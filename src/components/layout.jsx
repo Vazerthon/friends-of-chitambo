@@ -30,7 +30,7 @@ const Layout = ({ children, classes }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired, // eslint-disable-line
 };
 
 export default withRoot(withStyles(styles)(Layout));
