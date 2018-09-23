@@ -1,12 +1,10 @@
 {
-  "name": "gatsby-starter-material-ui",
-  "description": "Gatsby Material-UI Starter",
+  "name": "friends-of-chitambo",
+  "homepage": "https://vazerthon.github.io/friends-of-chitambo",
+  "description": "Homepage of Friends of Chitambo",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Naresh Bhatia",
-  "keywords": [
-    "gatsby"
-  ],
+  "author": "Paul Vallis",
   "repository": {
     "type": "git",
     "url": "https://github.com/nareshbhatia/gatsby-starter-material-ui"
@@ -14,7 +12,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write '**/*.js'"
+    "format": "prettier --write '**/*.js'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "@material-ui/core": "^3.0.0",
@@ -30,6 +30,7 @@
     "react-jss": "^8.6.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.0",
     "prettier": "^1.14.2"
   }
 }
