@@ -289,8 +289,7 @@
         "start_url": "/",
         "background_color": "#663399",
         "theme_color": "#663399",
-        "display": "minimal-ui",
-        "icon": "src/images/gatsby-icon.png"
+        "display": "minimal-ui"
       },
       "nodeAPIs": [
         "onPostBootstrap"
@@ -359,7 +358,7 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "bd3a7f0ea438065304ca63104eccf2d2",
+        "contentDigest": "8cfab07e2b4bdf61e499a708532c82fa",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -453,7 +452,7 @@
       "resolve": "/home/vallis/Projects/friends-of-chitambo",
       "id": "Plugin default-site-plugin",
       "name": "default-site-plugin",
-      "version": "8de26688f0968481e93dfe072e52c4f9",
+      "version": "5b88608f43d1754469672e31dfdaf8cd",
       "pluginOptions": {
         "plugins": []
       },
@@ -533,7 +532,7 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "5ebd546eb64535201976a5defce499d1",
+        "contentDigest": "c55b68ec9412ee5d20df23855b5730b1",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
@@ -641,12 +640,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-09-23T07:26:09.793Z",
+      "buildTime": "2018-09-23T14:39:11.059Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "97aee038aa645c41b580f8bd268966f0",
+        "contentDigest": "2eb179b033f15934155ab3df5589a650",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -714,20 +713,16 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "3a7c9548b81b6121994dea3b4db018e4"
+    "PLUGINS_HASH": "8ea87cdfae673065b17caf0c97baf6e7"
   },
   "componentDataDependencies": {
-    "nodes": {
-      "Site": []
-    },
+    "nodes": {},
     "connections": {}
   },
   "jsonDataPaths": {
     "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
-    "sq--src-components-layout-js": 755544856,
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
     "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
-    "page-2-fbc": "53/path---page-2-fbc-5a8-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E"
   },
   "components": {
