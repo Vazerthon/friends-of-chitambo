@@ -1,9 +1,8 @@
-// onClientEntry() must be included for the requires above to be triggered,
-// even if it is empty!
+/* eslint-env browser */
+
 exports.onClientEntry = () => {
   // Load Roboto font to support Material Design
-  const pathRoboto =
-    'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+  const pathRoboto = 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
   const linkRoboto = document.createElement('link');
   linkRoboto.setAttribute('rel', 'stylesheet');
   linkRoboto.setAttribute('href', pathRoboto);

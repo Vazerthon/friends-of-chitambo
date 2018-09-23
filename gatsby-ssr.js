@@ -16,6 +16,7 @@ function replaceRenderer({
     ? getPageContext.default()
     : getPageContext();
 
+  /* eslint-disable react/jsx-filename-extension */
   const bodyHTML = renderToString(
     <JssProvider
       registry={muiPageContext.sheetsRegistry}
@@ -26,6 +27,7 @@ function replaceRenderer({
       })}
     </JssProvider>,
   );
+  /* eslint-enable react/jsx-filename-extension */
 
   replaceBodyHTMLString(bodyHTML);
   setHeadComponents([

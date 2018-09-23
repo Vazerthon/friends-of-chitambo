@@ -1,25 +1,12 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Star } from '@material-ui/icons';
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 
-const styles = theme => ({
-  section: {
-    marginTop: theme.spacing.unit * 3,
-  },
-  toolbar: {
-    marginTop: theme.spacing.unit * 2,
-  },
-  button: {
-    marginRight: theme.spacing.unit,
-  },
-});
-
-const IndexPage = ({ classes }) => (
+const IndexPage = () => (
   <Layout>
     <Typography variant="display2" gutterBottom>
       Welcome
@@ -29,7 +16,6 @@ const IndexPage = ({ classes }) => (
       variant="fab"
       color="secondary"
       aria-label="Star"
-      className={classes.button}
     >
       <Star />
     </Button>
@@ -40,4 +26,4 @@ IndexPage.propTypes = {
   classes: PropTypes.object.isRequired, // eslint-disable-line
 };
 
-export default withStyles(styles)(IndexPage);
+export default IndexPage;
