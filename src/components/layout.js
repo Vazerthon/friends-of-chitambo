@@ -23,6 +23,7 @@ const Layout = ({ children, classes }) => (
     <Helmet title="Friends of Chitambo">
       <html lang="en" />
     </Helmet>
+    <Header siteTitle="Friends of Chitambo" />
     <div className={classes.root}>{children}</div>
   </Fragment>
 );
