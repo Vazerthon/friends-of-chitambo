@@ -10,7 +10,7 @@
     "url": "https://github.com/vazerthon/friends-of-chitambo"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write '**/*.js'",
