@@ -4,20 +4,22 @@ import {
   createGenerateClassName,
 } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
+import theme from './theme';
+
+const materialTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#f68712',
+      main: theme.colour.primary,
     },
     secondary: {
-      main: '#2f933c',
+      main: theme.colour.secondary,
     },
   },
 });
 
 function createPageContext() {
   return {
-    theme,
+    theme: materialTheme,
     sheetsManager: new Map(),
     sheetsRegistry: new SheetsRegistry(),
     generateClassName: createGenerateClassName(),

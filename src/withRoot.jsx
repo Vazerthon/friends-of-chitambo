@@ -2,9 +2,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import getPageContext from './getPageContext';
+
+import theme from './theme';
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
@@ -27,7 +30,9 @@ function withRoot(Component) {
           sheetsManager={this.muiPageContext.sheetsManager}
         >
           <CssBaseline />
-          <Component {...this.props} />
+          <ThemeProvider theme={theme}>
+            <Component {...this.props} />
+          </ThemeProvider>
         </MuiThemeProvider>
       );
     }
