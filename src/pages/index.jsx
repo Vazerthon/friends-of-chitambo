@@ -1,5 +1,4 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 import Layout from '../components/layout';
@@ -12,4 +11,4 @@ const IndexPage = () => (
   </Layout>
 );
 
-export default withStyles({})(IndexPage);
+export default IndexPage;

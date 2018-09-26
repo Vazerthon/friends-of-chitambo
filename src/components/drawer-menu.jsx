@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -36,4 +35,4 @@ DrawerMenu.propTypes = {
   onOpen: PropTypes.func.isRequired,
 };
 
-export default withStyles({})(DrawerMenu);
+export default DrawerMenu;

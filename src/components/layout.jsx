@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
@@ -8,18 +7,6 @@ import Helmet from 'react-helmet';
 import withRoot from '../withRoot';
 
 import DrawerMenu from './drawer-menu';
-
-const styles = theme => ({
-  root: {
-    paddingTop: theme.spacing.unit * 2,
-    paddingLeft: theme.spacing.unit * 2,
-    paddingRight: theme.spacing.unit * 2,
-    [theme.breakpoints.up('sm')]: {
-      paddingLeft: theme.spacing.unit * 3,
-      paddingRight: theme.spacing.unit * 3,
-    },
-  },
-});
 
 class Layout extends Component {
   constructor(props) {
@@ -35,7 +22,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { classes, children } = this.props;
+    const { children } = this.props;
     const { menuOpen } = this.state;
 
     return (
@@ -51,7 +38,7 @@ class Layout extends Component {
           onClose={() => this.setMenuState(false)}
           onOpen={() => this.setMenuState(true)}
         />
-        <div className={classes.root}>{children}</div>
+        <div>{children}</div>
       </Fragment>
     );
   }
@@ -59,7 +46,6 @@ class Layout extends Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  classes: PropTypes.object.isRequired, // eslint-disable-line
 };
 
-export default withRoot(withStyles(styles)(Layout));
+export default withRoot(Layout);
