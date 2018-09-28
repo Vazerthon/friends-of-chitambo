@@ -14,6 +14,9 @@ const Container = styled.div`
   padding: ${({ theme }) => theme.spacing.units(2)};
   padding-bottom: 0;
 
+  ${({ theme }) => theme.media.small`
+    padding: ${theme.spacing.units(1)};
+  `}
 `;
 
 class Layout extends Component {
