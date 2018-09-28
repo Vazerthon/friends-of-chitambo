@@ -5,16 +5,16 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-const Drawer = styled(SwipeableDrawer)`
-  & .MuiDrawer-paper-45, & .jss45 {
+const Drawer = styled(({ ...props }) => (
+  <SwipeableDrawer {...props} classes={{ paper: 'paper' }} />
+))`
+  & .paper {
     width: ${({ theme }) => theme.spacing.units(50)};
-  }
-
-  ${({ theme }) => theme.media.small`
-    & .MuiDrawer-paper-45, & .jss45 {
+  
+    ${({ theme }) => theme.media.small`
       width: 90%;
-    } 
-  `}
+    `}
+  }
 `;
 
 function DrawerMenu({

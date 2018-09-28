@@ -41,7 +41,7 @@ class Layout extends Component {
         <Helmet title="Friends of Chitambo">
           <html lang="en" />
         </Helmet>
-        <Button variant="fab" onClick={() => this.setMenuState(true)}>
+        <Button variant="flat" onClick={() => this.setMenuState(true)}>
           <MenuIcon />
         </Button>
         <DrawerMenu
