@@ -1,12 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-function DrawerMenu({ open, onClose, onOpen }) {
+const Drawer = styled(SwipeableDrawer)`
+  & .MuiDrawer-paper-45, & .jss45 {
+    width: ${({ theme }) => theme.spacing.units(50)};
+  }
+
+  ${({ theme }) => theme.media.small`
+    & .MuiDrawer-paper-45, & .jss45 {
+      width: 90%;
+    } 
+  `}
+`;
+
+function DrawerMenu({
+  open, onClose, onOpen,
+}) {
   return (
-    <SwipeableDrawer
+    <Drawer
       open={open}
       onClose={onClose}
       onOpen={onOpen}
@@ -25,7 +40,7 @@ function DrawerMenu({ open, onClose, onOpen }) {
           </List>
         </div>
       </div>
-    </SwipeableDrawer>
+    </Drawer>
   );
 }
 
