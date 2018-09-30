@@ -14,4 +14,11 @@ exports.onClientEntry = () => {
   linkIcons.setAttribute('rel', 'stylesheet');
   linkIcons.setAttribute('href', pathIcons);
   document.head.appendChild(linkIcons);
+
+  // Load Kaushan Script font
+  const pathKaushan = 'https://fonts.googleapis.com/css?family=Kaushan+Script';
+  const linkKaushan = document.createElement('link');
+  linkKaushan.setAttribute('rel', 'stylesheet');
+  linkKaushan.setAttribute('href', pathKaushan);
+  document.head.appendChild(linkKaushan);
 };
