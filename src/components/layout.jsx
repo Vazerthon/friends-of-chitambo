@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 import Root from '../Root';
 
 const Container = styled.div`
@@ -12,9 +13,10 @@ const Container = styled.div`
   `}
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, title }) {
   return (
     <Root>
+      <Helmet title={title} />
       <Container>
         {children}
       </Container>
@@ -24,4 +26,5 @@ export default function Layout({ children }) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
