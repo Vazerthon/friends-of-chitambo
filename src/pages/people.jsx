@@ -3,12 +3,12 @@ import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 
-function IndexPage() {
+function PeoplePage() {
   return (
     <Layout>
-      <Helmet title="Home" />
+      <Helmet title="People" />
     </Layout>
   );
 }
 
-export default IndexPage;
+export default PeoplePage;

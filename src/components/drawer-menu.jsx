@@ -3,7 +3,14 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+
+import WorkIcon from '@material-ui/icons/Work';
+import HomeIcon from '@material-ui/icons/Home';
+import PeopleIcon from '@material-ui/icons/AccessibilityNew';
+import AboutIcon from '@material-ui/icons/Help';
+import ContactIcon from '@material-ui/icons/ContactMail';
+
+import MenuItem from './menu-item';
 
 const Drawer = styled(({ ...props }) => (
   <SwipeableDrawer {...props} classes={{ paper: 'paper' }} />
@@ -32,13 +39,13 @@ function DrawerMenu({
         onClick={onClose}
         onKeyDown={onClose}
       >
-        <div>
-          <List>
-            <ListItem>One</ListItem>
-            <ListItem>Two</ListItem>
-            <ListItem>Three</ListItem>
-          </List>
-        </div>
+        <List component="nav">
+          <MenuItem icon={<HomeIcon />} text="home" to="/" />
+          <MenuItem icon={<AboutIcon />} text="about" to="/about" />
+          <MenuItem icon={<WorkIcon />} text="projects" to="/projects" />
+          <MenuItem icon={<PeopleIcon />} text="people" to="/people" />
+          <MenuItem icon={<ContactIcon />} text="contact" to="/contact" />
+        </List>
       </div>
     </Drawer>
   );

@@ -36,7 +36,7 @@ class Root extends Component {
       <ThemeProvider theme={theme}>
         <MuiThemeProvider theme={materialTheme}>
           <CssBaseline />
-          <Helmet title="Friends of Chitambo">
+          <Helmet titleTemplate="%s | Friends of Chitambo">
             <html lang="en" />
             <meta name="description" content="Friends of Chitambo - Registered Scottish Charity (SCO44337)" />
           </Helmet>
