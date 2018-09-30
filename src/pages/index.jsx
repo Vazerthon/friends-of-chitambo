@@ -1,11 +1,12 @@
 import React from 'react';
 
 import Layout from '../components/layout';
+import Logo from '../components/logo';
 
 function IndexPage() {
   return (
     <Layout>
-      <h1>Hi</h1>
+      <Logo />
     </Layout>
   );
 }
