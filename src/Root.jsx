@@ -38,8 +38,13 @@ class Root extends Component {
           <CssBaseline />
           <Helmet title="Friends of Chitambo">
             <html lang="en" />
+            <meta name="description" content="Friends of Chitambo - Registered Scottish Charity (SCO44337)" />
           </Helmet>
-          <Button variant="flat" onClick={() => this.setMenuState(true)}>
+          <Button
+            variant="flat"
+            onClick={() => this.setMenuState(true)}
+            aria-label="Main menu"
+          >
             <MenuIcon />
           </Button>
           <DrawerMenu
