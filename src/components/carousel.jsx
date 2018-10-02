@@ -3,16 +3,40 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 
-const Image = styled.img`
-  ${({ prev }) => prev && `& {
-    transform: translateX(-200%);
-  }`}
+const SlideContainer = styled.div`
+  display: flex;
+`;
 
-  ${({ next }) => next && `& {
-    transform: translateX(200%);
-  }`}
+const Slide = styled.div`
+  ${({ prev }) =>
+    prev && `
+    & {
+      display: flex;
+      transform: translateX(-100%);
+    }`
+  }
+  
+  ${({ next }) =>
+    next && `
+    & {
+      display: flex;
+      transform: translateX(100%);
+    }`
+  }
+
+  ${({ curr }) =>
+    curr && `
+    & {
+      display: flex;
+    }`
+  }
 
   transition: all 0.5s ease-in-out;
+
+  display: none;
+  min-width: 100%;  
+  justify-content: center;
+  align-items: center;
 `;
 
 class Carousel extends Component {
@@ -25,7 +49,7 @@ class Carousel extends Component {
       nextIndex: 2,
     };
 
-    this.imageInterval = setInterval(() => this.tickImage(), 2000);
+    this.imageInterval = setInterval(() => this.tickImage(), 3000);
   }
 
   tickImage() {
@@ -34,11 +58,15 @@ class Carousel extends Component {
     const nextIndex = index + 1 === images.length ? 0 : index + 1;
     const nextNextIndex = nextIndex + 1 === images.length ? 0 : nextIndex + 1;
 
-    this.setState({
+    const newState = {
       prevIndex: index,
       index: nextIndex,
       nextIndex: nextNextIndex,
-    });
+    };
+
+    this.setState(newState);
+    
+    console.log(newState);
   }
 
   imageInterval = undefined;
@@ -50,14 +78,21 @@ class Carousel extends Component {
     return (
       <div>
         <Paper>
-          { images.map((image, i) => (
-            <Image
-              prev={i === prevIndex}
-              next={i === nextIndex}
-              src={image.src}
-              alt={image.alt}
-            />
-          )) }
+          <SlideContainer>
+            {images.map((image, i) => (
+              <Slide
+                key={image.id}
+                prev={i === prevIndex}
+                curr={i === index}
+                next={i === nextIndex}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                />
+              </Slide>
+            ))}
+          </SlideContainer>
         </Paper>
       </div>
     );
@@ -71,6 +106,7 @@ class Carousel extends Component {
 Carousel.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string,
       src: PropTypes.string,
       alt: PropTypes.string,
     }),

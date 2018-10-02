@@ -5,10 +5,11 @@ import Logo from '../components/logo';
 import Carousel from '../components/carousel';
 
 const images = [
-  { src: 'http://placekitten.com/200/100', alt: 'Kitten One' },
-  { src: 'http://placekitten.com/200/300', alt: 'Kitten Two' },
-  { src: 'http://placekitten.com/1000/500', alt: 'Kitten Three' },
-  { src: 'http://placekitten.com/800/100', alt: 'Kitten Four' }]
+  { id: 'a', src: 'http://placekitten.com/400/200', alt: 'Kitten One' },
+  { id: 'b', src: 'http://placekitten.com/400/400', alt: 'Kitten Two' },
+  { id: 'c', src: 'http://placekitten.com/800/400', alt: 'Kitten Three' },
+  { id: 'd', src: 'http://placekitten.com/800/300', alt: 'Kitten Four' },
+];
 
 function IndexPage() {
   return (
