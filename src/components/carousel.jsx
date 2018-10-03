@@ -1,40 +1,38 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
 
 const SlideContainer = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  overflow: hidden;
 `;
 
 const Slide = styled.div`
   ${({ prev }) =>
     prev && `
     & {
-      display: flex;
       transform: translateX(-100%);
     }`
   }
   
-  ${({ next }) =>
-    next && `
-    & {
-      display: flex;
-      transform: translateX(100%);
-    }`
-  }
-
   ${({ curr }) =>
     curr && `
     & {
-      display: flex;
+      transform: translateX(0);
+      opacity: 1;
     }`
   }
 
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  transform: translateX(100%);
+
   transition: all 0.5s ease-in-out;
 
-  display: none;
-  min-width: 100%;  
   justify-content: center;
   align-items: center;
 `;
@@ -49,7 +47,7 @@ class Carousel extends Component {
       nextIndex: 2,
     };
 
-    this.imageInterval = setInterval(() => this.tickImage(), 3000);
+    this.imageInterval = setInterval(() => this.tickImage(), 5000);
   }
 
   tickImage() {
@@ -65,8 +63,6 @@ class Carousel extends Component {
     };
 
     this.setState(newState);
-    
-    console.log(newState);
   }
 
   imageInterval = undefined;
@@ -76,25 +72,20 @@ class Carousel extends Component {
     const { prevIndex, index, nextIndex } = this.state;
 
     return (
-      <div>
-        <Paper>
-          <SlideContainer>
-            {images.map((image, i) => (
-              <Slide
-                key={image.id}
-                prev={i === prevIndex}
-                curr={i === index}
-                next={i === nextIndex}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                />
-              </Slide>
-            ))}
-          </SlideContainer>
-        </Paper>
-      </div>
+      <SlideContainer>
+        {images.map((image, i) => (
+          <Slide
+            key={image.id}
+            prev={i === prevIndex}
+            curr={i === index}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+            />
+          </Slide>
+        ))}
+      </SlideContainer>
     );
   }
 
