@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Script from './script';

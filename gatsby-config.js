@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './src/images/logo.png',
+        logo: './src/data/images/logo.png',
 
         appName: null,
         appDescription: null,
@@ -40,6 +40,13 @@ module.exports = {
           yandex: false,
           windows: false,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/data`,
       },
     },
   ],

@@ -1,13 +1,18 @@
 import React from 'react';
 
-import Layout from '../components/layout';
-import Logo from '../components/logo';
+import HomePage from '../components/home-page';
+import Images from '../queries/images';
 
 function IndexPage() {
   return (
-    <Layout title="Home">
-      <Logo text="below" size="large" />
-    </Layout>
+    <Images
+      renderChildren={images => (
+        <HomePage
+          title="Home"
+          carouselImages={images.general}
+        />
+      )}
+    />
   );
 }
 
