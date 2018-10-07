@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AllFile from './all-file';
 
-const inImagesDir = new RegExp(/^images\//g);
-const toOnlyImages = ({ node }) => inImagesDir.test(node.relativePath);
+const toOnlyImages = ({ path }) => new RegExp(/^images\//g).test(path);
 
 const toCorrectShape = ({ node }) => ({
   id: node.id,
@@ -24,8 +23,8 @@ const toDictionary = (all, curr) => ({
 });
 
 const mapDataToImages = data => data
-  .filter(toOnlyImages)
   .map(toCorrectShape)
+  .filter(toOnlyImages)
   .reduce(toDictionary, {});
 
 export default function Images({ renderChildren }) {
