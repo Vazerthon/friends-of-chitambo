@@ -10,9 +10,10 @@
     "url": "https://github.com/vazerthon/friends-of-chitambo"
   },
   "scripts": {
-    "build": "gatsby build --prefix-paths",
+    "cleancache": "rimraf .cache/*",
+    "build": "npm run cleancache && gatsby build --prefix-paths",
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "npm run cleancache && npm run develop",
     "format": "prettier --write '**/*.js'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d public"
@@ -38,6 +39,7 @@
     "react-helmet": "^5.2.0",
     "react-jss": "^8.6.1",
     "react-slick": "^0.23.1",
+    "rimraf": "^2.6.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^3.4.9"
   },
