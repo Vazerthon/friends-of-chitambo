@@ -49,5 +49,11 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+    {
+      resolve: 'gatsby-transformer-json',
+      options: {
+        typeName: 'Json',
+      },
+    },
   ],
 };
