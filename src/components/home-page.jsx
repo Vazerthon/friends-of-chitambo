@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import PageContent from '../queries/page-content';
+
 import Layout from './layout';
 import Logo from './logo';
 import Carousel from './carousel';
 import List from './list';
+
 
 function HomePage({ title, carouselImages }) {
   return (
@@ -19,6 +22,8 @@ function HomePage({ title, carouselImages }) {
       />
 
       <Carousel images={carouselImages} />
+
+      <PageContent page="home" renderChildren={console.log} />
     </Layout>
   );
 }

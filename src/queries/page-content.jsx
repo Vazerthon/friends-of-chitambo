@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AllFile from './all-file';
+import Json from './json';
 
-const mapData = (page, data) => data;
+const mapData = (page, data) => data
+  .map(({ node }) => node)
+  .find(node => node.page === page);
 
 export default function PageContent({ page, renderChildren }) {
   return (
-    <AllFile
+    <Json
       renderChildren={data => renderChildren(mapData(page, data))}
     />
   );
