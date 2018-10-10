@@ -7,36 +7,43 @@
   "content": {
     "sections": [
       {
-        "heading": "Vision",
         "type": "text",
-        "content": "A healthy Chitambo district",
-        "children": []
+        "text": {
+          "heading": "Vision",
+          "content": "A healthy Chitambo district"
+        }
       },
       {
-        "heading": "Mission",
         "type": "text",
-        "content": "To advance health in the Chitambo District through specific community driven projects",
-        "children": []
+        "text": {
+          "heading": "Mission",
+          "content": "To advance health in the Chitambo District through specific community driven projects"
+        }
       },
       {
-        "heading": "Aims",
         "type": "multi",
-        "content": "",
-        "children": [
-          {
-            "type": "text",
-            "content": "Friends of Chitambo’s aim is to support health measures in the hospital and surrounding district, by responding to issues raised by the local staff:"
-          },
-          {
-            "type": "list",
-            "items": [
-              "Improve Emergency Care, to contribute to decreasing mortality and morbidity due to common medical emergencies at district and ultimately national level",
-              "Provide nurse scholarships for financially disadvantaged poor students",
-              "Maintain ‘Centenary’ ambulance.",
-              "Improve under-5s nutrition"
-            ]
-          }
-        ]
+        "multi": {
+          "children": [
+            {
+              "type": "text",
+              "text": {
+                "heading": "Aims",
+                "content": "Friends of Chitambo’s aim is to support health measures in the hospital and surrounding district, by responding to issues raised by the local staff:"
+              }
+            },
+            {
+              "type": "list",
+              "list": {
+                "items": [
+                  "Improve Emergency Care, to contribute to decreasing mortality and morbidity due to common medical emergencies at district and ultimately national level",
+                  "Provide nurse scholarships for financially disadvantaged poor students",
+                  "Maintain ‘Centenary’ ambulance.",
+                  "Improve under-5s nutrition"
+                ]
+              }
+            }
+          ]
+        }
       }
     ]
   }

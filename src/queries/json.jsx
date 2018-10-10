@@ -5,32 +5,43 @@ import { StaticQuery, graphql } from 'gatsby';
 export default function Json({ renderChildren }) {
   return (
     <StaticQuery
-      query={graphql`
-        query {
-          allJson {
-            edges {
-              node {
-                page
-                frontmatter {
-                  title
-                  description
-                }
-                  content {
-                    sections {
-                      heading
-                      type
-                      content
-                      children {
+      query={
+        graphql`
+          query {
+            allJson {
+              edges {
+                node {
+                  page
+                  frontmatter {
+                    title
+                    description
+                  }
+                    content {
+                      sections {
                         type
-                        content
+                        text {
+                          heading
+                          content
+                        }
+                        multi {
+                          children {
+                            type
+                            text {
+                              heading
+                              content
+                            }
+                            list {
+                              items
+                            }
+                          }
+                        }
                       }
                     }
                   }
                 }
               }
-            }
-          }`
-        }
+            }`
+          }
       render={data => renderChildren(data.allJson.edges)}
     />
   );
