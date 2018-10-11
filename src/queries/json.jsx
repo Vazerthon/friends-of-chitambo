@@ -35,6 +35,9 @@ export default function Json({ renderChildren }) {
                             }
                           }
                         }
+                        carousel {
+                          imageCollection
+                        }
                       }
                     }
                   }

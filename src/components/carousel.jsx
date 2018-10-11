@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 
+import Images from '../queries/images';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -36,4 +38,20 @@ Carousel.propTypes = {
       alt: PropTypes.string,
     }),
   ).isRequired,
+};
+
+export function ConnectedCarousel({ imageCollection }) {
+  return (
+    <Images
+      renderChildren={images => (
+        <Carousel
+          images={images[imageCollection]}
+        />
+      )}
+    />
+  );
+}
+
+ConnectedCarousel.propTypes = {
+  imageCollection: PropTypes.string.isRequired,
 };

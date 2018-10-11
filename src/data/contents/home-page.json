@@ -44,6 +44,12 @@
             }
           ]
         }
+      },
+      {
+        "type": "carousel",
+        "carousel": {
+          "imageCollection": "general"
+        }
       }
     ]
   }
