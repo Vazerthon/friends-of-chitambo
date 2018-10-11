@@ -41,7 +41,7 @@ class Root extends Component {
             <meta name="description" content="Friends of Chitambo - Registered Scottish Charity (SCO44337)" />
           </Helmet>
           <Button
-            variant="flat"
+            variant="text"
             onClick={() => this.setMenuState(true)}
             aria-label="Main menu"
           >
