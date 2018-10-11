@@ -6,11 +6,13 @@ import Logo from './logo';
 
 const Ul = styled.ul`
   list-style: none;
+  padding: 0;
 `;
 
 const Li = styled.li`
   display: flex;
   align-items: center;
+  margin-top: ${({ theme }) => theme.spacing.units(1)}
 `;
 
 const Bullet = styled.div`
