@@ -4,12 +4,6 @@ import PropTypes from 'prop-types';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 
-import WorkIcon from '@material-ui/icons/Work';
-import HomeIcon from '@material-ui/icons/Home';
-import PeopleIcon from '@material-ui/icons/AccessibilityNew';
-import AboutIcon from '@material-ui/icons/Help';
-import ContactIcon from '@material-ui/icons/ContactMail';
-
 import MenuItem from './menu-item';
 
 const Drawer = styled(({ ...props }) => (
@@ -25,7 +19,7 @@ const Drawer = styled(({ ...props }) => (
 `;
 
 function DrawerMenu({
-  open, onClose, onOpen,
+  open, onClose, onOpen, items,
 }) {
   return (
     <Drawer
@@ -40,11 +34,9 @@ function DrawerMenu({
         onKeyDown={onClose}
       >
         <List component="nav">
-          <MenuItem icon={<HomeIcon />} text="home" to="/" />
-          <MenuItem icon={<AboutIcon />} text="about" to="/about" />
-          <MenuItem icon={<WorkIcon />} text="projects" to="/projects" />
-          <MenuItem icon={<PeopleIcon />} text="people" to="/people" />
-          <MenuItem icon={<ContactIcon />} text="contact" to="/contact" />
+          { items.map(i => (
+            <MenuItem key={i.to} text={i.text} to={i.to} />
+          )) }
         </List>
       </div>
     </Drawer>
@@ -55,6 +47,10 @@ DrawerMenu.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   onOpen: PropTypes.func.isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default DrawerMenu;
