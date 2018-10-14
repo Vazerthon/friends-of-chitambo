@@ -15,10 +15,10 @@ exports.onClientEntry = () => {
   linkIcons.setAttribute('href', pathIcons);
   document.head.appendChild(linkIcons);
 
-  // Load Kaushan Script font
-  const pathKaushan = 'https://fonts.googleapis.com/css?family=Kaushan+Script';
-  const linkKaushan = document.createElement('link');
-  linkKaushan.setAttribute('rel', 'stylesheet');
-  linkKaushan.setAttribute('href', pathKaushan);
-  document.head.appendChild(linkKaushan);
+  // Load Barlow Script font
+  const pathBarlow = 'https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed';
+  const linkBarlow = document.createElement('link');
+  linkBarlow.setAttribute('rel', 'stylesheet');
+  linkBarlow.setAttribute('href', pathBarlow);
+  document.head.appendChild(linkBarlow);
 };

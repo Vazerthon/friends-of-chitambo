@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Script from './script';
+import Typography from './typography';
 
 const directions = {
   off: 'row',
@@ -86,7 +86,7 @@ const Container = styled.div`
   height: ${({ theme, size }) => theme.spacing.units(sizes[size])};
 `;
 
-const Heading = styled(Script)`
+const Heading = styled(Typography)`
   font-size: 3em;
   text-align: center;
 `;
@@ -96,7 +96,7 @@ export default function Logo({ text, size, colour }) {
     <Container direction={text} size={size}>
       <SvgLogo size={size} colour={colour} />
       {text !== 'off' && (
-        <Heading variant="headline" component="h1">
+        <Heading tag="h1">
           Friends of Chitambo
         </Heading>
       )}
