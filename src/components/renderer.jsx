@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 import Text from './text';
 import List from './list';
+import { ConnectedCarousel } from './carousel';
 
 function Renderer({ sections }) {
   const renderStrategies = {
     text: props => <Text {...props} />,
     list: props => <List {...props} />,
     multi: ({ children }) => Renderer({ sections: children }),
+    carousel: props => <ConnectedCarousel {...props} />,
   };
 
   return sections.map(section => (
@@ -22,6 +24,7 @@ const componentTypes = [
   'text',
   'multi',
   'list',
+  'carousel',
 ];
 
 Renderer.propTypes = {

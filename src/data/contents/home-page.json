@@ -7,6 +7,12 @@
   "content": {
     "sections": [
       {
+        "type": "carousel",
+        "carousel": {
+          "imageCollection": "general"
+        }
+      },
+      {
         "type": "text",
         "text": {
           "heading": "Vision",
