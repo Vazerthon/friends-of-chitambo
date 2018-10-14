@@ -12,6 +12,7 @@ export default function Json({ renderChildren }) {
               edges {
                 node {
                   page
+                  url
                   frontmatter {
                     title
                     description
