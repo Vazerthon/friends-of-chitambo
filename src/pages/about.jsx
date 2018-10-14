@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import AboutPage from '../components/about-page';
 
-function AboutPage() {
+function About() {
   return (
-    <Layout title="About" />
+    <AboutPage title="About" />
   );
 }
 
-export default AboutPage;
+export default About;

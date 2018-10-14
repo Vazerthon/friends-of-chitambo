@@ -10,6 +10,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 import DrawerMenu from './drawer-menu';
 
+import PageList from '../queries/page-list';
+
 import Root from './root';
 
 const Container = styled.div`
@@ -21,9 +23,7 @@ const Container = styled.div`
 
   ${({ theme }) => theme.media.medium`
     margin: 0 ${theme.spacing.units(10)};
-  `}
-  
-  ${({ theme }) => theme.media.small`
+  `} ${({ theme }) => theme.media.small`
     margin: 0;
   `};
 `;
@@ -59,10 +59,15 @@ class Layout extends Component {
             </Button>
           </Toolbar>
         </AppBar>
-        <DrawerMenu
-          open={menuOpen}
-          onClose={() => this.setMenuState(false)}
-          onOpen={() => this.setMenuState(true)}
+        <PageList
+          renderChildren={pages => (
+            <DrawerMenu
+              open={menuOpen}
+              onClose={() => this.setMenuState(false)}
+              onOpen={() => this.setMenuState(true)}
+              items={pages.map(p => ({ text: p.page, to: p.url }))}
+            />
+          )}
         />
         <Container>{children}</Container>
       </Root>
