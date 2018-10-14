@@ -5,6 +5,9 @@ import {
 import theme from './theme';
 
 export default createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
   palette: {
     primary: {
       main: theme.colour.primary,

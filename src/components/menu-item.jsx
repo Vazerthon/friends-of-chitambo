@@ -6,16 +6,18 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'gatsby';
 
+import Logo from './logo';
+
 const ItemText = styled(ListItemText)`
   text-transform: capitalize;
 `;
 
-function MenuItem({ icon, text, to }) {
+function MenuItem({ text, to }) {
   return (
     <Link to={to}>
       <ListItem button>
         <ListItemIcon>
-          {icon}
+          <Logo size="tiny" colour={false} />
         </ListItemIcon>
         <ItemText primary={text} />
       </ListItem>
@@ -24,7 +26,6 @@ function MenuItem({ icon, text, to }) {
 }
 
 MenuItem.propTypes = {
-  icon: PropTypes.node.isRequired,
   text: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
 };
