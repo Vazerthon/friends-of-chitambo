@@ -1,56 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
-import Slider from 'react-slick';
 import PropTypes from 'prop-types';
+import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.css';
 
 import Images from '../queries/images';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-/*
-  Override Slick styling to give a maximum height
-  without changing aspect ratios of contained images
-*/
-const Slide = styled(Slider)`
-  & {
-    .slick-track {
-      height: 50vh;
-
-      .slick-slide {
-        display: flex !important;
-        justify-content: center;
-
-        div {
-          display: flex !important;
-          justify-content: center;
-
-          img {
-            width: auto !important;
-            height: 100%;
-          }
-        }
-      }
-    }
-  }
+const Image = styled.img`
+  width: auto !important;
+  height: 100% !important;
 `;
 
-const sliderSettings = {
-  infinite: true,
-  autoplay: true,
-  autoplaySpeed: 5000,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
+const Slide = styled.div`
+  display: flex;
+  justify-content: center;
+  background: ${({ theme }) => theme.colour.neutral.background};
+  height: 50vh;
+  overflow: hidden;
+`;
+
+const carouselSettings = {
+  showArrows: false,
+  showThumbs: false,
+  showStatus: false,
+  infiniteLoop: true,
+  emulateTouch: true,
+  autoPlay: true,
+  interval: 6000,
 };
 
 export default function Carousel({ images }) {
   return (
-    <Slide {...sliderSettings}>
+    <ResponsiveCarousel {...carouselSettings}>
       {images.map(({ src, alt, id }) => (
-        <img key={id} src={src} alt={alt} />
+        <Slide key={id}>
+          <Image src={src} alt={alt} />
+        </Slide>
       ))}
-    </Slide>
+    </ResponsiveCarousel>
   );
 }
 

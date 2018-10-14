@@ -22,6 +22,9 @@ export default {
   colour: {
     primary: '#f68712',
     secondary: '#2f933c',
+    neutral: {
+      background: '#fafafa',
+    },
   },
   spacing: {
     unit: spacingUnit,
