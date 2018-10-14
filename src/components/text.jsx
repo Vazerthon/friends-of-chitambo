@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Heading } from './script';
+import Typography from './typography';
 
 function Text({ heading, content }) {
   return (
     <div>
-      { heading && <Heading tag="h2">{heading}</Heading> }
+      { heading && <Typography tag="h2">{heading}</Typography> }
       <p>
         {content}
       </p>
