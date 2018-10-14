@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 
@@ -6,6 +7,33 @@ import Images from '../queries/images';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+/*
+  Override Slick styling to give a maximum height
+  without changing aspect ratios of contained images
+*/
+const Slide = styled(Slider)`
+  & {
+    .slick-track {
+      height: 50vh;
+
+      .slick-slide {
+        display: flex !important;
+        justify-content: center;
+
+        div {
+          display: flex !important;
+          justify-content: center;
+
+          img {
+            width: auto !important;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+`;
 
 const sliderSettings = {
   infinite: true,
@@ -18,15 +46,11 @@ const sliderSettings = {
 
 export default function Carousel({ images }) {
   return (
-    <Slider {...sliderSettings}>
+    <Slide {...sliderSettings}>
       {images.map(({ src, alt, id }) => (
-        <img
-          key={id}
-          src={src}
-          alt={alt}
-        />
+        <img key={id} src={src} alt={alt} />
       ))}
-    </Slider>
+    </Slide>
   );
 }
 
@@ -43,11 +67,7 @@ Carousel.propTypes = {
 export function ConnectedCarousel({ imageCollection }) {
   return (
     <Images
-      renderChildren={images => (
-        <Carousel
-          images={images[imageCollection]}
-        />
-      )}
+      renderChildren={images => <Carousel images={images[imageCollection]} />}
     />
   );
 }
