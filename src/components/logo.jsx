@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { Heading } from './script';
+import Script from './script';
 
 const directions = {
   off: 'row',
@@ -49,8 +49,8 @@ const SvgLogo = withTheme(({ theme, size, colour }) => (
       {colour && (
         <path // mid right
           d="M243.192 86.171 C 243.823 86.817,351.580 176.150,351.664 176.097 C 351.913 175.940,374.741 105.762,374.592 105.612 C 374.485 105.506,345.306 101.063,309.749 95.739 C 274.192 90.415,244.553 85.964,243.886 85.849 C 242.798 85.661,242.726 85.694,243.192 86.171 "
-          stroke="#231f20"
-          fill="#ffffff"
+          stroke="none"
+          fill="#f8ad24"
         />
       )}
       {colour && (
@@ -71,7 +71,7 @@ const SvgLogo = withTheme(({ theme, size, colour }) => (
         <path // mid left
           d="M90.255 95.584 C 54.318 100.989,24.830 105.496,24.726 105.600 C 24.622 105.704,29.739 121.640,36.097 141.013 L 47.656 176.236 48.373 175.589 C 48.942 175.076,87.238 143.342,152.589 89.233 C 154.946 87.281,156.582 85.705,156.231 85.723 C 155.881 85.741,126.191 90.179,90.255 95.584 "
           stroke="none"
-          fill="#231f20"
+          fill="#61407b"
         />
       )}
     </g>
@@ -84,7 +84,11 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: ${({ theme, size }) => theme.spacing.units(sizes[size])};
-  margin-bottom: ${({ theme }) => theme.spacing.units(5)};
+`;
+
+const Heading = styled(Script)`
+  font-size: 3em;
+  text-align: center;
 `;
 
 export default function Logo({ text, size, colour }) {
@@ -92,7 +96,7 @@ export default function Logo({ text, size, colour }) {
     <Container direction={text} size={size}>
       <SvgLogo size={size} colour={colour} />
       {text !== 'off' && (
-        <Heading tag="h1">
+        <Heading variant="headline" component="h1">
           Friends of Chitambo
         </Heading>
       )}
