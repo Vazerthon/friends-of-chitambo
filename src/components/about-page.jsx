@@ -1,23 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Layout from './layout';
 import Logo from './logo';
 
 import RenderPage from './render-page';
 
-function AboutPage({ title }) {
+function AboutPage() {
   return (
-    <Layout title={title}>
+    <Layout>
       <Logo text="below" size="large" />
 
       <RenderPage page="about" />
     </Layout>
   );
 }
-
-AboutPage.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 export default AboutPage;

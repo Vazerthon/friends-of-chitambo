@@ -4,7 +4,7 @@ import HomePage from '../components/home-page';
 
 function IndexPage() {
   return (
-    <HomePage title="Home" />
+    <HomePage />
   );
 }
 
