@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
+import IconButton   from '@material-ui/core/IconButton';
 import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
 
 import Logo from './logo';
-import Button from './button';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colour.neutral.white};
@@ -34,12 +34,12 @@ function Footer() {
         <Col>
           Follow us!
           <Row>
-            <Button>
+            <IconButton color="secondary" href="https://www.facebook.com/friendsofchitambo/">
               <IoLogoFacebook />
-            </Button>
-            <Button>
+            </IconButton>
+            <IconButton color="secondary" href="https://twitter.com/FriendsChitambo">
               <IoLogoTwitter />
-            </Button>
+            </IconButton>
           </Row>
         </Col>
       </Row>
