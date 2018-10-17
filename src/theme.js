@@ -24,6 +24,7 @@ export default {
     secondary: '#2f933c',
     neutral: {
       background: '#fafafa',
+      white: '#ffffff',
     },
   },
   spacing: {

@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import DrawerMenu from './drawer-menu';
+import Footer from './footer';
 
 import PageList from '../queries/page-list';
 
@@ -69,7 +70,10 @@ class Layout extends Component {
             />
           )}
         />
-        <Container>{children}</Container>
+        <Container>
+          {children}
+          <Footer />
+        </Container>
       </Root>
     );
   }
@@ -77,7 +81,11 @@ class Layout extends Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+};
+
+Layout.defaultProps = {
+  title: '',
 };
 
 export default Layout;

@@ -4,7 +4,7 @@ import AboutPage from '../components/about-page';
 
 function About() {
   return (
-    <AboutPage title="About" />
+    <AboutPage />
   );
 }
 
