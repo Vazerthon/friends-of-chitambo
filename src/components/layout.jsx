@@ -16,10 +16,10 @@ import PageList from '../queries/page-list';
 import Root from './root';
 
 const Container = styled.div`
+  min-height: 80vh;
   padding: ${({ theme }) => theme.spacing.units(2)};
   padding-bottom: 0;
   padding-top: ${({ theme }) => theme.spacing.units(10)};
-
   margin: 0 ${({ theme }) => theme.spacing.units(20)};
 
   ${({ theme }) => theme.media.medium`
@@ -72,8 +72,8 @@ class Layout extends Component {
         />
         <Container>
           {children}
-          <Footer />
         </Container>
+        <Footer />
       </Root>
     );
   }
