@@ -24,7 +24,7 @@ const SvgLogo = withTheme(({ theme, size, colour }) => (
     viewBox="0 0 400 358"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <title>Friends of Chitambo</title>
+    <title>Friends of Chitambo S.C.I.O</title>
     <g>
       // mostly generated code within... slightly hand wrangled
       <path // outline
@@ -84,6 +84,19 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: ${({ theme, size }) => theme.spacing.units(sizes[size])};
+  margin: ${({ theme }) => theme.spacing.units(1)};
+`;
+
+const Headings = styled.div`
+  text-align: center;
+  & h1, h2 {
+    margin: 0;
+  }
+
+  ${({ theme, direction }) => ({
+    below: `margin: ${theme.spacing.units(1)} 0;`,
+    right: `margin: 0 ${theme.spacing.units(2)};`,
+  }[direction])}
 `;
 
 const Heading = styled(Typography)`
@@ -96,9 +109,10 @@ export default function Logo({ text, size, colour }) {
     <Container direction={text} size={size}>
       <SvgLogo size={size} colour={colour} />
       {text !== 'off' && (
-        <Heading tag="h1">
-          Friends of Chitambo
-        </Heading>
+        <Headings direction={text}>
+          <Heading tag="h1">Friends of Chitambo</Heading>
+          <Heading tag="h2">S.C.I.O</Heading>
+        </Headings>
       )}
     </Container>
   );
