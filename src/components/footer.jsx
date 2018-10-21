@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
-import IconButton   from '@material-ui/core/IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
 
 import Logo from './logo';
@@ -12,7 +12,19 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: ${({ theme }) => theme.spacing.units(4)} 0;
+  box-shadow: ${({ theme }) => theme.colour.secondary} 0 6px 16px;
+  padding-top: ${({ theme }) => theme.spacing.units(4)};
+  padding-bottom: ${({ theme }) => theme.spacing.units(4)};
+  padding-left: ${({ theme }) => theme.spacing.units(20)};
+  padding-right: ${({ theme }) => theme.spacing.units(20)};
+
+  ${({ theme }) => theme.media.medium`
+    padding-left: ${theme.spacing.units(10)};
+    padding-right: ${theme.spacing.units(10)};
+  `} ${({ theme }) => theme.media.small`
+    padding-left: ${theme.spacing.units(2)};
+    padding-right: ${theme.spacing.units(2)};
+  `};
 `;
 
 const Row = styled.div`
