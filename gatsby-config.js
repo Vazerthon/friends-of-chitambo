@@ -1,3 +1,5 @@
+require('dotenv').config({ path: '.env' });
+
 module.exports = {
   pathPrefix: '/friends-of-chitambo',
   siteMetadata: {
@@ -6,9 +8,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: '@wapps/gatsby-plugin-material-ui',
-    },
+    '@wapps/gatsby-plugin-material-ui',
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-favicon',
@@ -40,6 +40,13 @@ module.exports = {
           yandex: false,
           windows: false,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
