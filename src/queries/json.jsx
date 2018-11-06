@@ -13,6 +13,7 @@ export default function Json({ renderChildren }) {
                 node {
                   page
                   url
+                  weight
                   frontmatter {
                     title
                     description

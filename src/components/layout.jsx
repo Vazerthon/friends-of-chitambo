@@ -66,7 +66,7 @@ class Layout extends Component {
               open={menuOpen}
               onClose={() => this.setMenuState(false)}
               onOpen={() => this.setMenuState(true)}
-              items={pages.map(p => ({ text: p.page, to: p.url }))}
+              items={pages.map(p => ({ text: p.page, to: p.url, weight: p.weight }))}
             />
           )}
         />

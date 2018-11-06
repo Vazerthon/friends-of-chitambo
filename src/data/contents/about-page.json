@@ -1,6 +1,7 @@
 {
   "page": "about",
   "url": "/about",
+  "weight": 300,
   "frontmatter": {
     "title": "About",
     "description": "Friends of Chitambo (SCO44337)"
