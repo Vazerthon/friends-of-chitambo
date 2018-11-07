@@ -37,6 +37,7 @@ function DrawerMenu({
           {
             items
               .sort(i => i.weight)
+              .reverse()
               .map(i => (
                 <MenuItem key={i.to} text={i.text} to={i.to} />
               ))
