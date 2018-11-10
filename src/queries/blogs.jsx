@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-export default function BlogList({ renderChildren }) {
+const mapToNodes = data => data.allContentfulBlogPost.edges.map(({ node }) => node);
+const filterToSingleNode = id => nodes => nodes.find(n => n.id === id);
+const identity = x => x;
+
+export default function Blogs({ renderChildren, postId }) {
+  const filter = postId ? filterToSingleNode(postId) : identity;
   return (
     <StaticQuery
       query={
@@ -21,16 +26,20 @@ export default function BlogList({ renderChildren }) {
                   description {
                     description
                   }
+                  body {
+                    body
+                  }
                 }
               }
             }
           }`
         }
-      render={data => renderChildren(data.allContentfulBlogPost.edges.map(({ node }) => node))}
+      render={data => renderChildren(filter(mapToNodes(data)))}
     />
   );
 }
 
-BlogList.propTypes = {
+Blogs.propTypes = {
   renderChildren: PropTypes.func.isRequired,
+  postId: PropTypes.string,
 };
