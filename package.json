@@ -43,6 +43,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.2.2",
     "react-jss": "^8.6.1",
+    "react-markdown": "^4.0.3",
     "react-responsive-carousel": "^3.1.43",
     "rimraf": "^2.6.2",
     "styled-components": "^3.4.10"

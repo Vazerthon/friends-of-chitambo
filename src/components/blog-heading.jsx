@@ -8,6 +8,7 @@ import { Heading, SubHeading } from './headings';
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  color: ${({ theme }) => theme.colour.secondary};
 `;
 
 function BlogHeading({title, date}) {

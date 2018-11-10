@@ -4,16 +4,25 @@ import PropTypes from 'prop-types';
 
 import Logo from './logo';
 
-const Ul = styled.ul`
+export const UnorderedList = styled.ul`
   list-style: none;
   padding: 0;
 `;
 
-const Li = styled.li`
+const StyledListItem = styled.li`
   display: flex;
   align-items: center;
-  margin-top: ${({ theme }) => theme.spacing.units(1)}
+  margin-top: ${({ theme }) => theme.spacing.units(1)};
 `;
+
+export const ListItem = ({ children }) => (
+  <StyledListItem>
+    <Bullet>
+      <Logo size="tiny" colour={false} />
+    </Bullet>
+    {children}
+  </StyledListItem>
+);
 
 const Bullet = styled.div`
   margin-right: ${({ theme }) => theme.spacing.units(1)};
@@ -21,16 +30,13 @@ const Bullet = styled.div`
 
 function List({ items }) {
   return (
-    <Ul>
+    <UnorderedList>
       {items.map(item => (
-        <Li key={item}>
-          <Bullet>
-            <Logo size="tiny" colour={false} />
-          </Bullet>
+        <ListItem key={item}>
           {item}
-        </Li>
+        </ListItem>
       ))}
-    </Ul>
+    </UnorderedList>
   );
 }
 

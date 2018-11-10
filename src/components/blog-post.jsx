@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import Layout from './layout';
 import Logo from './logo';
 import BlogHeading from './blog-heading';
+import Markdown from './markdown';
 
 import Blogs from '../queries/blogs'
 
@@ -14,9 +16,13 @@ function BlogPost({ pageContext: { postId } }) {
       <Blogs
         postId={postId}
         renderChildren={data => (
-          <div>
+          <Fragment>
+            <Helmet title={`${data.title} | blog`}>
+                <meta name="description" content={data.description} />
+            </Helmet>
             <BlogHeading title={data.title} date={data.createdAt} />
-          </div>
+            <Markdown source={data.body.body} />
+          </Fragment>
       )}
       />
     </Layout>
