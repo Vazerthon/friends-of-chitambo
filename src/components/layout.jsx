@@ -7,6 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
+import Logo from './logo';
 
 import DrawerMenu from './drawer-menu';
 import Footer from './footer';
@@ -71,6 +72,8 @@ class Layout extends Component {
           )}
         />
         <Container>
+          <Logo text="below" size="large" />
+          
           {children}
         </Container>
         <Footer />

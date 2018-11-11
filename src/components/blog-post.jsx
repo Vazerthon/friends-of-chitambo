@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import Layout from './layout';
-import Logo from './logo';
 import BlogHeading from './blog-heading';
 import Markdown from './markdown';
 
@@ -12,7 +11,6 @@ import Blogs from '../queries/blogs'
 function BlogPost({ pageContext: { postId } }) {
   return (
     <Layout>
-      <Logo text="below" size="large" />
       <Blogs
         postId={postId}
         renderChildren={data => (
