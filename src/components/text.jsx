@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import Typography from './typography';
+import { Heading, Paragraph } from './typography';
+
+const Container = styled.div`
+  margin: ${({ theme }) => theme.spacing.units(1)} 0;
+`;
 
 function Text({ heading, content }) {
   return (
-    <div>
-      { heading && <Typography tag="h2">{heading}</Typography> }
-      <p>
+    <Container>
+      { heading && <Heading>{heading}</Heading> }
+      <Paragraph>
         {content}
-      </p>
-    </div>
+      </Paragraph>
+    </Container>
   );
 }
 

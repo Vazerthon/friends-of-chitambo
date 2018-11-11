@@ -1,16 +1,17 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 
 import Layout from '../components/layout';
+import { Heading, Paragraph } from '../components/typography';
+import Link from '../components/link';
 
 const NotFoundPage = () => (
   <Layout>
-    <Typography variant="display2" gutterBottom>
+    <Heading>
       NOT FOUND
-    </Typography>
-    <Typography>
-      You just hit a route that doesn&#39;t exist... the sadness.
-    </Typography>
+    </Heading>
+    <Paragraph>
+      The page you're looking for doesn't exist. <Link href="/">Click here to go back to the home page.</Link>
+    </Paragraph>
   </Layout>
 );
 

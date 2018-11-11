@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
 import Blogs from '../queries/blogs';
-import Typography from './typography';
+import { Paragraph } from './typography';
 import BlogHeading from './blog-heading';
 
 const Summary = styled.div`
@@ -26,9 +26,9 @@ function BlogSummaries() {
         <Paper key={article.id}>
           <Summary>
             <BlogHeading title={article.title} date={article.createdAt} />
-            <Typography tag="p">
+            <Paragraph>
               {article.description.description}
-            </Typography> 
+            </Paragraph> 
             <Footer>
               <Link to={`blog/${article.slug}`}>
                 <Button variant="outlined" color="secondary">Read more</Button>

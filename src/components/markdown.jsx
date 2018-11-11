@@ -2,14 +2,14 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 
-import Typography from './typography';
-import { Heading } from './headings';
+import { Heading, Paragraph } from './typography';
 import { UnorderedList, ListItem } from './list';
+import Link from './link';
 
 const renderers = {
-  paragraph: ({ children }) => <Typography tag="p">{children}</Typography>,
-  heading: ({ children }) => <Heading>{children}</Heading>,
-  link: ({ children }) => <span style={{ color: 'red'}}>{children}</span>, // TODO
+  paragraph: props => <Paragraph {...props} />,
+  heading: props => <Heading {...props} />,
+  link: props => <Link {...props} />,
   list: props => <UnorderedList {...props} />,
   listItem: props => <ListItem {...props} />,
 };

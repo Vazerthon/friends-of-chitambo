@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
 
 import Logo from './logo';
+import { Paragraph } from './typography';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colour.neutral.white};
@@ -56,13 +56,13 @@ function Footer() {
         </Col>
       </Row>
 
-      <Typography component="span">
+      <Paragraph>
         Friends of Chitambo is registered in Scotland as a charity, no. SCO44337. ©
         {' '}
         {new Date().getFullYear()}
         {' '}
         All rights reserved
-      </Typography>
+      </Paragraph>
     </Container>
   );
 }

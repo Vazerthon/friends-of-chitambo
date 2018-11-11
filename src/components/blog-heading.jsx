@@ -3,21 +3,20 @@ import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 import styled from 'styled-components';
 
-import { Heading, SubHeading } from './headings';
+import { Heading, SubHeading } from './typography';
 
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  color: ${({ theme }) => theme.colour.secondary};
 `;
 
 function BlogHeading({title, date}) {
   return (
     <Header>
-        <Heading>
+        <Heading color="primary">
           {title}
         </Heading>
-        <SubHeading>
+        <SubHeading color="primary">
           {format(date, 'Do MMMM YYYY')}
         </SubHeading>
     </Header>
