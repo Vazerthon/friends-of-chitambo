@@ -7,6 +7,7 @@ import { UnorderedList, ListItem } from './list';
 import Link from './link';
 
 const headings = {
+  1: props => <Heading {...props} />,
   2: props => <Heading {...props} />,
   3: props => <SubHeading {...props} />,
 }

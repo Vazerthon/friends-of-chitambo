@@ -20,9 +20,7 @@ export default function Blogs({ renderChildren, postId }) {
                   title
                   slug
                   createdAt
-                  description {
-                    description
-                  }
+                  description
                   body {
                     body
                   }
