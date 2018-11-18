@@ -20,7 +20,7 @@ function BlogPost({ pageContext: { pageId } }) {
             <Helmet title={`${data.title}`}>
                 <meta name="description" content={data.description} />
             </Helmet>
-            <ImageCarousel images={data.carousel} />
+            { data.carousel && <ImageCarousel images={data.carousel} />}
             <Markdown source={data.body.body} />
         </Layout>
       )}

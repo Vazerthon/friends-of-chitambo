@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.css';
 
-import Images from '../queries/images';
-
 const Image = styled.img`
   width: auto !important;
   height: 100% !important;

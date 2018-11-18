@@ -18,6 +18,8 @@ const Drawer = styled(({ ...props }) => (
   }
 `;
 
+const lightestFirst = (x, y) => (x.weight < y.weight ? -1 : 1);
+
 function DrawerMenu({
   open, onClose, onOpen, items,
 }) {
@@ -36,8 +38,7 @@ function DrawerMenu({
         <List component="nav">
           {
             items
-              .sort(i => i.weight)
-              .reverse()
+              .sort(lightestFirst)
               .map(i => (
                 <MenuItem key={i.to} text={i.text} to={i.to} />
               ))

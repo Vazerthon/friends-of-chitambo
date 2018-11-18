@@ -19,6 +19,7 @@ export default function Blogs({ renderChildren, pageId }) {
                   id
                   title
                   slug
+                  menuOrder
                   description
                   body {
                     body
