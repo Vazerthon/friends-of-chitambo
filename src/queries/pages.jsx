@@ -34,6 +34,9 @@ export default function Blogs({ renderChildren, pageId }) {
                   carousel {
                     id
                     title
+                    fluid(resizingBehavior: SCALE) {
+                      ...GatsbyContentfulFluid_tracedSVG
+                    }
                     file {
                       url
                     }

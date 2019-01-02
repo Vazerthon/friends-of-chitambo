@@ -10,6 +10,8 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     '@wapps/gatsby-plugin-material-ui',
     'gatsby-plugin-offline',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-favicon',
       options: {

@@ -8,7 +8,7 @@ import Carousel from './carousel';
 
 import Pages from '../queries/pages'
 
-const dataToImage = image => ({ id: image.id, src: image.file.url, alt: image.title });
+const dataToImage = image => ({ id: image.id, fluid: image.fluid, alt: image.title });
 const ImageCarousel = ({ images }) => images.length > 0 && <Carousel images={images.map(dataToImage)} />;
 
 function BlogPost({ pageContext: { pageId } }) {
