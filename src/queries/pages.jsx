@@ -27,18 +27,8 @@ export default function Blogs({ renderChildren, pageId }) {
                   gallery {
                     id
                     title
-                    file {
-                      url
-                    }
-                  }
-                  carousel {
-                    id
-                    title
-                    fluid(resizingBehavior: SCALE) {
-                      ...GatsbyContentfulFluid_tracedSVG
-                    }
-                    file {
-                      url
+                    fixed(width: 380) {
+                      ...GatsbyContentfulFixed_tracedSVG
                     }
                   }
                 }

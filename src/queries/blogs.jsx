@@ -24,6 +24,13 @@ export default function Blogs({ renderChildren, postId }) {
                   body {
                     body
                   }
+                  gallery {
+                    id
+                    title
+                    fixed(width: 380) {
+                      ...GatsbyContentfulFixed_tracedSVG
+                    }
+                  }
                 }
               }
             }

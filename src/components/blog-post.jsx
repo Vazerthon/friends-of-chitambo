@@ -8,6 +8,9 @@ import Markdown from './markdown';
 
 import Blogs from '../queries/blogs'
 
+const dataToImage = image => ({ id: image.id, alt: image.title, data: image.fixed });
+const ImageGallery = ({ images }) => images.length > 0 && <Gallery images={images.map(dataToImage)} />;
+
 function BlogPost({ pageContext: { postId } }) {
   return (
     <Layout>
@@ -20,6 +23,7 @@ function BlogPost({ pageContext: { postId } }) {
             </Helmet>
             <BlogHeading title={data.title} date={data.createdAt} />
             <Markdown source={data.body.body} />
+            { data.gallery && <ImageGallery images={data.gallery} />}
           </Fragment>
       )}
       />
