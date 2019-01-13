@@ -68,10 +68,18 @@ function Footer() {
         <Social>
           Follow us!
           <SocialButtons>
-            <IconButton color="secondary" href="https://www.facebook.com/friendsofchitambo/">
+            <IconButton
+              color="secondary"
+              href="https://www.facebook.com/friendsofchitambo/"
+              aria-label="facebook"
+            >
               <IoLogoFacebook />
             </IconButton>
-            <IconButton color="secondary" href="https://twitter.com/FriendsChitambo">
+            <IconButton
+              color="secondary"
+              href="https://twitter.com/FriendsChitambo"
+              aria-label="twitter"
+            >
               <IoLogoTwitter />
             </IconButton>
           </SocialButtons>

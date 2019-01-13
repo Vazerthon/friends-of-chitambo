@@ -25,7 +25,9 @@ const Container = styled.div`
 
   ${({ theme }) => theme.media.medium`
     margin: 0 ${theme.spacing.units(10)};
-  `} ${({ theme }) => theme.media.small`
+  `}
+  
+  ${({ theme }) => theme.media.small`
     margin: 0;
   `};
 `;
