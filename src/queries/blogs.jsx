@@ -32,7 +32,7 @@ export default function Blogs({ renderChildren, postId }) {
                   gallery {
                     id
                     title
-                    fixed(width: 380) {
+                    fixed(width: 300) {
                       ...GatsbyContentfulFixed_tracedSVG
                     }
                   }

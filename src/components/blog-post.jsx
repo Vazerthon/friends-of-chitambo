@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Layout from './layout';
 import BlogHeading from './blog-heading';
 import Markdown from './markdown';
+import Gallery from './gallery';
 import CoverImage from './cover-image';
 
 import Blogs from '../queries/blogs'

@@ -15,7 +15,6 @@
     "develop": "gatsby develop",
     "start": "npm run cleancache && npm run develop",
     "format": "prettier --write '**/*.js'",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d public"
   },
   "dependencies": {
