@@ -21,6 +21,11 @@ export default function Blogs({ renderChildren, postId }) {
                   slug
                   createdAt
                   description
+                  coverImage {
+                    fluid(maxWidth: 2000) {
+                      ...GatsbyContentfulFluid_tracedSVG
+                    }
+                  }
                   body {
                     body
                   }
