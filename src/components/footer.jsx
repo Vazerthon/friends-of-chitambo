@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
 
 import Logo from './logo';
+import { Paragraph } from './typography';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colour.neutral.white};
@@ -21,48 +21,78 @@ const Container = styled.div`
   ${({ theme }) => theme.media.medium`
     padding-left: ${theme.spacing.units(10)};
     padding-right: ${theme.spacing.units(10)};
-  `} ${({ theme }) => theme.media.small`
+  `}
+  
+  ${({ theme }) => theme.media.small`
     padding-left: ${theme.spacing.units(2)};
     padding-right: ${theme.spacing.units(2)};
   `};
 `;
 
-const Row = styled.div`
+const LogoAndSocial = styled.div`
   display: flex;
-  justify-content: space-between;
   width: 100%;
+  justify-content: space-between;
+
+  ${({ theme }) => theme.media.small`
+    flex-direction: column;
+  `};
 `;
 
-const Col = styled.div`
+const Social = styled.div`
   display: flex;
   flex-direction: column;
+
+  ${({ theme }) => theme.media.small`
+    margin-top: ${theme.spacing.units(1)}
+    align-items: center;
+  `};
+`;
+
+const SocialButtons = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  ${({ theme }) => theme.media.small`
+    justify-content: center;
+    align-items: center;
+  `};
 `;
 
 function Footer() {
   return (
     <Container>
-      <Row>
+      <LogoAndSocial>
         <Logo size="small" text="right" />
-        <Col>
+        <Social>
           Follow us!
-          <Row>
-            <IconButton color="secondary" href="https://www.facebook.com/friendsofchitambo/">
+          <SocialButtons>
+            <IconButton
+              color="secondary"
+              href="https://www.facebook.com/friendsofchitambo/"
+              aria-label="facebook"
+            >
               <IoLogoFacebook />
             </IconButton>
-            <IconButton color="secondary" href="https://twitter.com/FriendsChitambo">
+            <IconButton
+              color="secondary"
+              href="https://twitter.com/FriendsChitambo"
+              aria-label="twitter"
+            >
               <IoLogoTwitter />
             </IconButton>
-          </Row>
-        </Col>
-      </Row>
+          </SocialButtons>
+        </Social>
+      </LogoAndSocial>
 
-      <Typography component="span">
+      <Paragraph>
         Friends of Chitambo is registered in Scotland as a charity, no. SCO44337. ©
         {' '}
         {new Date().getFullYear()}
         {' '}
         All rights reserved
-      </Typography>
+      </Paragraph>
     </Container>
   );
 }

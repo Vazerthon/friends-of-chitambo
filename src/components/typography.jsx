@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
 
-export default function Typogrpahy({ tag, children }) {
-  const Tag = styled[tag]`
-    font-family: 'Barlow Semi Condensed', sans-serif;
-  `;
-  return (
-    <Tag>{children}</Tag>
-  );
-}
+export const Paragraph = styled(({ ...props }) => (
+  <Typography
+    {...props}
+    classes={{ paragraph: 'paragraph' }}
+    variant="body1"
+    paragraph
+  />
+))`
+  && {
+    font-size: 1rem;
+  }
+`;
 
-Typogrpahy.propTypes = {
-  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'p', 'span']).isRequired,
-  children: PropTypes.node.isRequired,
-};
+export const Title = props => <Typography paragraph variant="h3" {...props} />;
+export const Heading = props => <Typography paragraph variant="h4" {...props} />;
+export const SubHeading = props => <Typography paragraph variant="h5" {...props} />;

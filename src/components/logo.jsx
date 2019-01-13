@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Typography from './typography';
+import { Heading, SubHeading } from './typography';
 
 const directions = {
   off: 'row',
@@ -89,19 +89,10 @@ const Container = styled.div`
 
 const Headings = styled.div`
   text-align: center;
-  & h1, h2 {
-    margin: 0;
-  }
-
   ${({ theme, direction }) => ({
     below: `margin: ${theme.spacing.units(1)} 0;`,
     right: `margin: 0 ${theme.spacing.units(2)};`,
   }[direction])}
-`;
-
-const Heading = styled(Typography)`
-  font-size: 3em;
-  text-align: center;
 `;
 
 export default function Logo({ text, size, colour }) {
@@ -110,8 +101,8 @@ export default function Logo({ text, size, colour }) {
       <SvgLogo size={size} colour={colour} />
       {text !== 'off' && (
         <Headings direction={text}>
-          <Heading tag="h1">Friends of Chitambo</Heading>
-          <Heading tag="h2">S.C.I.O</Heading>
+          <Heading paragraph={false}>Friends of Chitambo</Heading>
+          <SubHeading paragraph={false}>S.C.I.O</SubHeading>
         </Headings>
       )}
     </Container>

@@ -5,6 +5,12 @@ A static site with information about registered Scottish charity, Friends of Chi
 
 ## Development
 
+Environment Variables
+---------
+`CONTENTFUL_SPACE_ID` - space ID for contentful 
+
+`CONTENTFUL_ACCESS_TOKEN` - API key for contentful
+
 Dev Build
 ---------
 ```bash

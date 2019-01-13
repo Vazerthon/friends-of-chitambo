@@ -18,6 +18,8 @@ const Drawer = styled(({ ...props }) => (
   }
 `;
 
+const lightestFirst = (x, y) => (x.weight < y.weight ? -1 : 1);
+
 function DrawerMenu({
   open, onClose, onOpen, items,
 }) {
@@ -34,9 +36,13 @@ function DrawerMenu({
         onKeyDown={onClose}
       >
         <List component="nav">
-          { items.map(i => (
-            <MenuItem key={i.to} text={i.text} to={i.to} />
-          )) }
+          {
+            items
+              .sort(lightestFirst)
+              .map(i => (
+                <MenuItem key={i.to} text={i.text} to={i.to} />
+              ))
+          }
         </List>
       </div>
     </Drawer>
@@ -50,6 +56,7 @@ DrawerMenu.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
+    weight: PropTypes.number.isRequired,
   })).isRequired,
 };
 

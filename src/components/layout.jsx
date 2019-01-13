@@ -7,11 +7,12 @@ import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
+import Logo from './logo';
 
 import DrawerMenu from './drawer-menu';
 import Footer from './footer';
 
-import PageList from '../queries/page-list';
+import Pages from '../queries/pages';
 
 import Root from './root';
 
@@ -24,10 +25,19 @@ const Container = styled.div`
 
   ${({ theme }) => theme.media.medium`
     margin: 0 ${theme.spacing.units(10)};
-  `} ${({ theme }) => theme.media.small`
+  `}
+  
+  ${({ theme }) => theme.media.small`
     margin: 0;
   `};
 `;
+
+// TODO: find a way to not maintain this manually
+const nonContentManagedPages = [{
+  title: 'Blog',
+  slug: 'blog',
+  menuOrder: 100,
+}];
 
 class Layout extends Component {
   constructor(props) {
@@ -60,17 +70,19 @@ class Layout extends Component {
             </Button>
           </Toolbar>
         </AppBar>
-        <PageList
+        <Pages
           renderChildren={pages => (
             <DrawerMenu
               open={menuOpen}
               onClose={() => this.setMenuState(false)}
               onOpen={() => this.setMenuState(true)}
-              items={pages.map(p => ({ text: p.page, to: p.url }))}
+              items={[...pages, ...nonContentManagedPages].map(p => ({ text: p.title, to: p.slug, weight: p.menuOrder }))}
             />
           )}
         />
         <Container>
+          <Logo text="below" size="large" />
+          
           {children}
         </Container>
         <Footer />

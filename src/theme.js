@@ -19,6 +19,7 @@ const media = Object.keys(breakpoints).reduce((prev, breakpoint) => ({
 }), {});
 
 export default {
+  fontFamily: "'Barlow Semi Condensed', sans-serif",
   colour: {
     primary: '#f68712',
     secondary: '#2f933c',
