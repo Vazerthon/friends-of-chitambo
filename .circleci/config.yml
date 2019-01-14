@@ -18,7 +18,7 @@ jobs:
           command: npm run build
       - add_ssh_keys:
           fingerprints:
-            - "b8:e3:ed:cd:97:b2:5f:11:77:18:56:fb:87:ca:fb:f1"
+            - "c4:7f:91:b9:96:d3:6f:20:ca:e6:9e:7e:09:29:72:08"
       - run: git config --global user.email circleci@circleci
       - run: git config --global user.name circleci
       - run:
