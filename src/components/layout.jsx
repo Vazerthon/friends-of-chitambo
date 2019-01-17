@@ -9,8 +9,10 @@ import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from './logo';
 
+import Panel from './panel';
 import DrawerMenu from './drawer-menu';
 import Footer from './footer';
+import { Paragraph } from './typography';
 
 import Pages from '../queries/pages';
 
@@ -30,6 +32,42 @@ const Container = styled.div`
   ${({ theme }) => theme.media.small`
     margin: 0;
   `};
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  ${({ theme }) => theme.media.medium`
+    flex-direction: column;
+  `}
+
+  ${({ theme }) => theme.media.small`
+    flex-direction: column;
+  `};
+`;
+
+const Main = styled.article`
+  width: 100%;
+  flex: 3 0 0%;
+  margin-right: ${({ theme }) => theme.spacing.units(10)};
+
+  ${({ theme }) => theme.media.medium`
+    margin-right: 0;
+  `}
+
+  ${({ theme }) => theme.media.small`
+    margin-right: 0;
+  `};
+`;
+
+const Sidebar = styled.aside`
+  width: 100%;
+  flex: 1 0 0%;
+`;
+
+const SidePanel = styled(Panel)`
+  margin: ${({ theme }) => theme.spacing.units(5)} 0;
 `;
 
 // TODO: find a way to not maintain this manually
@@ -83,7 +121,23 @@ class Layout extends Component {
         <Container>
           <Logo text="below" size="large" />
           
-          {children}
+          <Content>
+            <Main>
+              {children}
+            </Main>
+            <Sidebar>
+              <SidePanel title="Test">
+                <Paragraph>
+                  hello
+                </Paragraph>
+              </SidePanel>
+              <SidePanel title="Test">
+                <Paragraph>
+                  hello
+                </Paragraph>
+              </SidePanel>
+            </Sidebar>
+          </Content>
         </Container>
         <Footer />
       </Root>
