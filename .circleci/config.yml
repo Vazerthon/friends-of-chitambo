@@ -28,3 +28,12 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
+              ignore: gh-pages
