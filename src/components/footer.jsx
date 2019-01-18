@@ -6,7 +6,7 @@ import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
 import Logo from './logo';
 import { Paragraph } from './typography';
 
-const Container = styled.div`
+const Container = styled.footer`
   background-color: ${({ theme }) => theme.colour.neutral.white};
   display: flex;
   flex-direction: column;

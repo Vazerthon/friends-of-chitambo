@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Logo from './logo';
 
 import DrawerMenu from './drawer-menu';
+import Sidebar from './sidebar';
 import Footer from './footer';
 
 import Pages from '../queries/pages';
@@ -23,13 +24,25 @@ const Container = styled.div`
   padding-top: ${({ theme }) => theme.spacing.units(10)};
   margin: 0 ${({ theme }) => theme.spacing.units(20)};
 
-  ${({ theme }) => theme.media.medium`
-    margin: 0 ${theme.spacing.units(10)};
-  `}
-  
-  ${({ theme }) => theme.media.small`
-    margin: 0;
-  `};
+  ${({ theme }) => theme.media.medium`margin: 0 ${theme.spacing.units(10)};`}  
+  ${({ theme }) => theme.media.small`margin: 0;`};
+`;
+
+const Content = styled.main`
+  display: flex;
+  flex-direction: row;
+
+  ${({ theme }) => theme.media.medium`flex-direction: column;`}
+  ${({ theme }) => theme.media.small`flex-direction: column;`};
+`;
+
+const Main = styled.article`
+  width: 100%;
+  flex: 3 0 0%;
+  margin-right: ${({ theme }) => theme.spacing.units(10)};
+
+  ${({ theme }) => theme.media.medium`margin-right: 0;`}
+  ${({ theme }) => theme.media.small`margin-right: 0;`};
 `;
 
 // TODO: find a way to not maintain this manually
@@ -83,7 +96,10 @@ class Layout extends Component {
         <Container>
           <Logo text="below" size="large" />
           
-          {children}
+          <Content>
+            <Main>{children}</Main>
+            <Sidebar />
+          </Content>
         </Container>
         <Footer />
       </Root>

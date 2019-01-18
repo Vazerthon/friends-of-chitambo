@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
 
 import Blogs from '../queries/blogs';
 import { Paragraph } from './typography';
 import BlogHeading from './blog-heading';
+import { ButtonLink } from './link';
 
 const Summary = styled.div`
   padding: ${({ theme }) => theme.spacing.units(2)};
@@ -30,9 +29,7 @@ function BlogSummaries() {
               {article.description}
             </Paragraph> 
             <Footer>
-              <Link to={`blog/${article.slug}`}>
-                <Button variant="outlined" color="secondary">Read more</Button>
-              </Link>
+              <ButtonLink to={`blog/${article.slug}`} label="Read more" />
             </Footer>
           </Summary>
         </Paper>
