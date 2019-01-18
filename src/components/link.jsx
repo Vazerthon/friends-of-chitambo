@@ -12,7 +12,7 @@ export function ButtonLink({ to, label, external = false }) {
   const externalProps = {
     href: to,
     target: '_blank',
-    rel: 'noopener'
+    rel: 'noopener noreferrer'
   }
   const Component = external ? Link : InternalLink;
   const props = external ? externalProps : internalProps;
