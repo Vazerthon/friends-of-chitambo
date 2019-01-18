@@ -9,10 +9,9 @@ import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from './logo';
 
-import Panel from './panel';
 import DrawerMenu from './drawer-menu';
+import Sidebar from './sidebar';
 import Footer from './footer';
-import { Paragraph } from './typography';
 
 import Pages from '../queries/pages';
 
@@ -25,26 +24,16 @@ const Container = styled.div`
   padding-top: ${({ theme }) => theme.spacing.units(10)};
   margin: 0 ${({ theme }) => theme.spacing.units(20)};
 
-  ${({ theme }) => theme.media.medium`
-    margin: 0 ${theme.spacing.units(10)};
-  `}
-  
-  ${({ theme }) => theme.media.small`
-    margin: 0;
-  `};
+  ${({ theme }) => theme.media.medium`margin: 0 ${theme.spacing.units(10)};`}  
+  ${({ theme }) => theme.media.small`margin: 0;`};
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: row;
 
-  ${({ theme }) => theme.media.medium`
-    flex-direction: column;
-  `}
-
-  ${({ theme }) => theme.media.small`
-    flex-direction: column;
-  `};
+  ${({ theme }) => theme.media.medium`flex-direction: column;`}
+  ${({ theme }) => theme.media.small`flex-direction: column;`};
 `;
 
 const Main = styled.article`
@@ -52,22 +41,8 @@ const Main = styled.article`
   flex: 3 0 0%;
   margin-right: ${({ theme }) => theme.spacing.units(10)};
 
-  ${({ theme }) => theme.media.medium`
-    margin-right: 0;
-  `}
-
-  ${({ theme }) => theme.media.small`
-    margin-right: 0;
-  `};
-`;
-
-const Sidebar = styled.aside`
-  width: 100%;
-  flex: 1 0 0%;
-`;
-
-const SidePanel = styled(Panel)`
-  margin: ${({ theme }) => theme.spacing.units(5)} 0;
+  ${({ theme }) => theme.media.medium`margin-right: 0;`}
+  ${({ theme }) => theme.media.small`margin-right: 0;`};
 `;
 
 // TODO: find a way to not maintain this manually
@@ -122,21 +97,8 @@ class Layout extends Component {
           <Logo text="below" size="large" />
           
           <Content>
-            <Main>
-              {children}
-            </Main>
-            <Sidebar>
-              <SidePanel title="Test">
-                <Paragraph>
-                  hello
-                </Paragraph>
-              </SidePanel>
-              <SidePanel title="Test">
-                <Paragraph>
-                  hello
-                </Paragraph>
-              </SidePanel>
-            </Sidebar>
+            <Main>{children}</Main>
+            <Sidebar />
           </Content>
         </Container>
         <Footer />
