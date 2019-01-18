@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Link from './link';
 import Panel from './panel';
 import { Paragraph } from './typography';
+import { ButtonLink } from './link';
 
 const Aside = styled.aside`
   width: 100%;
@@ -31,6 +32,14 @@ export default function Sidebar() {
           <br />
           tel (Zambia): <Link href="tel:0026977571685">+26 (0)97 757 1685</Link>
         </Paragraph>
+      </SidePanel>
+      <SidePanel title="Donate">
+        <Paragraph>Thank you for your support!</Paragraph>
+        <ButtonLink
+          external
+          to="https://www.totalgiving.co.uk/charity/friends-of-chitambo-scio"
+          label="Donate with TotalGiving"
+        />
       </SidePanel>
     </Aside>
   );
