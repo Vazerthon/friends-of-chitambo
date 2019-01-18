@@ -28,7 +28,7 @@ const Container = styled.div`
   ${({ theme }) => theme.media.small`margin: 0;`};
 `;
 
-const Content = styled.div`
+const Content = styled.main`
   display: flex;
   flex-direction: row;
 
