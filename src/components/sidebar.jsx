@@ -12,12 +12,12 @@ const Aside = styled.aside`
 `;
 
 const SidePanel = styled(Panel)`
-  margin: ${({ theme }) => theme.spacing.units(5)} 0;
+  margin: ${({ theme }) => theme.spacing.units(4)} 0;
 
   & :first-child {
     margin-top: 0;
-    ${({ theme }) => theme.media.medium`margin-top: ${theme.spacing.units(5)};`}
-    ${({ theme }) => theme.media.small`margin-top: ${theme.spacing.units(5)};`}
+    ${({ theme }) => theme.media.medium`margin-top: ${theme.spacing.units(4)};`}
+    ${({ theme }) => theme.media.small`margin-top: ${theme.spacing.units(4)};`}
   }
 `;
 
