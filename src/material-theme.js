@@ -6,6 +6,7 @@ import theme from './theme';
 
 export default createMuiTheme({
   typography: {
+    useNextVariants: true,
     fontFamily: [
       'Barlow Semi Condensed',
       'sans-serif',
