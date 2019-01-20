@@ -5,20 +5,17 @@ import Masonry from 'react-masonry-component';
 import Image from 'gatsby-image';
 
 const Img = styled(Image)`
-  margin: ${({ theme }) => theme.spacing.units(0.5)};
+  margin: ${({ theme }) => theme.spacing.units(1)};
   margin-left: 0;
 `;
 
-export default function Gallery({ images }) {
+export default function Gallery({ images, render }) {
+  const defaultRender = imgs => imgs.map(({ data, alt, id }) => ( <Img key={id} alt={alt} fixed={data} />));
+  const renderChildren = render || defaultRender;
+
   return (
     <Masonry>
-      {images.map(({ data, alt, id }) => (
-          <Img
-            key={id}
-            alt={alt}
-            fixed={data}
-          />
-      ))}
+      { renderChildren(images) }
     </Masonry>
   );
 }
@@ -31,4 +28,5 @@ Gallery.propTypes = {
       data: PropTypes.object,
     }),
   ).isRequired,
+  render: PropTypes.func,
 };

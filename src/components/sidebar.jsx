@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Link from './link';
 import Panel from './panel';
+import PartnerLogos from './partner-logos';
 import { Paragraph } from './typography';
 import { ButtonLink } from './link';
 
@@ -41,6 +42,7 @@ export default function Sidebar() {
           label="Donate with TotalGiving"
         />
       </SidePanel>
+      <PartnerLogos />
     </Aside>
   );
 };
