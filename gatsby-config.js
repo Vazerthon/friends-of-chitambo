@@ -17,7 +17,7 @@ module.exports = {
       options: {
         name: 'Friends of Chitambo',
         short_name: 'Friends of Chitambo',
-        start_url: '/',
+        start_url: '/friends-of-chitambo',
         background_color: '#f68712',
         theme_color: '#2f933c',
         display: 'standalone',

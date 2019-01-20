@@ -13,6 +13,7 @@ const Container = styled.footer`
   justify-content: flex-start;
   align-items: flex-start;
   box-shadow: ${({ theme }) => theme.colour.secondary} 0 6px 16px;
+  margin-top: ${({ theme }) => theme.spacing.units(4)};
   padding-top: ${({ theme }) => theme.spacing.units(4)};
   padding-bottom: ${({ theme }) => theme.spacing.units(4)};
   padding-left: ${({ theme }) => theme.spacing.units(20)};
