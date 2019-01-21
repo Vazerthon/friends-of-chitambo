@@ -30,11 +30,12 @@ jobs:
             - ./node_modules
 workflows:
   version: 2
-  jobs:
-    - build:
-        filters:
-          branches:
-            only:
-              - master
-            ignore: 
-              - gh-pages 
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+              ignore:
+                - gh-pages
