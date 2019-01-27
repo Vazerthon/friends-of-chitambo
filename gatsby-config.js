@@ -16,8 +16,8 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Friends of Chitambo',
-        short_name: 'Friends of Chitambo',
-        start_url: '/friends-of-chitambo',
+        short_name: 'FoCH',
+        start_url: './index.html',
         background_color: '#f68712',
         theme_color: '#2f933c',
         display: 'standalone',
