@@ -4,7 +4,7 @@ import { Link as InternalLink } from 'gatsby';
 import styled from 'styled-components';
 
 const Link = styled.a`
-  color: ${({ theme }) => theme.colour.primary};
+  color: ${({ theme }) => theme.colour.secondary};
 `;
 
 export function ButtonLink({ to, label, external = false }) {
