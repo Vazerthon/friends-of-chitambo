@@ -50,3 +50,7 @@ Blogs.propTypes = {
   renderChildren: PropTypes.func.isRequired,
   postId: PropTypes.string,
 };
+
+Blogs.defaultProps = {
+  postId: undefined,
+};

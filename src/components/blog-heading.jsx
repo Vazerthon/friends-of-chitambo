@@ -10,15 +10,15 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 
-function BlogHeading({title, date}) {
+function BlogHeading({ title, date }) {
   return (
     <Header>
-        <Heading color="primary">
-          {title}
-        </Heading>
-        <SubHeading color="primary">
-          {format(date, 'Do MMMM YYYY')}
-        </SubHeading>
+      <Heading color="primary">
+        {title}
+      </Heading>
+      <SubHeading color="primary">
+        {format(date, 'Do MMMM YYYY')}
+      </SubHeading>
     </Header>
   );
 }
@@ -26,6 +26,6 @@ function BlogHeading({title, date}) {
 BlogHeading.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-}
+};
 
 export default BlogHeading;

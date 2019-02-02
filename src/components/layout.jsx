@@ -89,13 +89,13 @@ class Layout extends Component {
               open={menuOpen}
               onClose={() => this.setMenuState(false)}
               onOpen={() => this.setMenuState(true)}
-              items={[...pages, ...nonContentManagedPages].map(p => ({ text: p.title, to: p.slug, weight: p.menuOrder }))}
+              items={[...pages, ...nonContentManagedPages]
+                .map(p => ({ text: p.title, to: p.slug, weight: p.menuOrder }))}
             />
           )}
         />
         <Container>
           <Logo text="below" size="large" />
-          
           <Content>
             <Main>{children}</Main>
             <Sidebar />
