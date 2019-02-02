@@ -16,7 +16,7 @@ export default function CoverImage({ image: { alt, data } }) {
 
 CoverImage.propTypes = {
   image: PropTypes.shape({
-      alt: PropTypes.string,
-      data: PropTypes.object,
-    }).isRequired,
+    alt: PropTypes.string,
+    data: PropTypes.object,
+  }).isRequired,
 };

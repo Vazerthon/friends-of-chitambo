@@ -10,7 +10,9 @@ const NotFoundPage = () => (
       NOT FOUND
     </Heading>
     <Paragraph>
-      The page you're looking for doesn't exist. <Link href="/">Click here to go back to the home page.</Link>
+      Oh no! This page cannot be found :-(
+      {' '}
+      <Link href="/">Click here to go back to the home page.</Link>
     </Paragraph>
   </Layout>
 );

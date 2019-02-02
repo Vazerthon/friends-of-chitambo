@@ -10,7 +10,7 @@ const headings = {
   1: props => <Heading {...props} />,
   2: props => <Heading {...props} />,
   3: props => <SubHeading {...props} />,
-}
+};
 
 const renderers = {
   paragraph: props => <Paragraph {...props} />,

@@ -10,12 +10,9 @@ const Img = styled(Image)`
 `;
 
 export default function Gallery({ images, render }) {
-  const defaultRender = imgs => imgs.map(({ data, alt, id }) => ( <Img key={id} alt={alt} fixed={data} />));
-  const renderChildren = render || defaultRender;
-
   return (
     <Masonry>
-      { renderChildren(images) }
+      { render(images) }
     </Masonry>
   );
 }
@@ -29,4 +26,8 @@ Gallery.propTypes = {
     }),
   ).isRequired,
   render: PropTypes.func,
+};
+
+Gallery.defaultProps = {
+  render: imgs => imgs.map(({ data, alt, id }) => <Img key={id} alt={alt} fixed={data} />),
 };

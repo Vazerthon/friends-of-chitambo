@@ -6,7 +6,7 @@ const mapToNodes = data => data.allContentfulPage.edges.map(({ node }) => node);
 const filterToSingleNode = id => nodes => nodes.find(n => n.id === id);
 const identity = x => x;
 
-export default function Blogs({ renderChildren, pageId }) {
+export default function Pages({ renderChildren, pageId }) {
   const filter = pageId ? filterToSingleNode(pageId) : identity;
   return (
     <StaticQuery
@@ -46,7 +46,11 @@ export default function Blogs({ renderChildren, pageId }) {
   );
 }
 
-Blogs.propTypes = {
+Pages.propTypes = {
   renderChildren: PropTypes.func.isRequired,
   pageId: PropTypes.string,
+};
+
+Pages.defaultProps = {
+  pageId: undefined,
 };

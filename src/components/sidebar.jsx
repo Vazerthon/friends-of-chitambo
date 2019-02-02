@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
 
-import Link from './link';
+
+import Link, { ButtonLink } from './link';
 import Panel from './panel';
 import PartnerLogos from './partner-logos';
 import { Paragraph } from './typography';
-import { ButtonLink } from './link';
 
 const Aside = styled.aside`
   width: 100%;
@@ -34,13 +34,19 @@ export default function Sidebar() {
     <Aside>
       <SidePanel title="Contact">
         <Row>
-          email: <Link href="mailto:info@friendsofchitambo.org.uk">info@friendsofchitambo.org.uk</Link>
+          email:
+          {' '}
+          <Link href="mailto:info@friendsofchitambo.org.uk">info@friendsofchitambo.org.uk</Link>
         </Row>
         <Row>
-          tel (UK): <Link href="tel:00441316509382">+44 (0)131 650 9382</Link>
+          tel (UK):
+          {' '}
+          <Link href="tel:00441316509382">+44 (0)131 650 9382</Link>
         </Row>
         <Row>
-          tel (Zambia): <Link href="tel:0026977571685">+26 (0)97 757 1685</Link>
+          tel (Zambia):
+          {' '}
+          <Link href="tel:0026977571685">+26 (0)97 757 1685</Link>
         </Row>
         <Row>
           <IoLogoFacebook />
@@ -62,4 +68,4 @@ export default function Sidebar() {
       <PartnerLogos />
     </Aside>
   );
-};
+}

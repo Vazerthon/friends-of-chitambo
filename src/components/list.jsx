@@ -45,4 +45,8 @@ List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
+ListItem.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export default List;

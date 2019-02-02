@@ -27,7 +27,7 @@ function BlogSummaries() {
             <BlogHeading title={article.title} date={article.createdAt} />
             <Paragraph>
               {article.description}
-            </Paragraph> 
+            </Paragraph>
             <Footer>
               <ButtonLink to={`blog/${article.slug}`} label="Read more" />
             </Footer>
