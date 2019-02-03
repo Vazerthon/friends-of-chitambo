@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
 
-
 import Link, { ButtonLink } from './link';
 import Panel from './panel';
+import Calendar from './calendar';
 import PartnerLogos from './partner-logos';
 import { Paragraph } from './typography';
 
@@ -64,6 +64,9 @@ export default function Sidebar() {
           to="https://www.totalgiving.co.uk/charity/friends-of-chitambo-scio"
           label="Donate with TotalGiving"
         />
+      </SidePanel>
+      <SidePanel title="Events">
+        <Calendar />
       </SidePanel>
       <PartnerLogos />
     </Aside>
