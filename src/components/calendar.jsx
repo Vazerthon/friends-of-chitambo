@@ -1,11 +1,8 @@
 import React from 'react';
-import { Calendar, MuiPickersUtilsProvider } from 'material-ui-pickers';
-import DateFnsUtils from '@date-io/date-fns';
+import { Calendar as MaterialCalendar } from 'material-ui-pickers';
 
-export default function CalendarWidget() {
+export default function Calendar() {
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Calendar date={new Date()} onChange={console.log} />
-    </MuiPickersUtilsProvider>
+    <MaterialCalendar date={new Date()} onChange={console.log} />
   );
 }
