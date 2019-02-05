@@ -66,7 +66,14 @@ export default function Sidebar() {
         />
       </SidePanel>
       <SidePanel title="Events">
-        <Calendar />
+        <Calendar
+          events={[
+            { date: new Date('4 Feb 2019'), onClick: () => {} },
+            { date: new Date('20 Feb 2019'), onClick: () => {} },
+            { date: new Date('8 Feb 2019'), onClick: () => {} },
+            { date: new Date('14 Feb 2019'), onClick: () => {} },
+          ]}
+        />
       </SidePanel>
       <PartnerLogos />
     </Aside>
