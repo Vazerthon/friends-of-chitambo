@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import format from 'date-fns/format';
+import styled from 'styled-components';
 import { Calendar as MaterialCalendar, Day } from 'material-ui-pickers';
-import isSameDay from 'date-fns/isSameDay';
+
+import { formatDayOfMonth, isSameDay } from '../helpers/date';
 
 const noop = () => {};
-const dayOfMonth = date => format(date, 'd');
+
+
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
   const event = events.find(e => isSameDay(e.date, day));
   return (
@@ -15,18 +22,22 @@ const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
       selected={event}
       onClick={event ? event.onClick : () => {}}
     >
-      {dayOfMonth(day)}
+      {formatDayOfMonth(day)}
     </Day>
   );
 };
 
 export default function Calendar({ events }) {
   return (
-    <MaterialCalendar
-      date={new Date()}
-      onChange={noop}
-      renderDay={renderDayWithEvents(events)}
-    />
+    <Center>
+      <div>
+        <MaterialCalendar
+          date={new Date()}
+          onChange={noop}
+          renderDay={renderDayWithEvents(events)}
+        />
+      </div>
+    </Center>
   );
 }
 

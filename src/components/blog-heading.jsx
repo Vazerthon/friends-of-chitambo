@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { format } from 'date-fns';
 import styled from 'styled-components';
 
+import { formatFullDate } from '../helpers/date';
 import { Heading, SubHeading } from './typography';
 
 const Header = styled.div`
@@ -17,7 +17,7 @@ function BlogHeading({ title, date }) {
         {title}
       </Heading>
       <SubHeading color="primary">
-        {format(date, 'Do MMMM YYYY')}
+        {formatFullDate(date)}
       </SubHeading>
     </Header>
   );
