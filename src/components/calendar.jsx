@@ -19,7 +19,7 @@ const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
     <Day
       disabled={!event}
       hidden={!isDayInCurrentMonth}
-      selected={event}
+      selected={!!event}
       onClick={event ? event.onClick : () => {}}
     >
       {formatDayOfMonth(day)}
@@ -27,12 +27,12 @@ const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
   );
 };
 
-export default function Calendar({ events }) {
+export default function Calendar({ today, events }) {
   return (
     <Center>
       <div>
         <MaterialCalendar
-          date={new Date()}
+          date={today}
           onChange={noop}
           renderDay={renderDayWithEvents(events)}
         />
@@ -42,8 +42,9 @@ export default function Calendar({ events }) {
 }
 
 Calendar.propTypes = {
-  events: PropTypes.arrayOf({
+  today: PropTypes.instanceOf(Date).isRequired,
+  events: PropTypes.arrayOf(PropTypes.shape({
     date: PropTypes.instanceOf(Date),
     onClick: PropTypes.func,
-  }).isRequired,
+  })).isRequired,
 };

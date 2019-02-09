@@ -67,6 +67,7 @@ export default function Sidebar() {
       </SidePanel>
       <SidePanel title="Events">
         <Calendar
+          today={new Date()}
           events={[
             { date: new Date('4 Feb 2019'), onClick: () => {} },
             { date: new Date('20 Feb 2019'), onClick: () => {} },
