@@ -44,7 +44,7 @@ export default function Calendar({ today, events }) {
 Calendar.propTypes = {
   today: PropTypes.instanceOf(Date).isRequired,
   events: PropTypes.arrayOf(PropTypes.shape({
-    date: PropTypes.instanceOf(Date),
+    date: PropTypes.string,
     onClick: PropTypes.func,
   })).isRequired,
 };

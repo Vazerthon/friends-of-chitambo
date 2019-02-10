@@ -12,10 +12,10 @@ describe('Calendar', () => {
         <Calendar
           today={new Date(2019, 2, 12)}
           events={[
-            { date: new Date(2019, 2, 10), onClick: () => {} },
-            { date: new Date(2019, 2, 20), onClick: () => {} },
-            { date: new Date(2019, 3, 12), onClick: () => {} }, // not in month
-            { date: new Date(2019, 4, 2), onClick: () => {} }, // not in month
+            { date: '2019-03-10T00:00+00:00', onClick: () => {} },
+            { date: '2019-03-20T00:00+00:00', onClick: () => {} },
+            { date: '2019-04-12T00:00+00:00', onClick: () => {} }, // not in month
+            { date: '2019-05-02T00:00+00:00', onClick: () => {} }, // not in month
           ]}
         />
       </MuiPickersUtilsProvider>
@@ -34,8 +34,8 @@ describe('Calendar', () => {
         <Calendar
           today={new Date(2019, 2, 12)}
           events={[
-            { date: new Date(2019, 2, 3), onClick: () => {} },
-            { date: new Date(2019, 2, 10), onClick: () => {} },
+            { date: '2019-03-03T00:00+00:00', onClick: () => {} },
+            { date: '2019-03-10T00:00+00:00', onClick: () => {} },
           ]}
         />
       </MuiPickersUtilsProvider>
@@ -58,7 +58,7 @@ describe('Calendar', () => {
         <Calendar
           today={new Date(2019, 2, 12)}
           events={[
-            { date: new Date(2019, 2, 3), onClick },
+            { date: '2019-03-03T00:00+00:00', onClick },
           ]}
         />
       </MuiPickersUtilsProvider>

@@ -8,6 +8,8 @@ import Calendar from './calendar';
 import PartnerLogos from './partner-logos';
 import { Paragraph } from './typography';
 
+import Events from '../queries/events';
+
 const Aside = styled.aside`
   width: 100%;
   flex: 1 0 0%;
@@ -28,6 +30,9 @@ const SidePanel = styled(Panel)`
     ${({ theme }) => theme.media.small`margin-top: ${theme.spacing.units(4)};`}
   }
 `;
+
+// TODO: calendar click event
+const toCalendarEvent = event => ({ date: event.date, onClick: () => {} });
 
 export default function Sidebar() {
   return (
@@ -66,14 +71,13 @@ export default function Sidebar() {
         />
       </SidePanel>
       <SidePanel title="Events">
-        <Calendar
-          today={new Date()}
-          events={[
-            { date: new Date('4 Feb 2019'), onClick: () => {} },
-            { date: new Date('20 Feb 2019'), onClick: () => {} },
-            { date: new Date('8 Feb 2019'), onClick: () => {} },
-            { date: new Date('14 Feb 2019'), onClick: () => {} },
-          ]}
+        <Events
+          renderChildren={events => (
+            <Calendar
+              today={new Date()}
+              events={events.map(toCalendarEvent)}
+            />
+          )}
         />
       </SidePanel>
       <PartnerLogos />
