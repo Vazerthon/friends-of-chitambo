@@ -5,8 +5,9 @@ import { Calendar as MaterialCalendar, Day } from 'material-ui-pickers';
 
 import { formatDayOfMonth, isSameDay } from '../helpers/date';
 
-const noop = () => {};
+MaterialCalendar.displayName = 'MaterialCalendar';
 
+const noop = () => {};
 
 const Center = styled.div`
   display: flex;
@@ -28,6 +29,10 @@ const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
 };
 
 export default function Calendar({ today, events }) {
+  const eventDates = events.map(({ date }) => new Date(date));
+  const maxEventDate = Math.max(...eventDates);
+  const minEventDate = Math.min(...eventDates);
+
   return (
     <Center>
       <div>
@@ -35,6 +40,8 @@ export default function Calendar({ today, events }) {
           date={today}
           onChange={noop}
           renderDay={renderDayWithEvents(events)}
+          minDate={minEventDate}
+          maxDate={maxEventDate}
         />
       </div>
     </Center>
