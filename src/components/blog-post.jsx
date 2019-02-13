@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import Layout from './layout';
-import BlogHeading from './blog-heading';
+import TitleWithDate from './title-with-date';
 import Markdown from './markdown';
 import Gallery from './gallery';
 import CoverImage from './cover-image';
@@ -27,7 +27,7 @@ function BlogPost({ pageContext: { postId } }) {
             <Helmet title={`${data.title} | blog`}>
               <meta name="description" content={data.description} />
             </Helmet>
-            <BlogHeading title={data.title} date={data.createdAt} />
+            <TitleWithDate title={data.title} date={data.createdAt} />
             { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
             <Markdown source={data.body.body} />
             { data.gallery && <ImageGallery images={data.gallery} />}

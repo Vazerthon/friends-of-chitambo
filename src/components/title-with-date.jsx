@@ -10,7 +10,7 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 
-function BlogHeading({ title, date }) {
+function TitleWithDate({ title, date }) {
   return (
     <Header>
       <Heading color="primary">
@@ -23,9 +23,9 @@ function BlogHeading({ title, date }) {
   );
 }
 
-BlogHeading.propTypes = {
+TitleWithDate.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };
 
-export default BlogHeading;
+export default TitleWithDate;

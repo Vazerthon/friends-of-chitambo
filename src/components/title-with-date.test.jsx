@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import BlogHeading from './blog-heading';
+import TitleWithDate from './title-with-date';
 
-describe('BlogHeading', () => {
+describe('TitleWithDate', () => {
   it('should parse and format dates to show day, month and year', () => {
     const component = mount((
-      <BlogHeading
+      <TitleWithDate
         title="test"
         date="2018-11-12T15:39:24.197Z"
       />

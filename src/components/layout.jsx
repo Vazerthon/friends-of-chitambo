@@ -46,11 +46,18 @@ const Main = styled.article`
 `;
 
 // TODO: find a way to not maintain this manually
-const nonContentManagedPages = [{
-  title: 'Blog',
-  slug: 'blog',
-  menuOrder: 100,
-}];
+const nonContentManagedPages = [
+  {
+    title: 'Blog',
+    slug: 'blog',
+    menuOrder: 100,
+  },
+  {
+    title: 'Events',
+    slug: 'events',
+    menuOrder: 110,
+  },
+];
 
 class Layout extends Component {
   constructor(props) {
