@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
+import { navigate } from 'gatsby';
 
 import Link, { ButtonLink } from './link';
 import Panel from './panel';
@@ -31,8 +32,14 @@ const SidePanel = styled(Panel)`
   }
 `;
 
-// TODO: calendar click event
-const toCalendarEvent = event => ({ date: event.date, onClick: () => {} });
+const ContactLink = styled(Link)`
+  ${({ theme }) => `margin-left: ${theme.spacing.units(1)};`}
+`;
+
+const toCalendarEvent = event => ({
+  date: event.date,
+  onClick: () => navigate(`event/${event.slug}`),
+});
 
 export default function Sidebar() {
   return (
@@ -40,26 +47,23 @@ export default function Sidebar() {
       <SidePanel title="Contact">
         <Row>
           email:
-          {' '}
-          <Link href="mailto:info@friendsofchitambo.org.uk">info@friendsofchitambo.org.uk</Link>
+          <ContactLink href="mailto:info@friendsofchitambo.org.uk">info@friendsofchitambo.org.uk</ContactLink>
         </Row>
         <Row>
           tel (UK):
-          {' '}
-          <Link href="tel:00441316509382">+44 (0)131 650 9382</Link>
+          <ContactLink href="tel:00441316509382">+44 (0)131 650 9382</ContactLink>
         </Row>
         <Row>
           tel (Zambia):
-          {' '}
-          <Link href="tel:0026977571685">+26 (0)97 757 1685</Link>
+          <ContactLink href="tel:0026977571685">+26 (0)97 757 1685</ContactLink>
         </Row>
         <Row>
           <IoLogoFacebook />
-          <Link target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/friendsofchitambo/">@friendsofchitambo</Link>
+          <ContactLink target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/friendsofchitambo/">@friendsofchitambo</ContactLink>
         </Row>
         <Row>
           <IoLogoTwitter />
-          <Link target="_blank" rel="noopener noreferrer" href="https://twitter.com/FriendsChitambo">@FriendsChitambo</Link>
+          <ContactLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/FriendsChitambo">@FriendsChitambo</ContactLink>
         </Row>
       </SidePanel>
       <SidePanel title="Donate">
