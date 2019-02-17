@@ -13,7 +13,7 @@ export default function Blogs({ renderChildren, postId }) {
       query={
         graphql`
           query {
-            allContentfulBlogPost {
+            allContentfulBlogPost(sort: { fields: createdAt, order: DESC}) {
               edges {
                 node {
                   id

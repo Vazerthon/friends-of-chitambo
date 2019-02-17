@@ -13,7 +13,7 @@ export default function Events({ renderChildren, eventId }) {
       query={
         graphql`
           query {
-            allContentfulEvent {
+            allContentfulEvent(sort: { fields: date }) {
               edges {
                 node {
                   id
