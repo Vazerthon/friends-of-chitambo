@@ -3,8 +3,9 @@ import { css } from 'styled-components';
 const spacingUnit = 8;
 const breakpoints = {
   small: { min: 0, max: 599 },
-  medium: { min: 600, max: 1279 },
-  large: { min: 1280, max: 1919 },
+  medium: { min: 600, max: 1023 },
+  large: { min: 1024, max: 1279 },
+  xLarge: { min: 1280, max: 1919 },
 };
 
 const mediaQueryFactory = ({ min, max }) => (...args) => css`
