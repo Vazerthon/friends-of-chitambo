@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Masonry from 'react-masonry-component';
@@ -9,10 +9,14 @@ const Img = styled(Image)`
   margin-left: 0;
 `;
 
-export default function Gallery({ images, render }) {
+export default function Gallery({ images, renderImageWrapper }) {
   return (
     <Masonry>
-      { render(images) }
+      {
+          images
+            .map(({ data, alt }) => <Img alt={alt} fixed={data} />)
+            .map((img, i) => renderImageWrapper(img, i, images))
+      }
     </Masonry>
   );
 }
@@ -25,9 +29,9 @@ Gallery.propTypes = {
       data: PropTypes.object,
     }),
   ).isRequired,
-  render: PropTypes.func,
+  renderImageWrapper: PropTypes.func,
 };
 
 Gallery.defaultProps = {
-  render: imgs => imgs.map(({ data, alt, id }) => <Img key={id} alt={alt} fixed={data} />),
+  renderImageWrapper: (img, i, images) => <Fragment key={images[i].id}>{img}</Fragment>,
 };
