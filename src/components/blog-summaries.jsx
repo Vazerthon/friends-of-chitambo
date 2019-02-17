@@ -1,40 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Fragment } from 'react';
 
-import Paper from '@material-ui/core/Paper';
-
+import { Heading } from './typography';
 import Blogs from '../queries/blogs';
-import { Paragraph } from './typography';
-import BlogHeading from './blog-heading';
-import { ButtonLink } from './link';
-
-const Summary = styled.div`
-  padding: ${({ theme }) => theme.spacing.units(2)};
-  margin-bottom: ${({ theme }) => theme.spacing.units(4)};
-`;
-
-const Footer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
+import SummaryCard from './summary-card';
 
 function BlogSummaries() {
   return (
-    <Blogs
-      renderChildren={(blogs) => blogs.map(article => (
-        <Paper key={article.id}>
-          <Summary>
-            <BlogHeading title={article.title} date={article.createdAt} />
-            <Paragraph>
-              {article.description}
-            </Paragraph>
-            <Footer>
-              <ButtonLink to={`blog/${article.slug}`} label="Read more" />
-            </Footer>
-          </Summary>
-        </Paper>
-      ))}
-    />
+    <Fragment>
+      <Heading>Blog Posts</Heading>
+      <Blogs
+        renderChildren={(blogs) => blogs.map(article => (
+          <SummaryCard
+            key={article.id}
+            title={article.title}
+            date={article.createdAt}
+            description={article.description}
+            url={`blog/${article.slug}`}
+          />
+        ))}
+      />
+    </Fragment>
   );
 }
 

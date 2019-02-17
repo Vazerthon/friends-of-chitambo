@@ -1,6 +1,6 @@
 {
   "extends": "airbnb",
-  "env": { "node": true },
+  "env": { "node": true, "jest": true },
   "parser": "babel-eslint",
   "rules": {
     "linebreak-style": 0,

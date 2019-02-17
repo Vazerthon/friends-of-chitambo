@@ -12,21 +12,25 @@ const headings = {
   3: props => <SubHeading {...props} />,
 };
 
-const renderers = {
+const externalLinkProps = ({ href }) => (
+  href.startsWith('http')
+    ? {
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }
+    : {}
+);
+
+export const renderers = {
   paragraph: props => <Paragraph {...props} />,
   heading: props => headings[props.level](props),
-  link: props => <Link {...props} />,
+  link: props => <Link {...props} {...externalLinkProps(props)} />,
   list: props => <UnorderedList {...props} />,
   listItem: props => <ListItem {...props} />,
 };
 
 function Markdown({ source }) {
-  return (
-    <ReactMarkdown
-      source={source}
-      renderers={renderers}
-    />
-  );
+  return <ReactMarkdown source={source} renderers={renderers} />;
 }
 
 Markdown.propTypes = {

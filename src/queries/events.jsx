@@ -2,24 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-const mapToNodes = data => data.allContentfulBlogPost.edges.map(({ node }) => node);
+const mapToNodes = data => data.allContentfulEvent.edges.map(({ node }) => node);
 const filterToSingleNode = id => nodes => nodes.find(n => n.id === id);
 const identity = x => x;
 
-export default function Blogs({ renderChildren, postId }) {
-  const filter = postId ? filterToSingleNode(postId) : identity;
+export default function Events({ renderChildren, eventId }) {
+  const filter = eventId ? filterToSingleNode(eventId) : identity;
   return (
     <StaticQuery
       query={
         graphql`
           query {
-            allContentfulBlogPost(sort: { fields: createdAt, order: DESC}) {
+            allContentfulEvent(sort: { fields: date }) {
               edges {
                 node {
                   id
                   title
                   slug
-                  createdAt
+                  date
                   description
                   coverImage {
                     fluid(maxWidth: 2000) {
@@ -46,11 +46,11 @@ export default function Blogs({ renderChildren, postId }) {
   );
 }
 
-Blogs.propTypes = {
+Events.propTypes = {
   renderChildren: PropTypes.func.isRequired,
-  postId: PropTypes.string,
+  eventId: PropTypes.string,
 };
 
-Blogs.defaultProps = {
-  postId: undefined,
+Events.defaultProps = {
+  eventId: undefined,
 };

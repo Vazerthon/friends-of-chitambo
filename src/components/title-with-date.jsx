@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { format } from 'date-fns';
 import styled from 'styled-components';
 
+import { formatFullDate } from '../helpers/date';
 import { Heading, SubHeading } from './typography';
 
 const Header = styled.div`
@@ -10,22 +10,22 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 
-function BlogHeading({ title, date }) {
+function TitleWithDate({ title, date }) {
   return (
     <Header>
       <Heading color="primary">
         {title}
       </Heading>
       <SubHeading color="primary">
-        {format(date, 'Do MMMM YYYY')}
+        {formatFullDate(date)}
       </SubHeading>
     </Header>
   );
 }
 
-BlogHeading.propTypes = {
+TitleWithDate.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };
 
-export default BlogHeading;
+export default TitleWithDate;

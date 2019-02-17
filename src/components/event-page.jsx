@@ -8,7 +8,7 @@ import Markdown from './markdown';
 import Gallery from './gallery';
 import CoverImage from './cover-image';
 
-import Blogs from '../queries/blogs';
+import Events from '../queries/events';
 
 const dataToImage = type => image => ({ id: image.id, alt: image.title, data: image[type] });
 const fixedToImage = dataToImage('fixed');
@@ -17,17 +17,17 @@ const ImageGallery = ({ images }) => (
   images.length > 0 && <Gallery images={images.map(fixedToImage)} />
 );
 
-function BlogPost({ pageContext: { postId } }) {
+function EventPage({ pageContext: { eventId } }) {
   return (
     <Layout>
-      <Blogs
-        postId={postId}
+      <Events
+        eventId={eventId}
         renderChildren={data => (
           <Fragment>
-            <Helmet title={`${data.title} | blog`}>
+            <Helmet title={`${data.title} | events`}>
               <meta name="description" content={data.description} />
             </Helmet>
-            <TitleWithDate title={data.title} date={data.createdAt} />
+            <TitleWithDate title={data.title} date={data.date} />
             { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
             <Markdown source={data.body.body} />
             { data.gallery && <ImageGallery images={data.gallery} />}
@@ -38,11 +38,11 @@ function BlogPost({ pageContext: { postId } }) {
   );
 }
 
-BlogPost.propTypes = {
+EventPage.propTypes = {
   pageContext: PropTypes.shape({
     slug: PropTypes.string,
-    postId: PropTypes.string,
+    eventId: PropTypes.string,
   }).isRequired,
 };
 
-export default BlogPost;
+export default EventPage;

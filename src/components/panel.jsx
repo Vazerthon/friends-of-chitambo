@@ -7,6 +7,7 @@ import { Heading } from './typography';
 
 const Container = styled(Paper)`
   padding: ${({ theme }) => theme.spacing.units(1)};
+  overflow: hidden;
 `;
 
 export default function Panel({ title, children, className }) {
