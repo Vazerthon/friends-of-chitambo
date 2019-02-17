@@ -9,15 +9,39 @@ const Img = styled(Image)`
   margin-left: 0;
 `;
 
+const MasonryGrid = styled(Masonry)`
+  ${({ theme }) => theme.media.small`display: none;`};
+  ${({ theme }) => theme.media.medium`display: none;`};
+`;
+
+const FlexColumnGallery = styled.div`
+  display: none;
+  ${({ theme }) => theme.media.small`display: flex;`};
+  ${({ theme }) => theme.media.medium`display: flex;`};
+
+  flex-direction: column;
+  align-items: center;
+`;
+
 export default function Gallery({ images, renderImageWrapper }) {
+  const wrappedImages = images
+    .map(({ fixed, alt }) => (
+      <Img
+        fixed={fixed}
+        alt={alt}
+      />
+    ))
+    .map((img, i) => renderImageWrapper(img, i, images));
+
   return (
-    <Masonry>
-      {
-          images
-            .map(({ data, alt }) => <Img alt={alt} fixed={data} />)
-            .map((img, i) => renderImageWrapper(img, i, images))
-      }
-    </Masonry>
+    <Fragment>
+      <MasonryGrid>
+        { wrappedImages }
+      </MasonryGrid>
+      <FlexColumnGallery>
+        { wrappedImages }
+      </FlexColumnGallery>
+    </Fragment>
   );
 }
 
@@ -26,7 +50,7 @@ Gallery.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       alt: PropTypes.string,
-      data: PropTypes.object,
+      fixed: PropTypes.object,
     }),
   ).isRequired,
   renderImageWrapper: PropTypes.func,

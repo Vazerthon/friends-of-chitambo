@@ -8,9 +8,9 @@ const Img = styled(Image)`
   margin-left: 0;
 `;
 
-export default function CoverImage({ image: { alt, data } }) {
+export default function CoverImage({ image: { alt, fluid } }) {
   return (
-    <Img alt={alt} fluid={data} />
+    <Img alt={alt} fluid={fluid} />
   );
 }
 
