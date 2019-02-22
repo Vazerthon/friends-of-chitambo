@@ -9,9 +9,7 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: update npm
-          command: 'sudo npm install -g npm@latest'
+      - run: 'sudo npm install -g npm@latest'
 
       - restore_cache:
           keys:
@@ -37,9 +35,7 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: update npm
-          command: 'sudo npm install -g npm@latest'
+      - run: 'sudo npm install -g npm@latest'
 
       - restore_cache:
           keys:
@@ -59,6 +55,8 @@ jobs:
       
       - run: git config --global user.email circleci@circleci
       - run: git config --global user.name circleci
+
+      - run: npm run build
       - run: npm run deploy
 workflows:
   version: 2
