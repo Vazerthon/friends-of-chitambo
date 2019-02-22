@@ -17,7 +17,8 @@
     "format": "prettier --write '**/*.js'",
     "deploy": "gh-pages -d public",
     "lint": "eslint --ext .js,.jsx .",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:nowatch": "jest"
   },
   "dependencies": {
     "@date-io/date-fns": "^1.0.2",
