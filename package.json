@@ -15,7 +15,7 @@
     "develop": "gatsby develop",
     "start": "npm run cleancache && npm run develop",
     "format": "prettier --write '**/*.js'",
-    "deploy": "gh-pages -d public",
+    "deploy": "gh-pages -m 'Auto Deploy [ci-skip]' -d public",
     "lint": "eslint --ext .js,.jsx .",
     "test": "jest --watch",
     "test:nowatch": "jest"
