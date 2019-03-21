@@ -1,30 +1,5 @@
 version: 2
 jobs:
-  lint:
-    docker:
-      - image: circleci/node
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-
-      - run: 'sudo npm install -g npm@latest'
-
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-
-      - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run: npm run lint  
-
   test:
     docker:
       - image: circleci/node
@@ -34,8 +9,6 @@ jobs:
     steps:
       - checkout
 
-      - run: 'sudo npm install -g npm@latest'
-
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -47,7 +20,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
+      
+      - run: npm run lint
       - run: npm run test:nowatch
 
   deploy:
@@ -58,8 +32,6 @@ jobs:
 
     steps:
       - checkout
-
-      - run: 'sudo npm install -g npm@latest'
 
       - restore_cache:
           keys:
@@ -76,10 +48,9 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "c4:7f:91:b9:96:d3:6f:20:ca:e6:9e:7e:09:29:72:08"
-      
+
       - run: git config --global user.email circleci@circleci
       - run: git config --global user.name circleci
-
       - run: npm run build
       - run: npm run deploy
 workflows:
@@ -90,12 +61,7 @@ workflows:
           filters:
             branches:
               ignore: gh-pages
-      - lint:
-          filters:
-            branches:
-              ignore: gh-pages
       - deploy:
           filters:
             branches:
               only: master
-              ignore: gh-pages
