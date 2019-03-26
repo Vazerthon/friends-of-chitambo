@@ -18,7 +18,8 @@
     "deploy": "gh-pages -m 'Auto Deploy [ci-skip]' -d public",
     "lint": "eslint --ext .js,.jsx .",
     "test": "jest --watch",
-    "test:nowatch": "jest"
+    "test:nowatch": "jest",
+    "release": "npm run lint && npm run test:nowatch && npm run build"
   },
   "dependencies": {
     "@date-io/date-fns": "^1.0.2",
