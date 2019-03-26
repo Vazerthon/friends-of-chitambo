@@ -29,22 +29,19 @@ function DrawerMenu({
       onClose={onClose}
       onOpen={onOpen}
     >
-      <div
-        tabIndex={0}
-        role="button"
-        onClick={onClose}
-        onKeyDown={onClose}
-      >
-        <List component="nav">
-          {
-            items
-              .sort(lightestFirst)
-              .map(i => (
-                <MenuItem key={i.to} text={i.text} to={i.to} />
-              ))
-          }
-        </List>
-      </div>
+      <List component="nav">
+        {
+          items
+            .sort(lightestFirst)
+            .map(i => (
+              <MenuItem
+                key={i.to}
+                text={i.text}
+                to={i.to}
+              />
+            ))
+        }
+      </List>
     </Drawer>
   );
 }
