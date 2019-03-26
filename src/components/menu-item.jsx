@@ -14,8 +14,14 @@ const ItemText = styled(ListItemText)`
 
 function MenuItem({ text, to }) {
   return (
-    <Link to={to}>
-      <ListItem button>
+    <Link
+      to={to}
+      tabIndex="0"
+    >
+      <ListItem
+        button
+        tabIndex="-1"
+      >
         <ListItemIcon>
           <Logo size="tiny" colour={false} />
         </ListItemIcon>
