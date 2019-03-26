@@ -24,44 +24,13 @@ jobs:
       - run: npm run lint
       - run: npm run test:nowatch
 
-  deploy:
-    docker:
-      - image: circleci/node
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-
-      - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-        
-      - add_ssh_keys:
-          fingerprints:
-            - "c4:7f:91:b9:96:d3:6f:20:ca:e6:9e:7e:09:29:72:08"
-
-      - run: git config --global user.email circleci@circleci
-      - run: git config --global user.name circleci
-      - run: npm run build
-      - run: npm run deploy
 workflows:
   version: 2
-  test_and_deploy:
+  lint_and_test:
     jobs:
       - test:
           filters:
             branches:
-              ignore: gh-pages
-      - deploy:
-          filters:
-            branches:
-              only: master
+              ignore:
+                - gh-pages
+                - master
