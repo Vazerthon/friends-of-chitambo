@@ -16,6 +16,9 @@ export default function Team({ renderChildren }) {
                   id
                   name
                   location
+                  biography {
+                    biography
+                  }
                   picture {
                     fixed(width: 200) {
                       ...GatsbyContentfulFixed_tracedSVG
