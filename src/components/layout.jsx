@@ -57,6 +57,11 @@ const nonContentManagedPages = [
     slug: 'events',
     menuOrder: 110,
   },
+  {
+    title: 'Meet the Team',
+    slug: 'team',
+    menuOrder: 120,
+  },
 ];
 
 class Layout extends Component {
