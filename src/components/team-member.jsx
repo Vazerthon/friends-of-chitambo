@@ -1,31 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Image from 'gatsby-image';
 import styled from 'styled-components';
 
 import Paper from '@material-ui/core/Paper';
 import { Paragraph, Heading } from './typography';
+import Img from './profile-image';
 
-const Img = styled(Image)`
-  margin: ${({ theme }) => theme.spacing.units(1)};
-  margin-left: 0;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: ${({ theme }) => theme.spacing.units(2)};
+  margin-bottom: ${({ theme }) => theme.spacing.units(4)};
 `;
 
+const Bio = styled.div``;
+
 export default function TeamMember({
-  name, location, biography, picture,
+  name, biography, picture,
 }) {
   return (
     <Paper>
-      <Heading>{name}</Heading>
-      <Paragraph>{biography}</Paragraph>
-      <Img fixed={picture.fixed} />
+      <Container>
+        <Heading>{name}</Heading>
+        <Bio>
+          <Img fixed={picture.fixed} />
+          <Paragraph>{biography}</Paragraph>
+        </Bio>
+      </Container>
     </Paper>
   );
 }
 
 TeamMember.propTypes = {
   name: PropTypes.string.isRequired,
-  location: PropTypes.oneOf(['Zambia', 'Scotland']).isRequired,
   biography: PropTypes.string.isRequired,
   picture: PropTypes.shape({
     fixed: PropTypes.object,
