@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Calendar as MaterialCalendar, Day } from 'material-ui-pickers';
+import { Calendar as MaterialCalendar, Day } from '@material-ui/pickers';
 
 import { formatDayOfMonth, isSameDay } from '../helpers/date';
 
