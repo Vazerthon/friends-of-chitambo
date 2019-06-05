@@ -2,7 +2,7 @@ import format from 'date-fns/format';
 import dateFnsIsSameDay from 'date-fns/isSameDay';
 import parseIso from 'date-fns/parseISO';
 
-export const formatFullDate = dateString => format(parseIso(dateString), 'do MMMM YYYY', { awareOfUnicodeTokens: true });
+export const formatFullDate = dateString => format(parseIso(dateString), 'do MMMM yyyy', { awareOfUnicodeTokens: true });
 
 export const formatDayOfMonth = dateString => format(parseIso(dateString), 'd');
 
