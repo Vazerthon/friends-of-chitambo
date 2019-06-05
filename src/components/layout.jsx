@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
@@ -24,7 +24,7 @@ const Container = styled.div`
   padding-top: ${({ theme }) => theme.spacing.units(10)};
   margin: 0 ${({ theme }) => theme.spacing.units(20)};
 
-  ${({ theme }) => theme.media.medium`margin: 0 ${theme.spacing.units(10)};`}  
+  ${({ theme }) => theme.media.medium`margin: 0 ${theme.spacing.units(10)};`}
   ${({ theme }) => theme.media.small`margin: 0;`};
 `;
 
@@ -63,60 +63,44 @@ const nonContentManagedPages = [
     menuOrder: 120,
   },
 ];
+function Layout({ children, title }) {
+  const [menuOpen, setMenuState] = useState(false);
 
-class Layout extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      menuOpen: false,
-    };
-  }
-
-  setMenuState(open) {
-    this.setState({ menuOpen: open });
-  }
-
-  render() {
-    const { children, title } = this.props;
-    const { menuOpen } = this.state;
-
-    return (
-      <Root>
-        <Helmet title={title} />
-        <AppBar>
-          <Toolbar disableGutters>
-            <Button
-              variant="text"
-              onClick={() => this.setMenuState(true)}
-              aria-label="Main menu"
-            >
-              <MenuIcon />
-            </Button>
-          </Toolbar>
-        </AppBar>
-        <Pages
-          renderChildren={pages => (
-            <DrawerMenu
-              open={menuOpen}
-              onClose={() => this.setMenuState(false)}
-              onOpen={() => this.setMenuState(true)}
-              items={[...pages, ...nonContentManagedPages]
-                .map(p => ({ text: p.title, to: p.slug, weight: p.menuOrder }))}
-            />
-          )}
-        />
-        <Container>
-          <Logo text="below" size="large" />
-          <Content>
-            <Main>{children}</Main>
-            <Sidebar />
-          </Content>
-        </Container>
-        <Footer />
-      </Root>
-    );
-  }
+  return (
+    <Root>
+      <Helmet title={title} />
+      <AppBar>
+        <Toolbar disableGutters>
+          <Button
+            variant="text"
+            onClick={() => setMenuState(true)}
+            aria-label="Main menu"
+          >
+            <MenuIcon />
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <Pages
+        renderChildren={pages => (
+          <DrawerMenu
+            open={menuOpen}
+            onClose={() => setMenuState(false)}
+            onOpen={() => setMenuState(true)}
+            items={[...pages, ...nonContentManagedPages]
+              .map(p => ({ text: p.title, to: p.slug, weight: p.menuOrder }))}
+          />
+        )}
+      />
+      <Container>
+        <Logo text="below" size="large" />
+        <Content>
+          <Main>{children}</Main>
+          <Sidebar />
+        </Content>
+      </Container>
+      <Footer />
+    </Root>
+  );
 }
 
 Layout.propTypes = {

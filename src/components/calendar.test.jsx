@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MuiPickersUtilsProvider } from 'material-ui-pickers';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 
 import Calendar from './calendar';
@@ -12,10 +12,10 @@ describe('Calendar', () => {
         <Calendar
           today={new Date(2019, 2, 12)}
           events={[
-            { date: '2019-03-10T00:00+00:00', onClick: () => {} },
-            { date: '2019-03-20T00:00+00:00', onClick: () => {} },
-            { date: '2019-04-12T00:00+00:00', onClick: () => {} }, // not in month
-            { date: '2019-05-02T00:00+00:00', onClick: () => {} }, // not in month
+            { date: '2019-03-10T15:39:24.197Z', onClick: () => {} },
+            { date: '2019-03-20T15:39:24.197Z', onClick: () => {} },
+            { date: '2019-04-12T15:39:24.197Z', onClick: () => {} }, // not in month
+            { date: '2019-05-02T15:39:24.197Z', onClick: () => {} }, // not in month
           ]}
         />
       </MuiPickersUtilsProvider>
@@ -34,8 +34,8 @@ describe('Calendar', () => {
         <Calendar
           today={new Date(2019, 2, 12)}
           events={[
-            { date: '2019-03-03T00:00+00:00', onClick: () => {} },
-            { date: '2019-03-10T00:00+00:00', onClick: () => {} },
+            { date: '2019-03-03T15:39:24.197Z', onClick: () => {} },
+            { date: '2019-03-10T15:39:24.197Z', onClick: () => {} },
           ]}
         />
       </MuiPickersUtilsProvider>
@@ -58,7 +58,7 @@ describe('Calendar', () => {
         <Calendar
           today={new Date(2019, 2, 12)}
           events={[
-            { date: '2019-03-03T00:00+00:00', onClick },
+            { date: '2019-03-03T15:39:24.197Z', onClick },
           ]}
         />
       </MuiPickersUtilsProvider>

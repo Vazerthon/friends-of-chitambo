@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Calendar as MaterialCalendar, Day } from 'material-ui-pickers';
+import { Calendar as MaterialCalendar, Day } from '@material-ui/pickers';
 
 import { formatDayOfMonth, isSameDay } from '../helpers/date';
 
@@ -15,7 +15,8 @@ const Center = styled.div`
 `;
 
 const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
-  const event = events.find(e => isSameDay(e.date, day));
+  const isoDay = day.toISOString();
+  const event = events.find(e => isSameDay(new Date(e.date).toISOString(), isoDay));
   return (
     <Day
       disabled={!event}
@@ -23,7 +24,7 @@ const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
       selected={!!event}
       onClick={event ? event.onClick : () => {}}
     >
-      {formatDayOfMonth(day)}
+      {formatDayOfMonth(isoDay)}
     </Day>
   );
 };
