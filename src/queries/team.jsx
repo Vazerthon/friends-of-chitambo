@@ -10,7 +10,7 @@ export default function Team({ renderChildren }) {
       query={
         graphql`
           query {
-            allContentfulTeamMemberBio {
+            allContentfulTeamMemberBio(sort: { fields: name }) {
               edges {
                 node {
                   id
