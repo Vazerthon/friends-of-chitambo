@@ -15,7 +15,8 @@ const Center = styled.div`
 `;
 
 const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
-  const event = events.find(e => isSameDay(e.date, day));
+  const isoDay = day.toISOString();
+  const event = events.find(e => isSameDay(new Date(e.date).toISOString(), isoDay));
   return (
     <Day
       disabled={!event}
@@ -23,7 +24,7 @@ const renderDayWithEvents = events => (day, _, isDayInCurrentMonth) => {
       selected={!!event}
       onClick={event ? event.onClick : () => {}}
     >
-      {formatDayOfMonth(day)}
+      {formatDayOfMonth(isoDay)}
     </Day>
   );
 };
