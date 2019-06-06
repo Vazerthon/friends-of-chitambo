@@ -9,6 +9,7 @@ import Gallery from './gallery';
 import CoverImage from './cover-image';
 
 import Blogs from '../queries/blogs';
+import BlogAuthor from './blog-author';
 
 const dataToImage = type => image => ({ id: image.id, alt: image.title, [type]: image[type] });
 const fixedToImage = dataToImage('fixed');
@@ -29,6 +30,7 @@ function BlogPost({ pageContext: { postId } }) {
             </Helmet>
             <TitleWithDate title={data.title} date={data.createdAt} />
             { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
+            { data.author && <BlogAuthor author={data.author} /> }
             <Markdown source={data.body.body} />
             { data.gallery && <ImageGallery images={data.gallery} />}
           </Fragment>
