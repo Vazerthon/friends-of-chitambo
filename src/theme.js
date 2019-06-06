@@ -27,6 +27,7 @@ export default {
     neutral: {
       background: '#fafafa',
       white: '#ffffff',
+      grey: '#cecece',
     },
   },
   spacing: {
