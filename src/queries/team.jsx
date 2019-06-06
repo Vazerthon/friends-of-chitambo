@@ -4,6 +4,22 @@ import { StaticQuery, graphql } from 'gatsby';
 
 const mapToNodes = data => data.allContentfulTeamMemberBio.edges.map(({ node }) => node);
 
+export const teamMemberFragment = graphql`
+  fragment TeamMemberFragment on ContentfulTeamMemberBio {
+    id
+    name
+    location
+    biography {
+      biography
+    }
+    picture {
+      fixed(width: 200) {
+        ...GatsbyContentfulFixed_tracedSVG
+      }
+    }
+  }
+`;
+
 export default function Team({ renderChildren }) {
   return (
     <StaticQuery
@@ -13,17 +29,7 @@ export default function Team({ renderChildren }) {
             allContentfulTeamMemberBio(sort: { fields: name }) {
               edges {
                 node {
-                  id
-                  name
-                  location
-                  biography {
-                    biography
-                  }
-                  picture {
-                    fixed(width: 200) {
-                      ...GatsbyContentfulFixed_tracedSVG
-                    }
-                  }
+                  ...TeamMemberFragment
                 }
               }
             }

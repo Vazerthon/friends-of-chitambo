@@ -36,6 +36,9 @@ export default function Blogs({ renderChildren, postId }) {
                       ...GatsbyContentfulFixed_tracedSVG
                     }
                   }
+                  author {
+                    ...TeamMemberFragment
+                  }
                 }
               }
             }
