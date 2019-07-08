@@ -50,20 +50,21 @@ export default function Sidebar() {
           <ContactLink href="mailto:info@friendsofchitambo.org.uk">info@friendsofchitambo.org.uk</ContactLink>
         </Row>
         <Row>
-          tel (UK):
-          <ContactLink href="tel:00441316509382">+44 (0)131 650 9382</ContactLink>
-        </Row>
-        <Row>
-          tel (Zambia):
-          <ContactLink href="tel:0026977571685">+26 (0)97 757 1685</ContactLink>
-        </Row>
-        <Row>
           <IoLogoFacebook />
           <ContactLink target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/friendsofchitambo/">@friendsofchitambo</ContactLink>
         </Row>
         <Row>
           <IoLogoTwitter />
           <ContactLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/FriendsChitambo">@FriendsChitambo</ContactLink>
+        </Row>
+        <hr />
+        <Row>
+          tel (UK):
+          <ContactLink href="tel:00441968673978">+44 (0)1968 673978</ContactLink>
+        </Row>
+        <Row>
+          tel (UK Mobile):
+          <ContactLink href="tel:00447791262918">+44 (0)7791 262 918</ContactLink>
         </Row>
       </SidePanel>
       <SidePanel title="Donate">
