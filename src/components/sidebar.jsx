@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IoLogoTwitter, IoLogoFacebook } from 'react-icons/io';
+import { IoLogoTwitter, IoLogoFacebook, IoMdMail } from 'react-icons/io';
 import { navigate } from 'gatsby';
 
 import Link, { ButtonLink } from './link';
@@ -46,7 +46,7 @@ export default function Sidebar() {
     <Aside>
       <SidePanel title="Contact">
         <Row>
-          email:
+          <IoMdMail />
           <ContactLink href="mailto:info@friendsofchitambo.org.uk">info@friendsofchitambo.org.uk</ContactLink>
         </Row>
         <Row>
@@ -56,15 +56,6 @@ export default function Sidebar() {
         <Row>
           <IoLogoTwitter />
           <ContactLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/FriendsChitambo">@FriendsChitambo</ContactLink>
-        </Row>
-        <hr />
-        <Row>
-          tel (UK):
-          <ContactLink href="tel:00441968673978">+44 (0)1968 673978</ContactLink>
-        </Row>
-        <Row>
-          tel (UK Mobile):
-          <ContactLink href="tel:00447791262918">+44 (0)7791 262 918</ContactLink>
         </Row>
       </SidePanel>
       <SidePanel title="Donate">
