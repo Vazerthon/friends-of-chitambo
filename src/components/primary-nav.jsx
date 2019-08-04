@@ -11,14 +11,23 @@ const Nav = styled.nav`
 
   /* styling for active NavLink */
   .active {
-    text-decoration: underline;
+    border-bottom: 1px solid ${({ theme }) => theme.colour.neutral.black};
   }
 `;
 
 const NavLink = styled(Link)`
   color: ${({ theme }) => theme.colour.neutral.black};
   text-decoration: none;
-  margin: ${({ theme }) => theme.spacing.units(1)};
+  outline: none;
+  margin: ${({ theme }) => `0 ${theme.spacing.units(4)};`};
+
+  ${({ theme }) => theme.media.medium`margin: 0 ${theme.spacing.units(2)};`}
+  ${({ theme }) => theme.media.small`margin: 0 ${theme.spacing.units(1)};`}
+
+  :focus, :hover {
+    transform: scale(1.2);
+    font-weight: bold;
+  }
 `;
 
 function PrimaryNav({ items }) {
