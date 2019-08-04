@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import MenuIcon from '@material-ui/icons/Menu';
 import Logo from './logo';
 
-import DrawerMenu from './drawer-menu';
 import Sidebar from './sidebar';
 import Footer from './footer';
+import PrimaryNav from './primary-nav';
 
 import Pages from '../queries/pages';
 
@@ -45,6 +43,11 @@ const Main = styled.article`
   ${({ theme }) => theme.media.small`margin-right: 0;`};
 `;
 
+const TitleBar = styled(Toolbar)`
+  display: flex;
+  justify-content: center;
+`;
+
 // TODO: find a way to not maintain this manually
 const nonContentManagedPages = [
   {
@@ -63,34 +66,23 @@ const nonContentManagedPages = [
     menuOrder: 120,
   },
 ];
-function Layout({ children, title }) {
-  const [menuOpen, setMenuState] = useState(false);
 
+function Layout({ children, title }) {
   return (
     <Root>
       <Helmet title={title} />
       <AppBar>
-        <Toolbar disableGutters>
-          <Button
-            variant="text"
-            onClick={() => setMenuState(true)}
-            aria-label="Main menu"
-          >
-            <MenuIcon />
-          </Button>
-        </Toolbar>
-      </AppBar>
-      <Pages
-        renderChildren={pages => (
-          <DrawerMenu
-            open={menuOpen}
-            onClose={() => setMenuState(false)}
-            onOpen={() => setMenuState(true)}
-            items={[...pages, ...nonContentManagedPages]
-              .map(p => ({ text: p.title, to: p.slug, weight: p.menuOrder }))}
+        <TitleBar disableGutters>
+          <Pages
+            renderChildren={pages => (
+              <PrimaryNav
+                items={[...pages, ...nonContentManagedPages]
+                  .map(p => ({ text: p.title, to: p.slug, weight: p.menuOrder }))}
+              />
+            )}
           />
-        )}
-      />
+        </TitleBar>
+      </AppBar>
       <Container>
         <Logo text="below" size="large" />
         <Content>

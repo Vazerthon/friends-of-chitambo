@@ -28,6 +28,7 @@ export default {
       background: '#fafafa',
       white: '#ffffff',
       grey: '#cecece',
+      black: '#000000de',
     },
   },
   spacing: {
