@@ -15,6 +15,13 @@ import Pages from '../queries/pages';
 
 import Root from './root';
 
+const MaxSizeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: ${({ theme }) => theme.spacing.units(240)};
+  margin: 0 auto;
+`;
+
 const Container = styled.div`
   min-height: 80vh;
   padding: ${({ theme }) => theme.spacing.units(2)};
@@ -83,13 +90,15 @@ function Layout({ children, title }) {
           />
         </TitleBar>
       </AppBar>
-      <Container>
-        <Logo text="below" size="large" />
-        <Content>
-          <Main>{children}</Main>
-          <Sidebar />
-        </Content>
-      </Container>
+      <MaxSizeContainer>
+        <Container>
+          <Logo text="below" size="large" />
+          <Content>
+            <Main>{children}</Main>
+            <Sidebar />
+          </Content>
+        </Container>
+      </MaxSizeContainer>
       <Footer />
     </Root>
   );
