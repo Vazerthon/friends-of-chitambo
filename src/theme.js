@@ -28,6 +28,10 @@ export default {
       background: '#fafafa',
       white: '#ffffff',
       grey: '#cecece',
+      black: '#000000de',
+    },
+    special: {
+      accessibleSecondary: '#2a8436',
     },
   },
   spacing: {
