@@ -43,6 +43,8 @@ export default function Calendar({ today, events }) {
           renderDay={renderDayWithEvents(events)}
           minDate={minEventDate}
           maxDate={maxEventDate}
+          rightArrowButtonProps={{ 'aria-label': 'Next month' }}
+          leftArrowButtonProps={{ 'aria-label': 'Previous month' }}
         />
       </div>
     </Center>
