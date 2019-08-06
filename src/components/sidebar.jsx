@@ -33,7 +33,7 @@ const SidePanel = styled(Panel)`
 `;
 
 const ContactLink = styled(Link)`
-  ${({ theme }) => `margin-left: ${theme.spacing.units(1)};`}
+  ${({ theme }) => `margin-left: ${theme.spacing.units(1)};`}  
 `;
 
 const toCalendarEvent = event => ({

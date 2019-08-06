@@ -30,6 +30,9 @@ export default {
       grey: '#cecece',
       black: '#000000de',
     },
+    special: {
+      accessibleSecondary: '#2a8436',
+    },
   },
   spacing: {
     unit: spacingUnit,
