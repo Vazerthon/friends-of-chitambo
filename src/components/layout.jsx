@@ -23,6 +23,7 @@ const MaxSizeContainer = styled.div`
 `;
 
 const Container = styled.div`
+  width: 100%;
   min-height: 80vh;
   padding: ${({ theme }) => theme.spacing.units(2)};
   padding-bottom: 0;
