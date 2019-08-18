@@ -98,9 +98,9 @@ function Layout({ children, title }) {
             <Main>{children}</Main>
             <Sidebar />
           </Content>
+          <Footer />
         </Container>
       </MaxSizeContainer>
-      <Footer />
     </Root>
   );
 }

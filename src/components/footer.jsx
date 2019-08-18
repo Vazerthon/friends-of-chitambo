@@ -7,27 +7,13 @@ import Logo from './logo';
 import { Paragraph } from './typography';
 
 const Container = styled.footer`
-  background-color: ${({ theme }) => theme.colour.neutral.white};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  box-shadow: ${({ theme }) => theme.colour.neutral.grey} 0 6px 16px;
+  border-top: 1px solid ${({ theme }) => theme.colour.neutral.grey};
   margin-top: ${({ theme }) => theme.spacing.units(4)};
-  padding-top: ${({ theme }) => theme.spacing.units(4)};
-  padding-bottom: ${({ theme }) => theme.spacing.units(4)};
-  padding-left: ${({ theme }) => theme.spacing.units(20)};
-  padding-right: ${({ theme }) => theme.spacing.units(20)};
-
-  ${({ theme }) => theme.media.medium`
-    padding-left: ${theme.spacing.units(10)};
-    padding-right: ${theme.spacing.units(10)};
-  `}
-  
-  ${({ theme }) => theme.media.small`
-    padding-left: ${theme.spacing.units(2)};
-    padding-right: ${theme.spacing.units(2)};
-  `};
+  padding: ${({ theme }) => theme.spacing.units(4)} 0;
 `;
 
 const LogoAndSocial = styled.div`
