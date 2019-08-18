@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
 
 const Img = styled(Image)`
-  margin: ${({ theme }) => theme.spacing.units(0.5)};
-  margin-left: 0;
+  margin-bottom: ${({ theme }) => theme.spacing.units(4)};
 `;
 
 export default function CoverImage({ image: { alt, fluid } }) {
