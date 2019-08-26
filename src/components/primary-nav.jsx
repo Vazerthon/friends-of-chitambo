@@ -4,9 +4,9 @@ import NavLink, { Nav } from './nav-link';
 
 const lightestFirst = (x, y) => (x.weight < y.weight ? -1 : 1);
 
-function PrimaryNav({ items }) {
+function PrimaryNav({ items, className }) {
   return (
-    <Nav>
+    <Nav className={className}>
       {
           items
             .sort(lightestFirst)
@@ -31,6 +31,11 @@ PrimaryNav.propTypes = {
     to: PropTypes.string.isRequired,
     weight: PropTypes.number.isRequired,
   })).isRequired,
+  className: PropTypes.string,
+};
+
+PrimaryNav.defaultProps = {
+  className: undefined,
 };
 
 export default PrimaryNav;

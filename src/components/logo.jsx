@@ -94,9 +94,11 @@ const Headings = styled.div`
   }[direction])}
 `;
 
-export default function Logo({ text, size, colour }) {
+export default function Logo({
+  text, size, colour, className,
+}) {
   return (
-    <Container direction={text} size={size}>
+    <Container direction={text} size={size} className={className}>
       <SvgLogo size={size} colour={colour} />
       {text !== 'off' && (
         <Headings direction={text}>
@@ -112,10 +114,12 @@ Logo.propTypes = {
   text: PropTypes.oneOf(['off', 'below', 'right']),
   size: PropTypes.oneOf(['tiny', 'small', 'medium', 'large']),
   colour: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 Logo.defaultProps = {
   text: 'off',
   size: 'medium',
   colour: true,
+  className: undefined,
 };
