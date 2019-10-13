@@ -26,11 +26,11 @@ export default function DrawerNav({ items, open }) {
           items
             .sort(lightestFirst)
             .map(({ to, text }) => (
-              <ListItem key={to}>
-                <DrawerNavLink to={to}>
+              <DrawerNavLink to={to} key={to}>
+                <ListItem>
                   {text}
-                </DrawerNavLink>
-              </ListItem>
+                </ListItem>
+              </DrawerNavLink>
             ))
         }
     </NavDrawer>

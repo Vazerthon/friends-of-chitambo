@@ -12,6 +12,7 @@ export const Nav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
+  font-size: 1rem;
   color: ${({ theme }) => theme.colour.neutral.black};
   text-decoration: none;
   outline: none;
@@ -30,6 +31,7 @@ const NavLink = styled(Link)`
 `;
 
 export const DrawerNavLink = styled(Link)`
+  font-size: 1rem;
   color: ${({ theme }) => theme.colour.neutral.black};
   text-decoration: none;
   outline: none;
