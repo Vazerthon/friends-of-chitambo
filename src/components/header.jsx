@@ -1,32 +1,17 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
-import { MdMenu } from 'react-icons/md';
 
-import Logo from './logo';
-import PrimaryNav from './primary-nav';
+import PrimaryNav from './nav/primary';
+import MobileNav from './nav/mobile';
 
 import Pages from '../queries/pages';
-
-const MobileContainer = styled.div`
-  display: none;
-  width: 100%;
-  margin: ${({ theme }) => `0 ${theme.spacing.units(1)}`};
-  justify-content: space-between;
-  ${({ theme }) => theme.media.small`display: flex;`};
-`;
 
 const TitleBar = styled(Toolbar)`
   display: flex;
   justify-content: center;
-`;
-
-const MobileLogo = styled(Logo)`
-  display: none;
-  ${({ theme }) => theme.media.small`display: flex;`};
 `;
 
 const DesktopNav = styled(PrimaryNav)`
@@ -63,17 +48,15 @@ function Header() {
     <AppBar>
       <TitleBar disableGutters>
         <Pages
-          renderChildren={pages => (
-            <Fragment>
-              <DesktopNav items={[...pages, ...nonContentManagedPages].map(toNavItem)} />
-              <MobileContainer>
-                <MobileLogo text="off" size="tiny" />
-                <IconButton>
-                  <MdMenu />
-                </IconButton>
-              </MobileContainer>
-            </Fragment>
-          )}
+          renderChildren={pages => {
+            const items = [...pages, ...nonContentManagedPages].map(toNavItem);
+            return (
+              <Fragment>
+                <DesktopNav items={items} />
+                <MobileNav items={items} />
+              </Fragment>
+            );
+          }}
         />
       </TitleBar>
     </AppBar>

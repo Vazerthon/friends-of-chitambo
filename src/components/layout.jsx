@@ -9,7 +9,6 @@ import Sidebar from './sidebar';
 import Header from './header';
 import Footer from './footer';
 
-
 import Root from './root';
 
 const MaxSizeContainer = styled.div`

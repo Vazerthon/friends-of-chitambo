@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavLink, { Nav } from './nav-link';
-
-const lightestFirst = (x, y) => (x.weight < y.weight ? -1 : 1);
+import { lightestFirst, items as itemsType } from './shared';
 
 function PrimaryNav({ items, className }) {
   return (
@@ -26,11 +25,7 @@ function PrimaryNav({ items, className }) {
 }
 
 PrimaryNav.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    to: PropTypes.string.isRequired,
-    weight: PropTypes.number.isRequired,
-  })).isRequired,
+  items: itemsType.isRequired,
   className: PropTypes.string,
 };
 
