@@ -29,4 +29,12 @@ const NavLink = styled(Link)`
   }
 `;
 
+export const DrawerNavLink = styled(Link)`
+  color: ${({ theme }) => theme.colour.neutral.black};
+  text-decoration: none;
+  outline: none;
+  margin: ${({ theme }) => `${theme.spacing.units(1)} ${theme.spacing.units(4)};`};
+  white-space: nowrap;
+`;
+
 export default NavLink;

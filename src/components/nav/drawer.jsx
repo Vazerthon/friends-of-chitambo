@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Drawer from '@material-ui/core/Drawer';
+import ListItem from '@material-ui/core/ListItem';
 import styled from 'styled-components';
 import { lightestFirst, items as itemsType } from './shared';
-import NavLink from './nav-link';
+import { DrawerNavLink } from './nav-link';
 
 const NavDrawer = styled(({ ...props }) => (
   <Drawer {...props} classes={{ paper: 'paper' }} />
@@ -25,14 +26,11 @@ export default function DrawerNav({ items, open }) {
           items
             .sort(lightestFirst)
             .map(({ to, text }) => (
-              <NavLink
-                key={to}
-                to={to}
-                tabIndex="0"
-                activeClassName="active"
-              >
-                {text}
-              </NavLink>
+              <ListItem key={to}>
+                <DrawerNavLink to={to}>
+                  {text}
+                </DrawerNavLink>
+              </ListItem>
             ))
         }
     </NavDrawer>
