@@ -3,15 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
 import Logo from './logo';
 
 import Sidebar from './sidebar';
+import Header from './header';
 import Footer from './footer';
-import PrimaryNav from './primary-nav';
-
-import Pages from '../queries/pages';
 
 import Root from './root';
 
@@ -51,46 +47,11 @@ const Main = styled.article`
   ${({ theme }) => theme.media.small`margin-right: 0;`};
 `;
 
-const TitleBar = styled(Toolbar)`
-  display: flex;
-  justify-content: center;
-`;
-
-// TODO: find a way to not maintain this manually
-const nonContentManagedPages = [
-  {
-    title: 'Blog',
-    slug: 'blog',
-    menuOrder: 100,
-  },
-  {
-    title: 'Events',
-    slug: 'events',
-    menuOrder: 110,
-  },
-  {
-    title: 'Meet the Team',
-    slug: 'team',
-    menuOrder: 120,
-  },
-];
-
 function Layout({ children, title }) {
   return (
     <Root>
       <Helmet title={title} />
-      <AppBar>
-        <TitleBar disableGutters>
-          <Pages
-            renderChildren={pages => (
-              <PrimaryNav
-                items={[...pages, ...nonContentManagedPages]
-                  .map(p => ({ text: p.title, to: p.slug, weight: p.menuOrder }))}
-              />
-            )}
-          />
-        </TitleBar>
-      </AppBar>
+      <Header />
       <MaxSizeContainer>
         <Container>
           <Logo text="below" size="large" />

@@ -12,6 +12,7 @@ export const Nav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
+  font-size: 1rem;
   color: ${({ theme }) => theme.colour.neutral.black};
   text-decoration: none;
   outline: none;
@@ -27,6 +28,15 @@ const NavLink = styled(Link)`
     transform: scale(1.2);
     font-weight: bold;
   }
+`;
+
+export const DrawerNavLink = styled(Link)`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colour.neutral.black};
+  text-decoration: none;
+  outline: none;
+  margin: ${({ theme }) => `${theme.spacing.units(1)} ${theme.spacing.units(4)};`};
+  white-space: nowrap;
 `;
 
 export default NavLink;

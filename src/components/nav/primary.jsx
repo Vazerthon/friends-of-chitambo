@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavLink, { Nav } from './nav-link';
+import { lightestFirst, items as itemsType } from './shared';
 
-const lightestFirst = (x, y) => (x.weight < y.weight ? -1 : 1);
-
-function PrimaryNav({ items }) {
+function PrimaryNav({ items, className }) {
   return (
-    <Nav>
+    <Nav className={className}>
       {
           items
             .sort(lightestFirst)
@@ -26,11 +25,12 @@ function PrimaryNav({ items }) {
 }
 
 PrimaryNav.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    to: PropTypes.string.isRequired,
-    weight: PropTypes.number.isRequired,
-  })).isRequired,
+  items: itemsType.isRequired,
+  className: PropTypes.string,
+};
+
+PrimaryNav.defaultProps = {
+  className: undefined,
 };
 
 export default PrimaryNav;
