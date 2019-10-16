@@ -6,7 +6,7 @@ import EventSummaries from './event-summaries';
 
 function EventsPage() {
   return (
-    <Layout>
+    <Layout title="Events">
       <EventSummaries />
     </Layout>
   );

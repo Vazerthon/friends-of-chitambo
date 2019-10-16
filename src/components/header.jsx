@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Toolbar from '@material-ui/core/Toolbar';
@@ -43,7 +44,7 @@ const toNavItem = p => ({
   weight: p.menuOrder,
 });
 
-function Header() {
+function Header({ title }) {
   return (
     <AppBar>
       <TitleBar disableGutters>
@@ -53,7 +54,7 @@ function Header() {
             return (
               <Fragment>
                 <DesktopNav items={items} />
-                <MobileNav items={items} />
+                <MobileNav items={items} title={title} />
               </Fragment>
             );
           }}
@@ -64,3 +65,11 @@ function Header() {
 }
 
 export default Header;
+
+Header.propTypes = {
+  title: PropTypes.string,
+};
+
+Header.defaultProps = {
+  title: '',
+};

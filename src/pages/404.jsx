@@ -5,7 +5,7 @@ import { Heading, Paragraph } from '../components/typography';
 import Link from '../components/link';
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout title="Page not Found">
     <Heading>
       NOT FOUND
     </Heading>

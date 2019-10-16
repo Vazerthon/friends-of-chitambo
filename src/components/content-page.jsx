@@ -21,7 +21,7 @@ function BlogPost({ pageContext: { pageId } }) {
     <Pages
       pageId={pageId}
       renderChildren={data => (
-        <Layout>
+        <Layout title={data.title}>
           <Helmet title={`${data.title}`}>
             <meta name="description" content={data.description} />
           </Helmet>
