@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Helmet from 'react-helmet';
 
 import Logo from './logo';
 
@@ -50,8 +49,7 @@ const Main = styled.article`
 function Layout({ children, title }) {
   return (
     <Root>
-      <Helmet title={title} />
-      <Header />
+      <Header title={title} />
       <MaxSizeContainer>
         <Container>
           <Logo text="below" size="large" />
