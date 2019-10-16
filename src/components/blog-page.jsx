@@ -6,7 +6,7 @@ import BlogSummaries from './blog-summaries';
 
 function BlogPage() {
   return (
-    <Layout>
+    <Layout title="Blog">
       <BlogSummaries />
     </Layout>
   );

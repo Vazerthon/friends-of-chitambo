@@ -20,7 +20,7 @@ const ImageGallery = ({ images }) => (
 
 function BlogPost({ pageContext: { postId } }) {
   return (
-    <Layout>
+    <Layout title="Blog">
       <Blogs
         postId={postId}
         renderChildren={data => (

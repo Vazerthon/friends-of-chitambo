@@ -19,7 +19,7 @@ const ImageGallery = ({ images }) => (
 
 function EventPage({ pageContext: { eventId } }) {
   return (
-    <Layout>
+    <Layout title="Events">
       <Events
         eventId={eventId}
         renderChildren={data => (

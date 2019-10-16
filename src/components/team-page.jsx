@@ -5,7 +5,7 @@ import TeamMembers from './team-members';
 
 function TeamPage() {
   return (
-    <Layout>
+    <Layout title="Meet the Team">
       <TeamMembers />
     </Layout>
   );
