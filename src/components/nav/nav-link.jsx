@@ -26,7 +26,7 @@ const NavLink = styled(Link)`
 
   :focus, :hover {
     transform: scale(1.2);
-    font-weight: bold;
+    border-bottom: 1px solid ${({ theme }) => theme.colour.neutral.black};
   }
 `;
 
