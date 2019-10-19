@@ -3,7 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { Heading } from './typography';
+import { SubHeading } from './typography';
 
 const Container = styled(Paper)`
   padding: ${({ theme }) => theme.spacing.units(1)};
@@ -13,7 +13,7 @@ const Container = styled(Paper)`
 export default function Panel({ title, children, className }) {
   return (
     <Container className={className}>
-      <Heading>{title}</Heading>
+      <SubHeading>{title}</SubHeading>
       {children}
     </Container>
   );
