@@ -11,7 +11,7 @@ export const Paragraph = styled(({ ...props }) => (
   />
 ))`
   && {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `;
 
