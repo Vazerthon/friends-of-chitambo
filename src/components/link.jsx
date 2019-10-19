@@ -14,11 +14,7 @@ export const InternalLink = styled(UnstyledInternalLink)`
 
 export function ButtonLink({ to, label, external }) {
   const internalProps = { to };
-  const externalProps = {
-    href: to,
-    target: '_blank',
-    rel: 'noopener noreferrer',
-  };
+  const externalProps = { href: to };
   const Component = external ? Link : UnstyledInternalLink;
   const props = external ? externalProps : internalProps;
   return (
