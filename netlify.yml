@@ -1,0 +1,3 @@
+plugins:
+  subfont:
+    type: netlify-plugin-subfont
