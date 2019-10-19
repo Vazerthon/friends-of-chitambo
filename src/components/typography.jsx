@@ -20,6 +20,7 @@ export const Heading = styled(({ ...props }) => <Typography {...props} paragraph
     color: ${({ theme, colour }) => theme.colour[colour]};
     margin-bottom: ${({ theme }) => theme.spacing.units(0.5)};
     font-size: 2.2rem;
+    line-height: 2.2rem;
   }
 `;
 
@@ -28,5 +29,6 @@ export const SubHeading = styled(({ ...props }) => <Typography {...props} paragr
     color: ${({ theme, colour }) => theme.colour[colour]};
     margin-bottom: ${({ theme }) => theme.spacing.units(0.5)};
     font-size: 1.8rem;
+    line-height: 2.2rem;
   }
 `;
