@@ -6,6 +6,7 @@ import Layout from './layout';
 import Markdown from './markdown';
 import Gallery from './gallery';
 import CoverImage from './cover-image';
+import Panel from './panel';
 
 import Pages from '../queries/pages';
 
@@ -22,12 +23,14 @@ function BlogPost({ pageContext: { pageId } }) {
       pageId={pageId}
       renderChildren={data => (
         <Layout title={data.title}>
-          <Helmet title={`${data.title}`}>
-            <meta name="description" content={data.description} />
-          </Helmet>
-          { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
-          <Markdown source={data.body.body} />
-          { data.gallery && <ImageGallery images={data.gallery} />}
+          <Panel>
+            <Helmet title={`${data.title}`}>
+              <meta name="description" content={data.description} />
+            </Helmet>
+            { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
+            <Markdown source={data.body.body} />
+            { data.gallery && <ImageGallery images={data.gallery} />}
+          </Panel>
         </Layout>
       )}
     />

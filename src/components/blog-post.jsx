@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
+import Panel from './panel';
 import Layout from './layout';
 import TitleWithDate from './title-with-date';
 import Markdown from './markdown';
@@ -21,21 +22,23 @@ const ImageGallery = ({ images }) => (
 function BlogPost({ pageContext: { postId } }) {
   return (
     <Layout title="Blog">
-      <Blogs
-        postId={postId}
-        renderChildren={data => (
-          <Fragment>
-            <Helmet title={`${data.title} | blog`}>
-              <meta name="description" content={data.description} />
-            </Helmet>
-            <TitleWithDate title={data.title} date={data.createdAt} />
-            { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
-            { data.author && <BlogAuthor author={data.author} /> }
-            <Markdown source={data.body.body} />
-            { data.gallery && <ImageGallery images={data.gallery} />}
-          </Fragment>
-        )}
-      />
+      <Panel>
+        <Blogs
+          postId={postId}
+          renderChildren={data => (
+            <Fragment>
+              <Helmet title={`${data.title} | blog`}>
+                <meta name="description" content={data.description} />
+              </Helmet>
+              <TitleWithDate title={data.title} date={data.createdAt} />
+              { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
+              { data.author && <BlogAuthor author={data.author} /> }
+              <Markdown source={data.body.body} />
+              { data.gallery && <ImageGallery images={data.gallery} />}
+            </Fragment>
+          )}
+        />
+      </Panel>
     </Layout>
   );
 }
