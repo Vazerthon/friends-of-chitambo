@@ -11,7 +11,7 @@ const NavDrawer = styled(({ ...props }) => (
 ))`
   & .paper {
     width: 100%;
-    margin-top: ${({ theme }) => theme.spacing.units(8)}
+    margin-top: ${({ theme }) => theme.spacing.units(7)}
   }
 `;
 

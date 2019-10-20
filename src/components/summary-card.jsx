@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 
 import { Paragraph } from './typography';
 import TitleWithDate from './title-with-date';
-import { ButtonLink } from './link';
+import { ButtonLink, InternalLink } from './link';
 
 const Summary = styled.div`
   padding: ${({ theme }) => theme.spacing.units(2)};
@@ -24,7 +24,9 @@ export default function SummaryCard({
   return (
     <Paper>
       <Summary>
-        <TitleWithDate title={title} date={date} />
+        <InternalLink to={url} tabIndex="0">
+          <TitleWithDate title={title} date={date} />
+        </InternalLink>
         <Paragraph>
           {description}
         </Paragraph>

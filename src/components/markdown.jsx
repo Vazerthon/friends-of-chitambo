@@ -12,19 +12,10 @@ const headings = {
   3: props => <SubHeading {...props} />,
 };
 
-const externalLinkProps = ({ href }) => (
-  href.startsWith('http')
-    ? {
-      target: '_blank',
-      rel: 'noopener noreferrer',
-    }
-    : {}
-);
-
 export const renderers = {
   paragraph: props => <Paragraph {...props} />,
   heading: props => headings[props.level](props),
-  link: props => <Link {...props} {...externalLinkProps(props)} />,
+  link: props => <Link {...props} />,
   list: props => <UnorderedList {...props} />,
   listItem: props => <ListItem {...props} />,
 };

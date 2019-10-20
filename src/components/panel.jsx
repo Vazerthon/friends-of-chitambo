@@ -3,17 +3,22 @@ import Paper from '@material-ui/core/Paper';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { Heading } from './typography';
+import { SubHeading } from './typography';
 
 const Container = styled(Paper)`
-  padding: ${({ theme }) => theme.spacing.units(1)};
+  padding: ${({ theme }) => theme.spacing.units(2)};
+
+  ${({ theme }) => theme.media.small`
+    padding: ${theme.spacing.units(1)};
+  `};
+
   overflow: hidden;
 `;
 
 export default function Panel({ title, children, className }) {
   return (
     <Container className={className}>
-      <Heading>{title}</Heading>
+      <SubHeading>{title}</SubHeading>
       {children}
     </Container>
   );

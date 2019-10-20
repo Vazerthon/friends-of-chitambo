@@ -2,32 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 
-export const Paragraph = styled(({ ...props }) => (
-  <Typography
-    {...props}
-    classes={{ paragraph: 'paragraph' }}
-    variant="body1"
-    paragraph
-  />
-))`
+export const Paragraph = styled(({ ...props }) => <Typography {...props} paragraph />)`
   && {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `;
 
-export const PageTitle = styled(({ ...props }) => (
-  <Typography
-    {...props}
-    variant="h1"
-    paragraph
-  />
-))`
+export const HeaderBarTitle = styled(({ ...props }) => <Typography {...props} component="h1" paragraph />)`
   && {
     font-size: 1.4rem;
     margin: 0;
   }
 `;
 
-export const Title = props => <Typography paragraph variant="h3" {...props} />;
-export const Heading = props => <Typography paragraph variant="h4" {...props} />;
-export const SubHeading = props => <Typography paragraph variant="h5" {...props} />;
+export const Heading = styled(({ ...props }) => <Typography {...props} paragraph component="h2" />)`
+  && {
+    color: ${({ theme, colour }) => theme.colour[colour]};
+    margin-bottom: ${({ theme }) => theme.spacing.units(0.5)};
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+`;
+
+export const SubHeading = styled(({ ...props }) => <Typography {...props} paragraph component="h3" />)`
+  && {
+    color: ${({ theme, colour }) => theme.colour[colour]};
+    margin-bottom: ${({ theme }) => theme.spacing.units(0.5)};
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+`;

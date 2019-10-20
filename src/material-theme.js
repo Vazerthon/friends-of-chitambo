@@ -11,6 +11,7 @@ export default createMuiTheme({
       'Barlow Semi Condensed',
       'sans-serif',
     ],
+    fontSize: 18,
   },
   palette: {
     primary: {

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 import { MdMenu, MdClose } from 'react-icons/md';
 
-import { PageTitle } from '../typography';
+import { HeaderBarTitle } from '../typography';
 import { items as itemsType } from './shared';
 import DrawerNav from './drawer';
 
@@ -28,7 +28,7 @@ export default function MobileNav({ items, title }) {
     <Fragment>
       <MobileContainer>
         <Logo text="off" size="tiny" />
-        <PageTitle>{title}</PageTitle>
+        <HeaderBarTitle>{title}</HeaderBarTitle>
         <IconButton onClick={toggleMenu}>
           { showMenu
             ? <MdClose />

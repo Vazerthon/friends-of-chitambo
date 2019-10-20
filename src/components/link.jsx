@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
-import { Link as InternalLink } from 'gatsby';
+import { Link as UnstyledInternalLink } from 'gatsby';
 import styled from 'styled-components';
 
 const Link = styled.a`
-  color: ${({ theme }) => theme.colour.special.accessibleSecondary};
+  color: ${({ theme }) => theme.colour.accessibleSecondary};
+`;
+
+export const InternalLink = styled(UnstyledInternalLink)`
+  text-decoration: none;
 `;
 
 export function ButtonLink({ to, label, external }) {
   const internalProps = { to };
-  const externalProps = {
-    href: to,
-    target: '_blank',
-    rel: 'noopener noreferrer',
-  };
-  const Component = external ? Link : InternalLink;
+  const externalProps = { href: to };
+  const Component = external ? Link : UnstyledInternalLink;
   const props = external ? externalProps : internalProps;
   return (
     <Component {...props}>

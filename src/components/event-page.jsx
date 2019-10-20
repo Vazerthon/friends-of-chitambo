@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
+import Panel from './panel';
 import Layout from './layout';
 import TitleWithDate from './title-with-date';
 import Markdown from './markdown';
@@ -20,20 +21,22 @@ const ImageGallery = ({ images }) => (
 function EventPage({ pageContext: { eventId } }) {
   return (
     <Layout title="Events">
-      <Events
-        eventId={eventId}
-        renderChildren={data => (
-          <Fragment>
-            <Helmet title={`${data.title} | events`}>
-              <meta name="description" content={data.description} />
-            </Helmet>
-            <TitleWithDate title={data.title} date={data.date} />
-            { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
-            <Markdown source={data.body.body} />
-            { data.gallery && <ImageGallery images={data.gallery} />}
-          </Fragment>
-        )}
-      />
+      <Panel>
+        <Events
+          eventId={eventId}
+          renderChildren={data => (
+            <Fragment>
+              <Helmet title={`${data.title} | events`}>
+                <meta name="description" content={data.description} />
+              </Helmet>
+              <TitleWithDate title={data.title} date={data.date} />
+              { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
+              <Markdown source={data.body.body} />
+              { data.gallery && <ImageGallery images={data.gallery} />}
+            </Fragment>
+          )}
+        />
+      </Panel>
     </Layout>
   );
 }

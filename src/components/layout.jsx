@@ -40,7 +40,7 @@ const Content = styled.main`
 const Main = styled.article`
   width: 100%;
   flex: 3 0 0%;
-  margin-right: ${({ theme }) => theme.spacing.units(10)};
+  margin-right: ${({ theme }) => theme.spacing.units(4)};
 
   ${({ theme }) => theme.media.medium`margin-right: 0;`}
   ${({ theme }) => theme.media.small`margin-right: 0;`};
