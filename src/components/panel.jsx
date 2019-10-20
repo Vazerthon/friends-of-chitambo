@@ -6,7 +6,12 @@ import PropTypes from 'prop-types';
 import { SubHeading } from './typography';
 
 const Container = styled(Paper)`
-  padding: ${({ theme }) => theme.spacing.units(1)};
+  padding: ${({ theme }) => theme.spacing.units(2)};
+
+  ${({ theme }) => theme.media.small`
+    padding: ${theme.spacing.units(1)};
+  `};
+
   overflow: hidden;
 `;
 

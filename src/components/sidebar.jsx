@@ -24,7 +24,6 @@ const Row = styled(Paragraph)`
 
 const SidePanel = styled(Panel)`
   margin: ${({ theme }) => theme.spacing.units(4)} 0;
-  padding: ${({ theme }) => theme.spacing.units(2)};
 
   & :first-child {
     margin-top: 0;
