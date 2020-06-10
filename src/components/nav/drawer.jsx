@@ -7,6 +7,7 @@ import { lightestFirst, items as itemsType } from './shared';
 import { DrawerNavLink } from './nav-link';
 
 const NavDrawer = styled(({ ...props }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
   <Drawer {...props} classes={{ paper: 'paper' }} />
 ))`
   & .paper {

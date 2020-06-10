@@ -31,8 +31,7 @@ export default function PartnerLogos() {
             <Gallery images={galleryData} renderImageWrapper={renderLinkImages(galleryData)} />
           </Panel>
         );
-      }
-    }
+      }}
     />
   );
 }

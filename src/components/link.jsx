@@ -18,6 +18,7 @@ export function ButtonLink({ to, label, external }) {
   const Component = external ? Link : UnstyledInternalLink;
   const props = external ? externalProps : internalProps;
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <Component {...props}>
       <Button variant="outlined" color="secondary">{label}</Button>
     </Component>

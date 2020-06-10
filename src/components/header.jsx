@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -52,10 +52,10 @@ function Header({ title }) {
           renderChildren={pages => {
             const items = [...pages, ...nonContentManagedPages].map(toNavItem);
             return (
-              <Fragment>
+              <>
                 <DesktopNav items={items} />
                 <MobileNav items={items} title={title} />
-              </Fragment>
+              </>
             );
           }}
         />

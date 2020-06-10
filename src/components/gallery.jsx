@@ -34,14 +34,14 @@ export default function Gallery({ images, renderImageWrapper }) {
     .map((img, i) => renderImageWrapper(img, i, images));
 
   return (
-    <Fragment>
+    <>
       <MasonryGrid>
         { wrappedImages }
       </MasonryGrid>
       <FlexColumnGallery>
         { wrappedImages }
       </FlexColumnGallery>
-    </Fragment>
+    </>
   );
 }
 

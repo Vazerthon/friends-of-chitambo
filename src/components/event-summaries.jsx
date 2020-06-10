@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { Heading } from './typography';
 import Events from '../queries/events';
@@ -6,7 +6,7 @@ import SummaryCard from './summary-card';
 
 function EventSummaries() {
   return (
-    <Fragment>
+    <>
       <Heading>Events</Heading>
       <Events
         renderChildren={(events) => events.map(event => (
@@ -19,7 +19,7 @@ function EventSummaries() {
           />
         ))}
       />
-    </Fragment>
+    </>
   );
 }
 
