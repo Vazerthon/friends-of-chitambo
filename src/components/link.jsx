@@ -14,7 +14,7 @@ const StyledInternalLink = styled(UnstyledInternalLink)`
 
 const toAbsoluteTo = (to) => (to.startsWith('/') ? to : `/${to}`);
 
-export const InternalLink = ({ to, ...rest }) => console.log(to) || (
+export const InternalLink = ({ to, ...rest }) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <StyledInternalLink to={toAbsoluteTo(to)} {...rest} />
 );
