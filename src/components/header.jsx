@@ -44,13 +44,17 @@ const toNavItem = p => ({
   weight: p.menuOrder,
 });
 
+const toAbsoluteTo = ({ to, ...rest }) => (to.startsWith('/') ? { to, ...rest } : { to: `/${to}`, ...rest });
+
 function Header({ title }) {
   return (
     <AppBar>
       <TitleBar disableGutters>
         <Pages
           renderChildren={pages => {
-            const items = [...pages, ...nonContentManagedPages].map(toNavItem);
+            const items = [...pages, ...nonContentManagedPages]
+              .map(toNavItem)
+              .map(toAbsoluteTo);
             return (
               <>
                 <DesktopNav items={items} />
