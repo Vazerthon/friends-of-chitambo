@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
@@ -14,9 +14,16 @@ import Events from '../queries/events';
 const dataToImage = type => image => ({ id: image.id, alt: image.title, [type]: image[type] });
 const fixedToImage = dataToImage('fixed');
 const fluidToImage = dataToImage('fluid');
+
 const ImageGallery = ({ images }) => (
   images.length > 0 && <Gallery images={images.map(fixedToImage)} />
 );
+
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.shape({
+    fixed: PropTypes.object,
+  })).isRequired,
+};
 
 function EventPage({ pageContext: { eventId } }) {
   return (
@@ -25,7 +32,7 @@ function EventPage({ pageContext: { eventId } }) {
         <Events
           eventId={eventId}
           renderChildren={data => (
-            <Fragment>
+            <>
               <Helmet title={`${data.title} | events`}>
                 <meta name="description" content={data.description} />
               </Helmet>
@@ -33,7 +40,7 @@ function EventPage({ pageContext: { eventId } }) {
               { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
               <Markdown source={data.body.body} />
               { data.gallery && <ImageGallery images={data.gallery} />}
-            </Fragment>
+            </>
           )}
         />
       </Panel>

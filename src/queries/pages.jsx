@@ -23,7 +23,7 @@ export default function Pages({ renderChildren, pageId }) {
                   description
                   coverImage {
                     fluid(maxWidth: 2000) {
-                      ...GatsbyContentfulFluid_tracedSVG
+                      ...GatsbyContentfulFluid
                     }
                   }
                   body {
@@ -33,7 +33,7 @@ export default function Pages({ renderChildren, pageId }) {
                     id
                     title
                     fixed(width: 300) {
-                      ...GatsbyContentfulFixed_tracedSVG
+                      ...GatsbyContentfulFixed
                     }
                   }
                 }

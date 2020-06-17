@@ -14,7 +14,7 @@ export const teamMemberFragment = graphql`
     }
     picture {
       fixed(width: 200) {
-        ...GatsbyContentfulFixed_tracedSVG
+        ...GatsbyContentfulFixed
       }
     }
   }

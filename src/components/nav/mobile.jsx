@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -25,19 +25,18 @@ export default function MobileNav({ items, title }) {
   const toggleMenu = () => setShowMenu(!showMenu);
 
   return (
-    <Fragment>
+    <>
       <MobileContainer>
         <Logo text="off" size="tiny" />
         <HeaderBarTitle>{title}</HeaderBarTitle>
         <IconButton onClick={toggleMenu}>
           { showMenu
             ? <MdClose />
-            : <MdMenu />
-          }
+            : <MdMenu />}
         </IconButton>
       </MobileContainer>
       <DrawerNav items={items} open={showMenu} />
-    </Fragment>
+    </>
   );
 }
 

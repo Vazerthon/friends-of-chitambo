@@ -8,18 +8,32 @@ const Link = styled.a`
   color: ${({ theme }) => theme.colour.accessibleSecondary};
 `;
 
-export const InternalLink = styled(UnstyledInternalLink)`
+const StyledInternalLink = styled(UnstyledInternalLink)`
   text-decoration: none;
 `;
+
+const toAbsoluteTo = (to) => (to.startsWith('/') ? to : `/${to}`);
+
+export const InternalLink = ({ to, ...rest }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <StyledInternalLink to={toAbsoluteTo(to)} {...rest} />
+);
+
+InternalLink.propTypes = {
+  to: PropTypes.string.isRequired,
+};
 
 export function ButtonLink({ to, label, external }) {
   const internalProps = { to };
   const externalProps = { href: to };
-  const Component = external ? Link : UnstyledInternalLink;
+  const Component = external ? Link : InternalLink;
   const props = external ? externalProps : internalProps;
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <Component {...props}>
-      <Button variant="outlined" color="secondary">{label}</Button>
+      <Button variant="outlined" color="secondary">
+        {label}
+      </Button>
     </Component>
   );
 }

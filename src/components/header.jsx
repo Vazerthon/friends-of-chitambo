@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -44,18 +44,22 @@ const toNavItem = p => ({
   weight: p.menuOrder,
 });
 
+const toAbsoluteTo = ({ to, ...rest }) => (to.startsWith('/') ? { to, ...rest } : { to: `/${to}`, ...rest });
+
 function Header({ title }) {
   return (
     <AppBar>
       <TitleBar disableGutters>
         <Pages
           renderChildren={pages => {
-            const items = [...pages, ...nonContentManagedPages].map(toNavItem);
+            const items = [...pages, ...nonContentManagedPages]
+              .map(toNavItem)
+              .map(toAbsoluteTo);
             return (
-              <Fragment>
+              <>
                 <DesktopNav items={items} />
                 <MobileNav items={items} title={title} />
-              </Fragment>
+              </>
             );
           }}
         />

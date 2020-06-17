@@ -13,9 +13,16 @@ import Pages from '../queries/pages';
 const dataToImage = type => image => ({ id: image.id, alt: image.title, [type]: image[type] });
 const fixedToImage = dataToImage('fixed');
 const fluidToImage = dataToImage('fluid');
+
 const ImageGallery = ({ images }) => (
   images.length > 0 && <Gallery images={images.map(fixedToImage)} />
 );
+
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.shape({
+    fixed: PropTypes.object,
+  })).isRequired,
+};
 
 function BlogPost({ pageContext: { pageId } }) {
   return (
