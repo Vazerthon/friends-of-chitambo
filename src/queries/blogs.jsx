@@ -23,7 +23,7 @@ export default function Blogs({ renderChildren, postId }) {
                   description
                   coverImage {
                     fluid(maxWidth: 2000) {
-                      ...GatsbyContentfulFluid_tracedSVG
+                      ...GatsbyContentfulFluid
                     }
                   }
                   body {
@@ -33,7 +33,7 @@ export default function Blogs({ renderChildren, postId }) {
                     id
                     title
                     fixed(width: 300) {
-                      ...GatsbyContentfulFixed_tracedSVG
+                      ...GatsbyContentfulFixed
                     }
                   }
                   author {
