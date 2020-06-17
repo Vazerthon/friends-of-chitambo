@@ -18,18 +18,19 @@ const Container = styled(Paper)`
 export default function Panel({ title, children, className }) {
   return (
     <Container className={className}>
-      <SubHeading>{title}</SubHeading>
+      {title && <SubHeading>{title}</SubHeading>}
       {children}
     </Container>
   );
 }
 
 Panel.propTypes = {
-  title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  title: PropTypes.string,
   className: PropTypes.string,
 };
 
 Panel.defaultProps = {
+  title: undefined,
   className: undefined,
 };

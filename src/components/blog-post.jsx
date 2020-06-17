@@ -21,9 +21,9 @@ const ImageGallery = ({ images }) => (
 );
 
 ImageGallery.propTypes = {
-  images: PropTypes.arrayOf({
+  images: PropTypes.arrayOf(PropTypes.shape({
     fixed: PropTypes.object,
-  }).isRequired,
+  })).isRequired,
 };
 
 function BlogPost({ pageContext: { postId } }) {

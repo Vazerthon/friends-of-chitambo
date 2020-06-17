@@ -10,7 +10,7 @@
     "url": "https://github.com/vazerthon/friends-of-chitambo"
   },
   "scripts": {
-    "cleancache": "rimraf .cache/*",
+    "cleancache": "rimraf .cache/* && gatsby clean",
     "build": "npm run cleancache && gatsby build",
     "develop": "gatsby develop",
     "start": "npm run cleancache && npm run develop",
@@ -19,7 +19,8 @@
     "lint:fix": "eslint --ext .js,.jsx --fix .",
     "test": "jest --watch",
     "test:nowatch": "jest",
-    "release": "npm run lint && npm run test:nowatch && npm run build"
+    "release": "npm run lint && npm run test:nowatch && npm run build",
+    "gatsby": "gatsby"
   },
   "dependencies": {
     "@date-io/date-fns": "^1.3.11",
