@@ -31,7 +31,7 @@ export function ButtonLink({ to, label, external }) {
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Component {...props}>
-      <Button variant="outlined" color="secondary">
+      <Button variant="outlined" color="secondary" aria-label={label}>
         {label}
       </Button>
     </Component>
