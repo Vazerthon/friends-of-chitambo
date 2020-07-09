@@ -5,7 +5,7 @@ import { Link as UnstyledInternalLink } from 'gatsby';
 import styled from 'styled-components';
 
 const Link = styled.a`
-  color: ${({ theme }) => theme.colour.accessibleSecondary};
+  color: ${({ theme }) => theme.colour.secondary};
 `;
 
 const StyledInternalLink = styled(UnstyledInternalLink)`
