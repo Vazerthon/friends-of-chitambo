@@ -24,8 +24,10 @@ export default {
   colour: {
     primary: '#f68712',
     secondary: '#2f933c',
-    accessiblePrimary: '#b35c00',
-    accessibleSecondary: '#2a8436',
+    text: {
+      primary: '#b35c00',
+      secondary: '#2a8436',
+    },
     neutral: {
       background: '#fafafa',
       white: '#ffffff',

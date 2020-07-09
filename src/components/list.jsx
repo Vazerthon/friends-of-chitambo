@@ -10,7 +10,6 @@ export const UnorderedList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-  font-family: ${({ theme }) => theme.fontFamily}; 
   display: flex;
   align-items: center;
   margin-top: ${({ theme }) => theme.spacing.units(1)};

@@ -27,7 +27,7 @@ export const Heading = styled(({ ...props }) => <Typography {...props} paragraph
 
 export const SubHeading = styled(({ ...props }) => <Typography {...props} paragraph component="h3" />)`
   && {
-    color: ${({ theme, colour }) => theme.colour[colour]};
+    color: ${({ theme, colour }) => theme.colour.text[colour]};
     margin-bottom: ${({ theme }) => theme.spacing.units(0.5)};
     font-size: 1.8rem;
     line-height: 2.2rem;

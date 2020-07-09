@@ -20,10 +20,10 @@ const Header = styled.div`
 function TitleWithDate({ title, date }) {
   return (
     <Header>
-      <Heading colour="accessiblePrimary">
+      <Heading colour="primary">
         {title}
       </Heading>
-      <SubHeading colour="accessiblePrimary">
+      <SubHeading colour="primary">
         {formatFullDate(date)}
       </SubHeading>
     </Header>

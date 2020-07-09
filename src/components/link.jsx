@@ -5,11 +5,15 @@ import { Link as UnstyledInternalLink } from 'gatsby';
 import styled from 'styled-components';
 
 const Link = styled.a`
-  color: ${({ theme }) => theme.colour.accessibleSecondary};
+  color: ${({ theme }) => theme.colour.text.secondary};
 `;
 
 const StyledInternalLink = styled(UnstyledInternalLink)`
   text-decoration: none;
+`;
+
+const StyledButton = styled(Button)`
+  color: ${({ theme }) => theme.colour.text.secondary};
 `;
 
 const toAbsoluteTo = (to) => (to.startsWith('/') ? to : `/${to}`);
@@ -31,9 +35,9 @@ export function ButtonLink({ to, label, external }) {
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Component {...props}>
-      <Button variant="outlined" color="secondary">
+      <StyledButton variant="outlined" aria-label={label}>
         {label}
-      </Button>
+      </StyledButton>
     </Component>
   );
 }
