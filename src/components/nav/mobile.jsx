@@ -29,7 +29,7 @@ export default function MobileNav({ items, title }) {
       <MobileContainer>
         <Logo text="off" size="tiny" />
         <HeaderBarTitle>{title}</HeaderBarTitle>
-        <IconButton onClick={toggleMenu}>
+        <IconButton onClick={toggleMenu} aria-label="toggle navigation menu">
           { showMenu
             ? <MdClose />
             : <MdMenu />}
