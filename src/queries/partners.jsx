@@ -18,7 +18,8 @@ export default function Partners({ renderChildren }) {
                   organisation
                   logo {
                     fixed(width: 100) {
-                      ...GatsbyContentfulFixed
+                      ...GatsbyContentfulFixed_withWebp
+
                     }
                   }
                 }

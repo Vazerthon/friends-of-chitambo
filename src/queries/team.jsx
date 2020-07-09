@@ -14,7 +14,8 @@ export const teamMemberFragment = graphql`
     }
     picture {
       fixed(width: 200) {
-        ...GatsbyContentfulFixed
+        ...GatsbyContentfulFixed_withWebp
+
       }
     }
   }

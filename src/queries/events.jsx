@@ -23,7 +23,8 @@ export default function Events({ renderChildren, eventId }) {
                   description
                   coverImage {
                     fluid(maxWidth: 2000) {
-                      ...GatsbyContentfulFluid
+                      ...GatsbyContentfulFluid_withWebp
+
                     }
                   }
                   body {
@@ -33,7 +34,8 @@ export default function Events({ renderChildren, eventId }) {
                     id
                     title
                     fixed(width: 300) {
-                      ...GatsbyContentfulFixed
+                      ...GatsbyContentfulFixed_withWebp
+
                     }
                   }
                 }
