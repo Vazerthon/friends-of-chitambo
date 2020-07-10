@@ -6,6 +6,7 @@ import Link, { ButtonLink } from './link';
 import Panel from './panel';
 import PartnerLogos from './partner-logos';
 import { Paragraph } from './typography';
+import EventsPanel from './events-panel';
 
 const Aside = styled.aside`
   width: 100%;
@@ -57,8 +58,8 @@ export default function Sidebar() {
           label="Donate with TotalGiving"
         />
       </SidePanel>
-      <SidePanel title="Events">
-        <div>nowt here</div>
+      <SidePanel title="Recent & Upcoming Events">
+        <EventsPanel />
       </SidePanel>
       <PartnerLogos />
     </Aside>
