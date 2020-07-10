@@ -23,10 +23,8 @@
     "gatsby": "gatsby"
   },
   "dependencies": {
-    "@date-io/date-fns": "^1.3.11",
     "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/pickers": "^3.2.10",
     "ajv": "^6.12.2",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.10.7",
