@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoLogoTwitter, IoLogoFacebook, IoMdMail } from 'react-icons/io';
-import { navigate } from 'gatsby';
 
 import Link, { ButtonLink } from './link';
 import Panel from './panel';
-import Calendar from './calendar';
 import PartnerLogos from './partner-logos';
 import { Paragraph } from './typography';
-
-import Events from '../queries/events';
 
 const Aside = styled.aside`
   width: 100%;
@@ -35,11 +31,6 @@ const SidePanel = styled(Panel)`
 const ContactLink = styled(Link)`
   ${({ theme }) => `margin-left: ${theme.spacing.units(1)};`}
 `;
-
-const toCalendarEvent = event => ({
-  date: event.date,
-  onClick: () => navigate(`event/${event.slug}`),
-});
 
 export default function Sidebar() {
   return (
@@ -67,14 +58,7 @@ export default function Sidebar() {
         />
       </SidePanel>
       <SidePanel title="Events">
-        <Events
-          renderChildren={events => (
-            <Calendar
-              today={new Date()}
-              events={events.map(toCalendarEvent)}
-            />
-          )}
-        />
+        <div>nowt here</div>
       </SidePanel>
       <PartnerLogos />
     </Aside>
