@@ -21,7 +21,8 @@ export default function Blogs({ renderChildren, postId }) {
                   slug
                   dateFromNow: createdAt(fromNow: true)
                   dateDaysDiff: createdAt(difference: "days")
-                  date: createdAt(formatString: "Do MMMM yyyy")
+                  dateString: createdAt(formatString: "Do MMMM yyyy")
+                  date: createdAt
                   description
                   coverImage {
                     fluid(maxWidth: 2000) {

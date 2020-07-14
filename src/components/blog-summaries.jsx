@@ -13,7 +13,7 @@ function BlogSummaries() {
           <SummaryCard
             key={article.id}
             title={article.title}
-            date={article.date}
+            date={article.dateString}
             description={article.description}
             url={`blog/${article.slug}`}
           />

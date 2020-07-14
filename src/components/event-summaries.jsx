@@ -13,7 +13,7 @@ function EventSummaries() {
           <SummaryCard
             key={event.id}
             title={event.title}
-            date={event.date}
+            date={event.dateString}
             description={event.description}
             url={`event/${event.slug}`}
           />
