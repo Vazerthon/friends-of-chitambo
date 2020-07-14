@@ -27,7 +27,7 @@ function ConnectedEventsPanel() {
 
   return next ? (
     <EventsPanel
-      url={`blog/${next.slug}`}
+      url={`event/${next.slug}`}
       date={next.dateString}
       title={next.title}
     />
