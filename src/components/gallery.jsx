@@ -50,6 +50,7 @@ Gallery.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       alt: PropTypes.string,
+      // eslint-disable-next-line react/forbid-prop-types
       fixed: PropTypes.object,
     }),
   ).isRequired,

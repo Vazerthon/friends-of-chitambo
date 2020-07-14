@@ -16,6 +16,7 @@ export default function CoverImage({ image: { alt, fluid } }) {
 CoverImage.propTypes = {
   image: PropTypes.shape({
     alt: PropTypes.string,
+    // eslint-disable-next-line react/forbid-prop-types
     fluid: PropTypes.object,
   }).isRequired,
 };

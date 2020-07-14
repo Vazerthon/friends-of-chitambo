@@ -35,6 +35,7 @@ TeamMember.propTypes = {
   name: PropTypes.string.isRequired,
   biography: PropTypes.string.isRequired,
   picture: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
     fixed: PropTypes.object,
   }).isRequired,
 };
