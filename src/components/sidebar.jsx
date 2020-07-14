@@ -58,7 +58,7 @@ export default function Sidebar() {
           label="Donate with TotalGiving"
         />
       </SidePanel>
-      <SidePanel title="Recent & Upcoming Events">
+      <SidePanel title="Upcoming Events">
         <EventsPanel />
       </SidePanel>
       <PartnerLogos />

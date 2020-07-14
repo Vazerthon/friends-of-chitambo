@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 export const Paragraph = styled(({ ...props }) => <Typography {...props} paragraph />)`
   && {
     font-size: 1.2rem;
+    ${({ theme, colour }) => colour && `color: ${theme.colour.text[colour]};`}
   }
 `;
 
