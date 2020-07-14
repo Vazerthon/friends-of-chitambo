@@ -6,16 +6,16 @@ import theme from '../theme';
 import TitleWithDate from './title-with-date';
 
 describe('TitleWithDate', () => {
-  it('should parse and format dates to show day, month and year', () => {
+  it('render date unparsed', () => {
     const component = mount((
       <ThemeProvider theme={theme}>
         <TitleWithDate
           title="test"
-          date="2018-11-12T15:39:24.197Z"
+          date="dates passed as strings"
         />
       </ThemeProvider>
     ));
 
-    expect(component.text()).toContain('12th November 2018');
+    expect(component.text()).toContain('dates passed as strings');
   });
 });
