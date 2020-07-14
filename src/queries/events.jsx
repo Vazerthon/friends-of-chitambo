@@ -19,7 +19,9 @@ export default function Events({ renderChildren, eventId }) {
                   id
                   title
                   slug
-                  date
+                  dateFromNow: date(fromNow: true)
+                  dateDaysDiff: date(difference: "days")
+                  date(formatString: "Do MMMM yyyy")
                   description
                   coverImage {
                     fluid(maxWidth: 2000) {
