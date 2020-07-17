@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import { Paragraph } from './typography';
 import { InternalLink } from './link';
-import { query } from '../queries/events';
 
 function EventsPanel({ url, date, title }) {
   return (
@@ -19,10 +18,21 @@ function EventsPanel({ url, date, title }) {
 }
 
 const mapToNodes = (allContentfulEvent) => allContentfulEvent.edges.map(({ node }) => node);
-const dateMoreThanToday = (event) => event.date > new Date();
+const dateMoreThanToday = (event) => new Date(event.date) > new Date();
 
 function ConnectedEventsPanel() {
-  const { allContentfulEvent } = useStaticQuery(query);
+  const { allContentfulEvent } = useStaticQuery(graphql`
+    query {
+      allContentfulEvent(sort: { fields: date, order: DESC }) {
+        edges {
+          node {
+            ...EventData
+          }
+        }
+      }
+    }
+  `);
+
   const [next] = mapToNodes(allContentfulEvent).filter(dateMoreThanToday);
 
   return next ? (
