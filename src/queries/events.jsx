@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-const mapToNodes = (data) =>
-  data.allContentfulEvent.edges.map(({ node }) => node);
+const mapToNodes = (data) => data.allContentfulEvent.edges.map(({ node }) => node);
 const filterToSingleNode = (id) => (nodes) => nodes.find((n) => n.id === id);
 const identity = (x) => x;
 
