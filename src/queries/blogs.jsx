@@ -19,7 +19,10 @@ export default function Blogs({ renderChildren, postId }) {
                   id
                   title
                   slug
-                  createdAt
+                  dateFromNow: createdAt(fromNow: true)
+                  dateDaysDiff: createdAt(difference: "days")
+                  dateString: createdAt(formatString: "Do MMMM yyyy")
+                  date: createdAt
                   description
                   coverImage {
                     fluid(maxWidth: 2000) {

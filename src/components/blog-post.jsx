@@ -22,6 +22,7 @@ const ImageGallery = ({ images }) => (
 
 ImageGallery.propTypes = {
   images: PropTypes.arrayOf(PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
     fixed: PropTypes.object,
   })).isRequired,
 };
@@ -37,7 +38,7 @@ function BlogPost({ pageContext: { postId } }) {
               <Helmet title={`${data.title} | blog`}>
                 <meta name="description" content={data.description} />
               </Helmet>
-              <TitleWithDate title={data.title} date={data.createdAt} />
+              <TitleWithDate title={data.title} date={data.dateString} />
               { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
               { data.author && <BlogAuthor author={data.author} /> }
               <Markdown source={data.body.body} />

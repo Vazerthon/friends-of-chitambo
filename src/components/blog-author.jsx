@@ -51,6 +51,7 @@ BlogAuthor.propTypes = {
   author: PropTypes.shape({
     name: PropTypes.string.isRequired,
     picture: PropTypes.shape({
+      // eslint-disable-next-line react/forbid-prop-types
       fixed: PropTypes.object,
     }).isRequired,
   }).isRequired,

@@ -20,6 +20,7 @@ const ImageGallery = ({ images }) => (
 
 ImageGallery.propTypes = {
   images: PropTypes.arrayOf(PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
     fixed: PropTypes.object,
   })).isRequired,
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { formatFullDate } from '../helpers/date';
 import { Heading, SubHeading } from './typography';
 
 const Header = styled.div`
@@ -24,7 +23,7 @@ function TitleWithDate({ title, date }) {
         {title}
       </Heading>
       <SubHeading colour="primary">
-        {formatFullDate(date)}
+        {date}
       </SubHeading>
     </Header>
   );
