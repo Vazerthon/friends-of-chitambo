@@ -22,10 +22,10 @@ export default function Pages({ renderChildren, pageId }) {
                   menuOrder
                   description
                   coverImage {
-                    fluid(maxWidth: 2000) {
-                      ...GatsbyContentfulFluid_withWebp
-
-                    }
+                    image: gatsbyImageData(
+                      layout: FULL_WIDTH
+                      formats: [AUTO, WEBP]
+                    )
                   }
                   body {
                     body
@@ -33,10 +33,11 @@ export default function Pages({ renderChildren, pageId }) {
                   gallery {
                     id
                     title
-                    fixed(width: 300) {
-                      ...GatsbyContentfulFixed_withWebp
-
-                    }
+                    image: gatsbyImageData(
+                      width: 300
+                      layout: FIXED
+                      formats: [AUTO, WEBP]
+                    )
                   }
                 }
               }

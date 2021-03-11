@@ -10,8 +10,10 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-material-ui',
     'gatsby-plugin-offline',
-    'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

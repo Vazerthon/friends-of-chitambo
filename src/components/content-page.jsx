@@ -10,18 +10,16 @@ import Panel from './panel';
 
 import Pages from '../queries/pages';
 
-const dataToImage = type => image => ({ id: image.id, alt: image.title, [type]: image[type] });
-const fixedToImage = dataToImage('fixed');
-const fluidToImage = dataToImage('fluid');
+const dataToImage = image => ({ id: image.id, alt: image.title, image: image.image });
 
 const ImageGallery = ({ images }) => (
-  images.length > 0 && <Gallery images={images.map(fixedToImage)} />
+  images.length > 0 && <Gallery images={images.map(dataToImage)} />
 );
 
 ImageGallery.propTypes = {
   images: PropTypes.arrayOf(PropTypes.shape({
     // eslint-disable-next-line react/forbid-prop-types
-    fixed: PropTypes.object,
+    image: PropTypes.object,
   })).isRequired,
 };
 
@@ -35,7 +33,7 @@ function BlogPost({ pageContext: { pageId } }) {
             <Helmet title={`${data.title}`}>
               <meta name="description" content={data.description} />
             </Helmet>
-            { data.coverImage && <CoverImage image={fluidToImage(data.coverImage)} />}
+            { data.coverImage && <CoverImage image={dataToImage(data.coverImage)} />}
             <Markdown source={data.body.body} />
             { data.gallery && <ImageGallery images={data.gallery} />}
           </Panel>

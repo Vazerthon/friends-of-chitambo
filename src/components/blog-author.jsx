@@ -42,7 +42,7 @@ export default function BlogAuthor({ author: { name, picture } }) {
           { name }
         </Name>
       </Col>
-      <SmallImg fixed={picture.fixed} />
+      <SmallImg image={picture.image} />
     </Container>
   );
 }
@@ -52,7 +52,7 @@ BlogAuthor.propTypes = {
     name: PropTypes.string.isRequired,
     picture: PropTypes.shape({
       // eslint-disable-next-line react/forbid-prop-types
-      fixed: PropTypes.object,
+      image: PropTypes.object,
     }).isRequired,
   }).isRequired,
 };
