@@ -21,6 +21,10 @@ export default function Root({ children }) {
             name="description"
             content="Friends of Chitambo - Registered Scottish Charity (SCO44337)"
           />
+          <meta property="og:title" content="Friends of Chitambo" />
+          <meta property="og:description" content="Friends of Chitambo - Registered Scottish Charity (SCO44337)" />
+          <meta property="og:url" content="https://friendsofchitambo.org.uk" />
+          <meta property="og:image" content="https://friendsofchitambo.org.uk/logo.png" />
         </Helmet>
         {children}
       </MuiThemeProvider>

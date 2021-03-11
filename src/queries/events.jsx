@@ -21,6 +21,9 @@ export const eventFragment = graphql`
         layout: FULL_WIDTH
         formats: [AUTO, WEBP]
       )
+      file {
+        url
+      }
     }
     body {
       body

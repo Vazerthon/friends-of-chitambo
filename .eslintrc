@@ -1,6 +1,6 @@
 {
   "extends": "airbnb",
-  "env": { "node": true },
+  "env": { "node": true, "browser": true },
   "parser": "@babel/eslint-parser",
   "plugins": ["react-hooks"],
   "rules": {

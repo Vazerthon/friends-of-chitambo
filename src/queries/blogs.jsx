@@ -29,6 +29,9 @@ export default function Blogs({ renderChildren, postId }) {
                       layout: FULL_WIDTH
                       formats: [AUTO, WEBP]
                     )
+                    file {
+                      url
+                    }
                   }
                   body {
                     body
