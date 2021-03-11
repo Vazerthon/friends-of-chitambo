@@ -2,9 +2,9 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Masonry from 'react-masonry-component';
-import Image from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 
-const Img = styled(Image)`
+const Img = styled(GatsbyImage)`
   margin: ${({ theme }) => theme.spacing.units(1)};
   margin-left: 0;
 `;

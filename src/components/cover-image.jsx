@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Image from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 
-const Img = styled(Image)`
+const Img = styled(GatsbyImage)`
   margin-bottom: ${({ theme }) => theme.spacing.units(4)};
 `;
 

@@ -1,7 +1,7 @@
-import Image from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from 'styled-components';
 
-export default styled(Image)`
+export default styled(GatsbyImage)`
   margin: ${({ theme }) => theme.spacing.units(1)};
   margin-right: ${({ theme }) => theme.spacing.units(3)};
   border: 1px solid ${({ theme }) => theme.colour.secondary};
