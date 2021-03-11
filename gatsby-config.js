@@ -6,6 +6,7 @@ module.exports = {
     title: 'Friends of Chitambo',
   },
   plugins: [
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-material-ui',
     'gatsby-plugin-offline',
