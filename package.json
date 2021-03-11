@@ -16,9 +16,7 @@
     "format": "prettier --write '**/*.js'",
     "lint": "eslint --ext .js,.jsx .",
     "lint:fix": "eslint --ext .js,.jsx --fix .",
-    "test": "jest --watch",
-    "test:nowatch": "jest",
-    "release": "npm run lint && npm run test:nowatch && npm run build",
+    "release": "npm run lint && npm run build",
     "gatsby": "gatsby"
   },
   "dependencies": {
@@ -50,20 +48,15 @@
     "react-jss": "^10.5.1",
     "react-markdown": "^5.0.3",
     "react-masonry-component": "^6.2.1",
-    "rimraf": "^3.0.2",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.21.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "prettier-eslint": "^12.0.0",
     "react-test-renderer": "^17.0.1"
