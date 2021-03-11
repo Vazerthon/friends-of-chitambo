@@ -13,10 +13,11 @@ export const teamMemberFragment = graphql`
       biography
     }
     picture {
-      fixed(width: 200) {
-        ...GatsbyContentfulFixed_withWebp
-
-      }
+      gatsbyImageData(
+        width: 200
+        layout: FIXED
+        formats: [AUTO, WEBP]
+      )
     }
   }
 `;

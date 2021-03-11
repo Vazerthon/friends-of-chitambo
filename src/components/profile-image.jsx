@@ -1,4 +1,4 @@
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 export default styled(GatsbyImage)`

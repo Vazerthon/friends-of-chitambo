@@ -23,7 +23,7 @@ export default function TeamMember({
       <Container>
         <Heading>{name}</Heading>
         <Bio>
-          <Img fixed={picture.fixed} />
+          <Img image={picture.gatsbyImageData} />
           <Paragraph>{biography}</Paragraph>
         </Bio>
       </Container>
@@ -36,6 +36,6 @@ TeamMember.propTypes = {
   biography: PropTypes.string.isRequired,
   picture: PropTypes.shape({
     // eslint-disable-next-line react/forbid-prop-types
-    fixed: PropTypes.object,
+    gatsbyImageData: PropTypes.object,
   }).isRequired,
 };
