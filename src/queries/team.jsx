@@ -13,7 +13,7 @@ export const teamMemberFragment = graphql`
       biography
     }
     picture {
-      gatsbyImageData(
+      image: gatsbyImageData(
         width: 200
         layout: FIXED
         formats: [AUTO, WEBP]
