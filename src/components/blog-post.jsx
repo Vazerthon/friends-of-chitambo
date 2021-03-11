@@ -35,6 +35,10 @@ function BlogPost({ pageContext: { postId } }) {
             <>
               <Helmet title={`${data.title} | blog`}>
                 <meta name="description" content={data.description} />
+                <meta property="og:title" content={`${data.title} | Friends of Chitambo`} />
+                <meta property="og:description" content={data.description} />
+                <meta property="og:url" content={`https://friendsofchitambo.org.uk/blog/${data.slug}`} />
+                {data.coverImage && <meta property="og:image" content={`${data.coverImage.file.url}`} /> }
               </Helmet>
               <TitleWithDate title={data.title} date={data.dateString} />
               { data.coverImage && <CoverImage image={dataToImage(data.coverImage)} />}
