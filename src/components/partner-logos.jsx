@@ -17,7 +17,7 @@ const renderLinkImages = images => (imageElement, index) => {
 const toGalleryData = image => ({
   id: image.id,
   alt: image.organisation,
-  fixed: image.logo.fixed,
+  image: image.logo.gatsbyImageData,
   website: image.website,
 });
 

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Masonry from 'react-masonry-component';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Img = styled(GatsbyImage)`
   margin: ${({ theme }) => theme.spacing.units(1)};
@@ -25,9 +25,9 @@ const FlexColumnGallery = styled.div`
 
 export default function Gallery({ images, renderImageWrapper }) {
   const wrappedImages = images
-    .map(({ fixed, alt }) => (
+    .map(({ image, alt }) => (
       <Img
-        fixed={fixed}
+        image={image}
         alt={alt}
       />
     ))
@@ -51,7 +51,7 @@ Gallery.propTypes = {
       id: PropTypes.string,
       alt: PropTypes.string,
       // eslint-disable-next-line react/forbid-prop-types
-      fixed: PropTypes.object,
+      image: PropTypes.object,
     }),
   ).isRequired,
   renderImageWrapper: PropTypes.func,

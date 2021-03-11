@@ -42,7 +42,7 @@ export default function BlogAuthor({ author: { name, picture } }) {
           { name }
         </Name>
       </Col>
-      <SmallImg fixed={picture.fixed} />
+      <SmallImg image={picture.fixed} />
     </Container>
   );
 }

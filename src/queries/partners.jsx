@@ -17,10 +17,11 @@ export default function Partners({ renderChildren }) {
                   website
                   organisation
                   logo {
-                    fixed(width: 100) {
-                      ...GatsbyContentfulFixed_withWebp
-
-                    }
+                    gatsbyImageData(
+                      width: 100
+                      layout: FIXED
+                      formats: [AUTO, WEBP]
+                    )
                   }
                 }
               }

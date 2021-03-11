@@ -22,7 +22,7 @@ export default function Pages({ renderChildren, pageId }) {
                   menuOrder
                   description
                   coverImage {
-                    gatsbyImageData(
+                    image: gatsbyImageData(
                       layout: FULL_WIDTH
                       formats: [AUTO, WEBP]
                     )
