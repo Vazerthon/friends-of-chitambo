@@ -11,8 +11,8 @@ import Panel from './panel';
 import Pages from '../queries/pages';
 
 const dataToImage = type => image => ({ id: image.id, alt: image.title, [type]: image[type] });
-const fixedToImage = dataToImage('fixed');
-const fluidToImage = dataToImage('fluid');
+const fixedToImage = dataToImage('image');
+const fluidToImage = dataToImage('gatsbyImageData');
 
 const ImageGallery = ({ images }) => (
   images.length > 0 && <Gallery images={images.map(fixedToImage)} />
@@ -21,7 +21,7 @@ const ImageGallery = ({ images }) => (
 ImageGallery.propTypes = {
   images: PropTypes.arrayOf(PropTypes.shape({
     // eslint-disable-next-line react/forbid-prop-types
-    fixed: PropTypes.object,
+    image: PropTypes.object,
   })).isRequired,
 };
 
