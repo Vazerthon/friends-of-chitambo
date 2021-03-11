@@ -23,7 +23,7 @@ export default function TeamMember({
       <Container>
         <Heading>{name}</Heading>
         <Bio>
-          <Img image={picture.gatsbyImageData} />
+          <Img image={picture.gatsbyImageData} alt={name} />
           <Paragraph>{biography}</Paragraph>
         </Bio>
       </Container>
