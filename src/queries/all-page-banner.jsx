@@ -12,17 +12,25 @@ const Banner = styled(Panel)`
 `;
 
 const renderBanner = (data) => {
+  const item = data?.allContentfulAllPageBanner?.nodes[0];
+
+  if (!item) {
+    return <></>;
+  }
+
   const {
     heading,
     body,
     linkText,
     linkAddress,
-  } = data?.allContentfulAllPageBanner?.nodes[0];
+  } = item;
 
   return (
     <Banner title={heading}>
-      <Paragraph>{body.body}</Paragraph>
-      <Link target="_blank" rel="noopener noreferrer" href={linkAddress}>{linkText}</Link>
+      <Paragraph>{body}</Paragraph>
+      {linkText && linkAddress && (
+        <Link target="_blank" rel="noopener noreferrer" href={linkAddress}>{linkText}</Link>
+      )}
     </Banner>
   );
 };
@@ -37,10 +45,7 @@ export default function AllPageBanner() {
               nodes {
                 id
                 heading
-                body {
-                  id
-                  body
-                }
+                body
                 linkAddress
                 linkText
               }

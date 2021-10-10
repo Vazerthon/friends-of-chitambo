@@ -1,5 +1,19 @@
 const path = require('path');
 
+// stop gatsby from freaking out if no banner item exists
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type ContentfulAllPageBanner {
+      heading: String!
+      body: String!
+      linkAddress: String
+      linkText: String
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 const pathToEventTemplate = path.resolve('./src/components/event-page.jsx');
 const pathToBlogTemplate = path.resolve('./src/components/blog-post.jsx');
 const pathToPageTemplate = path.resolve('./src/components/content-page.jsx');
