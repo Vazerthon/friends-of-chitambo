@@ -9,6 +9,7 @@ import Header from './header';
 import Footer from './footer';
 
 import Root from './root';
+import AllPageBanner from '../queries/all-page-banner';
 
 const MaxSizeContainer = styled.div`
   display: flex;
@@ -52,6 +53,7 @@ function Layout({ children, title }) {
       <Header title={title} />
       <MaxSizeContainer>
         <Container>
+          <AllPageBanner />
           <Logo text="below" size="large" />
           <Content>
             <Main>{children}</Main>
