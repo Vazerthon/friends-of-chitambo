@@ -54,8 +54,8 @@ export default function Sidebar() {
         <Paragraph>Thank you for your support!</Paragraph>
         <ButtonLink
           external
-          to="https://www.totalgiving.co.uk/charity/friends-of-chitambo-scio"
-          label="Donate with TotalGiving"
+          to="http://www.crowdfunder.co.uk/breathe-life-into-chitambo"
+          label="Donate with Crowdfunder"
         />
       </SidePanel>
       <SidePanel title="Upcoming Events">
